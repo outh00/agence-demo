@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gestion des Agences</title>
+  <title>Carte des Communes et Centres</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <style>
-body {
+    body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
@@ -71,95 +71,187 @@ body {
 </head>
 <body>
   <div class="container">
-    <!-- Sidebar -->
-    <div class="sidebar">
+    <!-- Partie Gestion des Agences -->
+    <div class="gestion-agences">
       <h1>Gestion des Agences</h1>
-      <div class="stats">
-        <div class="stat-item">
-          <h3>Fermé</h3>
-          <p>45</p>
-        </div>
-        <div class="stat-item">
-          <h3>En construction</h3>
-          <p>12</p>
-        </div>
-        <div class="stat-item">
-          <h3>En maintenance</h3>
-          <p>8</p>
-        </div>
-        <div class="stat-item">
-          <h3>Fermé définitivement</h3>
-          <p>15</p>
-        </div>
-      </div>
-      <h2>Carte des Agences</h2>
       <div id="map"></div>
+      <div class="form-container">
+        <h2>Ajouter une agence</h2>
+        <input type="text" id="name" placeholder="Nom de l'agence">
+        <input type="text" id="address" placeholder="Adresse">
+        <input type="text" id="latitude" placeholder="Latitude">
+        <input type="text" id="longitude" placeholder="Longitude">
+        <select id="status">
+          <option value="Ouvert">Ouvert</option>
+          <option value="Fermé">Fermé</option>
+          <option value="Fermé définitivement">Fermé définitivement</option>
+          <option value="En construction">En construction</option>
+          <option value="En maintenance">En maintenance</option>
+        </select>
+        <input type="text" id="phone" placeholder="Numéro de contact">
+        <input type="text" id="hours" placeholder="Horaires d'ouverture">
+        <input type="text" id="city" placeholder="Commune">
+        <button onclick="addAgency()">Ajouter</button>
+      </div>
     </div>
 
-    <!-- Main Content -->
-    <div class="main-content">
+    <!-- Partie Lecture des Agences -->
+    <div class="lecture-agences">
       <h2>Liste des Agences</h2>
-      <div class="filters">
-        <input type="text" placeholder="Rechercher une agence...">
-        <select>
-          <option>Tous les statuts</option>
-          <option>Ouvert</option>
-          <option>Fermé</option>
-          <option>En construction</option>
-          <option>En maintenance</option>
-          <option>Fermé définitivement</option>
-        </select>
-        <select>
-          <option>Toutes les communes</option>
-          <option>Casablanca</option>
-          <option>Rabat</option>
-          <option>Marrakech</option>
-          <option>Tanger</option>
-        </select>
-      </div>
       <div class="agency-list">
-        <div class="agency-item">
-          <div class="info">
-            <h3>Agence Maarif</h3>
-            <p>Rue Ibnou Manjour, 20100</p>
-          </div>
-          <div class="status">
-            <p>Ouvert</p>
-          </div>
-          <div class="contact">
-            <p>+212 522 456 789</p>
-          </div>
-        </div>
-        <div class="agency-item">
-          <div class="info">
-            <h3>Agence Hassan</h3>
-            <p>Avenue Mohammed V, 10000</p>
-          </div>
-          <div class="status">
-            <p>En maintenance</p>
-          </div>
-          <div class="contact">
-            <p>+212 537 789 123</p>
-          </div>
-        </div>
-      </div>
-      <div class="pagination">
-        <button>Précédent</button>
-        <button class="active">1</button>
-        <button>2</button>
-        <button>3</button>
-        <button>Suivant</button>
+        <ul id="agency-list"></ul>
       </div>
     </div>
   </div>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>
-    // Initialisation de la carte Leaflet
+    // Base de données simulée
+    let agencies = [];
+
+    // Initialisation de la carte Leaflet centrée sur le Maroc
     const map = L.map('map').setView([31.7917, -7.0926], 6); // Centré sur le Maroc
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 19,
     }).addTo(map);
+
+    // Données des communes (exemple)
+    const communes = [
+      {
+        Commune: "Ahlaf",
+        Coordonnées: "[[33.362, -7.226], [33.362, -7.206], [33.342, -7.206], [33.342, -7.226]]",
+      },
+      {
+        Commune: "Ain Tizgha",
+        Coordonnées: "[[33.5897, -7.0294], [33.5897, -7.0094], [33.5697, -7.0094], [33.5697, -7.0294]]",
+      },
+      // Ajoutez d'autres communes ici...
+    ];
+
+    // Données des centres (exemple)
+    const centres = [
+      {
+        Centre: "SGS AIT MELLOUL",
+        GPS: "30.384336,-9.523964",
+      },
+      {
+        Centre: "SGS AS KÉNITRA",
+        GPS: "34.247464,-6.608049",
+      },
+      // Ajoutez d'autres centres ici...
+    ];
+
+    // Afficher les communes sous forme de zones (polygones)
+    communes.forEach(commune => {
+      const coordinates = JSON.parse(commune.Coordonnées); // Convertir les coordonnées en tableau
+      const polygon = L.polygon(coordinates, {
+        color: 'blue', // Couleur de la bordure de la zone
+        fillColor: 'lightblue', // Couleur de remplissage de la zone
+        fillOpacity: 0.4, // Opacité de la zone
+      }).addTo(map);
+
+      polygon.bindPopup(`<b>Commune : ${commune.Commune}</b>`);
+    });
+
+    // Afficher les centres sous forme de marqueurs
+    centres.forEach(centre => {
+      const [latitude, longitude] = centre.GPS.split(',').map(coord => parseFloat(coord.trim()));
+      const marker = L.marker([latitude, longitude]).addTo(map);
+      marker.bindPopup(`<b>Centre : ${centre.Centre}</b>`);
+    });
+
+    // Fonction pour ajouter une agence
+    function addAgency() {
+      const name = document.getElementById('name').value;
+      const address = document.getElementById('address').value;
+      const latitude = parseFloat(document.getElementById('latitude').value);
+      const longitude = parseFloat(document.getElementById('longitude').value);
+      const status = document.getElementById('status').value;
+      const phone = document.getElementById('phone').value;
+      const hours = document.getElementById('hours').value;
+      const city = document.getElementById('city').value;
+
+      if (!name || !latitude || !longitude) {
+        alert("Veuillez remplir tous les champs obligatoires.");
+        return;
+      }
+
+      const newAgency = {
+        id: agencies.length + 1,
+        name,
+        address,
+        latitude,
+        longitude,
+        status,
+        phone,
+        hours,
+        city,
+      };
+
+      agencies.push(newAgency);
+      updateMap();
+      updateAgencyList();
+      clearForm();
+    }
+
+    // Fonction pour mettre à jour la carte
+    function updateMap() {
+      map.eachLayer(layer => {
+        if (layer instanceof L.Marker) {
+          map.removeLayer(layer);
+        }
+      });
+
+      agencies.forEach(agency => {
+        const marker = L.marker([agency.latitude, agency.longitude]).addTo(map);
+        marker.bindPopup(`
+          <b>${agency.name}</b><br>
+          ${agency.address}<br>
+          Statut: ${agency.status}<br>
+          Téléphone: ${agency.phone}<br>
+          Horaires: ${agency.hours}<br>
+          Commune: ${agency.city}
+        `);
+      });
+    }
+
+    // Fonction pour mettre à jour la liste des agences
+    function updateAgencyList() {
+      const list = document.getElementById('agency-list');
+      list.innerHTML = '';
+      agencies.forEach(agency => {
+        const li = document.createElement('li');
+        li.innerHTML = `
+          <b>${agency.name}</b> - ${agency.city}<br>
+          Statut: ${agency.status}<br>
+          <button onclick="deleteAgency(${agency.id})">Supprimer</button>
+        `;
+        list.appendChild(li);
+      });
+    }
+
+    // Fonction pour supprimer une agence
+    function deleteAgency(id) {
+      agencies = agencies.filter(agency => agency.id !== id);
+      updateMap();
+      updateAgencyList();
+    }
+
+    // Fonction pour vider le formulaire
+    function clearForm() {
+      document.getElementById('name').value = '';
+      document.getElementById('address').value = '';
+      document.getElementById('latitude').value = '';
+      document.getElementById('longitude').value = '';
+      document.getElementById('status').value = 'Ouvert';
+      document.getElementById('phone').value = '';
+      document.getElementById('hours').value = '';
+      document.getElementById('city').value = '';
+    }
+
+    // Initialisation
+    updateMap();
+    updateAgencyList();
   </script>
 </body>
 </html>
