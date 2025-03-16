@@ -3,85 +3,218 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Carte des Communes et Centres</title>
+  <title>Gestion des Agences</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
+      background: #f4f4f4;
+    }
+    .container {
+      display: flex;
+      padding: 20px;
+      gap: 20px;
+    }
+    .sidebar {
+      width: 300px;
+      background: white;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .main-content {
+      flex: 1;
+      background: white;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    h2 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+    .stats {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .stat-item {
+      flex: 1;
+      text-align: center;
+      padding: 10px;
+      background: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    .stat-item h3 {
+      font-size: 16px;
+      margin: 0;
+    }
+    .stat-item p {
+      font-size: 24px;
+      margin: 5px 0 0;
     }
     #map {
-      height: 100vh; /* Pleine hauteur de l'écran */
+      height: 300px;
+      margin-bottom: 20px;
+    }
+    .filters {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .filters input, .filters select {
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      flex: 1;
+    }
+    .agency-list {
+      margin-top: 20px;
+    }
+    .agency-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+    }
+    .agency-item:last-child {
+      border-bottom: none;
+    }
+    .agency-item .info {
+      flex: 1;
+    }
+    .agency-item .info h3 {
+      margin: 0;
+      font-size: 16px;
+    }
+    .agency-item .info p {
+      margin: 5px 0;
+      color: #666;
+    }
+    .agency-item .status {
+      width: 100px;
+      text-align: center;
+    }
+    .agency-item .contact {
+      width: 150px;
+      text-align: right;
+    }
+    .pagination {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .pagination button {
+      padding: 8px 12px;
+      border: 1px solid #ddd;
+      background: #f9f9f9;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .pagination button.active {
+      background: #007bff;
+      color: white;
+      border-color: #007bff;
     }
   </style>
 </head>
 <body>
-  <div id="map"></div>
+  <div class="container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h1>Gestion des Agences</h1>
+      <div class="stats">
+        <div class="stat-item">
+          <h3>Fermé</h3>
+          <p>45</p>
+        </div>
+        <div class="stat-item">
+          <h3>En construction</h3>
+          <p>12</p>
+        </div>
+        <div class="stat-item">
+          <h3>En maintenance</h3>
+          <p>8</p>
+        </div>
+        <div class="stat-item">
+          <h3>Fermé définitivement</h3>
+          <p>15</p>
+        </div>
+      </div>
+      <h2>Carte des Agences</h2>
+      <div id="map"></div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <h2>Liste des Agences</h2>
+      <div class="filters">
+        <input type="text" placeholder="Rechercher une agence...">
+        <select>
+          <option>Tous les statuts</option>
+          <option>Ouvert</option>
+          <option>Fermé</option>
+          <option>En construction</option>
+          <option>En maintenance</option>
+          <option>Fermé définitivement</option>
+        </select>
+        <select>
+          <option>Toutes les communes</option>
+          <option>Casablanca</option>
+          <option>Rabat</option>
+          <option>Marrakech</option>
+          <option>Tanger</option>
+        </select>
+      </div>
+      <div class="agency-list">
+        <div class="agency-item">
+          <div class="info">
+            <h3>Agence Maarif</h3>
+            <p>Rue Ibnou Manjour, 20100</p>
+          </div>
+          <div class="status">
+            <p>Ouvert</p>
+          </div>
+          <div class="contact">
+            <p>+212 522 456 789</p>
+          </div>
+        </div>
+        <div class="agency-item">
+          <div class="info">
+            <h3>Agence Hassan</h3>
+            <p>Avenue Mohammed V, 10000</p>
+          </div>
+          <div class="status">
+            <p>En maintenance</p>
+          </div>
+          <div class="contact">
+            <p>+212 537 789 123</p>
+          </div>
+        </div>
+      </div>
+      <div class="pagination">
+        <button>Précédent</button>
+        <button class="active">1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>Suivant</button>
+      </div>
+    </div>
+  </div>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
   <script>
-    // Fonction pour lire un fichier Excel
-    function readExcelFile(file, callback) {
-      const reader = new FileReader();
-      reader.onload = function (e) {
-        const data = new Uint8Array(e.target.result);
-        const workbook = XLSX.read(data, { type: 'array' });
-        const sheetName = workbook.SheetNames[0];
-        const sheet = workbook.Sheets[sheetName];
-        const json = XLSX.utils.sheet_to_json(sheet);
-        callback(json);
-      };
-      reader.readAsArrayBuffer(file);
-    }
-
-    // Fonction pour afficher les données sur la carte
-    function displayDataOnMap(communes, centres) {
-      // Initialisation de la carte Leaflet centrée sur le Maroc
-      const map = L.map('map').setView([31.7917, -7.0926], 6); // Centré sur le Maroc avec un zoom adapté
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19,
-      }).addTo(map);
-
-      // Afficher les communes sous forme de zones (polygones)
-      communes.forEach(commune => {
-        const coordinates = JSON.parse(commune.Coordonnées); // Convertir les coordonnées en tableau
-        const polygon = L.polygon(coordinates, {
-          color: 'blue', // Couleur de la bordure de la zone
-          fillColor: 'lightblue', // Couleur de remplissage de la zone
-          fillOpacity: 0.4, // Opacité de la zone
-        }).addTo(map);
-
-        polygon.bindPopup(`<b>Commune : ${commune.Commune}</b>`);
-      });
-
-      // Afficher les centres sous forme de marqueurs
-      centres.forEach(centre => {
-        const [latitude, longitude] = centre.GPS.split(',').map(coord => parseFloat(coord.trim()));
-        const marker = L.marker([latitude, longitude]).addTo(map);
-        marker.bindPopup(`<b>Centre : ${centre.Centre}</b>`);
-      });
-    }
-
-    // Charger les fichiers Excel
-    Promise.all([
-      fetch('Communes_Coordonnees.xlsx').then(response => response.blob()),
-      fetch('CoordonneesCVT.xlsx').then(response => response.blob()),
-    ]).then(files => {
-      const [communesFile, centresFile] = files;
-
-      // Lire les données des communes
-      readExcelFile(communesFile, communes => {
-        // Lire les données des centres
-        readExcelFile(centresFile, centres => {
-          // Afficher les données sur la carte
-          displayDataOnMap(communes, centres);
-        });
-      });
-    }).catch(error => {
-      console.error('Erreur lors du chargement des fichiers :', error);
-    });
+    // Initialisation de la carte Leaflet
+    const map = L.map('map').setView([31.7917, -7.0926], 6); // Centré sur le Maroc
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+    }).addTo(map);
   </script>
 </body>
 </html>
