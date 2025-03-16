@@ -1,64 +1,64 @@
-// Base de données simulée avec des agences pré-remplies
+// Base de données simulée avec des agences au Maroc
 let agencies = [
   {
     id: 1,
-    name: "Agence Paris Centre",
-    address: "10 Rue de la Paix, 75002 Paris",
-    latitude: 48.8698,
-    longitude: 2.3319,
+    name: "Agence Casablanca Centre",
+    address: "123 Boulevard Mohammed V, Casablanca",
+    latitude: 33.5731,
+    longitude: -7.5898,
     status: "Ouvert",
-    phone: "01 23 45 67 89",
-    hours: "09h00 - 18h00",
-    city: "Paris",
+    phone: "0522 98 76 54",
+    hours: "08h30 - 18h30",
+    city: "Casablanca",
   },
   {
     id: 2,
-    name: "Agence Lyon Part-Dieu",
-    address: "15 Rue de la République, 69003 Lyon",
-    latitude: 45.7601,
-    longitude: 4.8573,
+    name: "Agence Rabat Ville",
+    address: "45 Avenue Hassan II, Rabat",
+    latitude: 34.0209,
+    longitude: -6.8416,
     status: "Fermé",
-    phone: "04 56 78 90 12",
-    hours: "10h00 - 19h00",
-    city: "Lyon",
+    phone: "0537 12 34 56",
+    hours: "09h00 - 17h00",
+    city: "Rabat",
   },
   {
     id: 3,
-    name: "Agence Marseille Vieux-Port",
-    address: "25 Quai des Belges, 13001 Marseille",
-    latitude: 43.2951,
-    longitude: 5.3741,
+    name: "Agence Marrakech Médina",
+    address: "10 Rue Riad Zitoun, Marrakech",
+    latitude: 31.6295,
+    longitude: -7.9811,
     status: "En maintenance",
-    phone: "04 91 23 45 67",
-    hours: "08h30 - 17h30",
-    city: "Marseille",
+    phone: "0524 44 55 66",
+    hours: "10h00 - 19h00",
+    city: "Marrakech",
   },
   {
     id: 4,
-    name: "Agence Bordeaux Centre",
-    address: "5 Place de la Comédie, 33000 Bordeaux",
-    latitude: 44.8417,
-    longitude: -0.5724,
+    name: "Agence Tanger Ville",
+    address: "5 Avenue Pasteur, Tanger",
+    latitude: 35.7643,
+    longitude: -5.8329,
     status: "En construction",
-    phone: "05 56 78 90 12",
-    hours: "09h30 - 18h30",
-    city: "Bordeaux",
+    phone: "0539 33 44 55",
+    hours: "08h00 - 16h00",
+    city: "Tanger",
   },
   {
     id: 5,
-    name: "Agence Lille Grand-Place",
-    address: "12 Place du Général de Gaulle, 59800 Lille",
-    latitude: 50.6366,
-    longitude: 3.0635,
+    name: "Agence Fès Médina",
+    address: "20 Rue Talaa Kebira, Fès",
+    latitude: 34.0637,
+    longitude: -4.9778,
     status: "Ouvert",
-    phone: "03 20 12 34 56",
-    hours: "09h00 - 19h00",
-    city: "Lille",
+    phone: "0535 66 77 88",
+    hours: "09h30 - 18h30",
+    city: "Fès",
   },
 ];
 
-// Initialisation de la carte Leaflet
-const map = L.map('map').setView([46.6031, 1.8883], 6); // Centré sur la France
+// Initialisation de la carte Leaflet centrée sur le Maroc
+const map = L.map('map').setView([31.7917, -7.0926], 6); // Centré sur le Maroc
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   maxZoom: 19,
 }).addTo(map);
@@ -113,7 +113,7 @@ function updateMap() {
       Statut: ${agency.status}<br>
       Téléphone: ${agency.phone}<br>
       Horaires: ${agency.hours}<br>
-      Commune: ${agency.city}
+      Ville: ${agency.city}
     `);
   });
 }
