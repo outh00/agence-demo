@@ -1,52 +1,53 @@
 // Initialisation de la carte
-var map = L.map('map').setView([32.00, -6.00], 6);
+var map = L.map('map').setView([32.3683, -6.3692], 6);
 
 // Ajout des tuiles OpenStreetMap
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; OpenStreetMap contributors'
 }).addTo(map);
 
-// Définition des couleurs pour les différentes zones
-const regionStyle = { color: "blue", weight: 2, fillOpacity: 0.3 };
-const provinceStyle = { color: "green", weight: 2, fillOpacity: 0.4 };
-const communeStyle = { color: "red", weight: 1, fillOpacity: 0.6 };
-
-const blueDot = L.icon({
+// Définition des icônes pour les communes
+const blueIcon = L.icon({
     iconUrl: 'https://maps.google.com/mapfiles/ms/icons/blue-dot.png',
-    iconSize: [10, 10],
-    iconAnchor: [5, 5]
+    iconSize: [32, 32],
+    iconAnchor: [16, 32]
 });
 
-// Charger les données depuis JSON
+// Fonction pour charger et afficher les données
 fetch('data.json')
     .then(response => response.json())
     .then(data => {
         console.log("Données JSON chargées:", data);
-        
-        // Affichage des régions en zones bleues
+
+        // Ajout des régions sous forme de zones (polygones)
         data.regions.forEach(region => {
-            L.polygon(region.coordinates, regionStyle)
-                .bindPopup(`<b>Région:</b> ${region.name}`)
+            var polygon = L.polygon(region.coordinates, { color: 'green', fillOpacity: 0.3 })
+                .bindPopup(`<b>Région:</b> ${region.nom}`)
                 .addTo(map);
         });
-        
-        // Affichage des provinces/préfectures en zones vertes
+
+        // Ajout des provinces au centre de leur région
         data.provinces.forEach(province => {
-            L.polygon(province.coordinates, provinceStyle)
-                .bindPopup(`<b>Province:</b> ${province.name}`)
-                .addTo(map);
+            L.circleMarker([province.latitude, province.longitude], {
+                color: 'red',
+                radius: 8,
+                fillOpacity: 0.7
+            }).bindPopup(`<b>Province:</b> ${province.nom}`)
+            .addTo(map);
         });
-        
-        // Affichage des communes en dots bleus avec informations de population et besoins
+
+        // Ajout des communes sous forme de points
         data.communes.forEach(commune => {
-            L.marker([commune.latitude, commune.longitude], {icon: blueDot})
-                .bindPopup(`
-                    <strong>Commune:</strong> ${commune.name}<br>
-                    <strong>Population:</strong> ${commune.population}<br>
-                    <strong>Besoins CCT VL:</strong> ${commune.BesoinCommuneCCT_VL}<br>
-                    <strong>Besoins CCT PL:</strong> ${commune.BesoinCommuneCCT_PL}<br>
-                `)
-                .addTo(map);
+            if (commune.latitude && commune.longitude) {
+                L.marker([commune.latitude, commune.longitude], {icon: blueIcon})
+                    .bindPopup(`
+                        <b>Commune:</b> ${commune.nom}<br>
+                        <b>Besoins CCT VL:</b> ${commune.BesoinCommuneCCT_VL}<br>
+                        <b>Besoins CCT PL:</b> ${commune.BesoinCommuneCCT_PL}<br>
+                        <b>Population:</b> ${commune.population}
+                    `)
+                    .addTo(map);
+            }
         });
     })
     .catch(error => console.error('Erreur lors du chargement des données:', error));
