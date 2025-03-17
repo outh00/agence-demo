@@ -75,6 +75,20 @@
           "horaires": "07:30 - 16:30",
           "telephone": "+212633333333",
           "statut": "Actif"
+        },
+        {
+          "nom": "Centre Fquih Ben Salah 2",
+          "adresse": "Bd Mohamed V, Fquih Ben Salah",
+          "horaires": "07:30 - 16:30",
+          "telephone": "+212633333333",
+          "statut": "Actif"
+        },
+        {
+          "nom": "Centre Est ",
+          "adresse": "Bd Mohamed V, Fquih Ben Salah",
+          "horaires": "07:30 - 16:30",
+          "telephone": "+212633333333",
+          "statut": "Actif"
         }
       ]
     }
