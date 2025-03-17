@@ -40,6 +40,14 @@ function loadData() {
                 });
             }
 
+            // Afficher les agences en rouge
+            if (data.agences) {
+                markersAgences = data.agences.map(agence => {
+                    return L.marker([agence.latitude, agence.longitude], {icon: redIcon})
+                        .bindPopup(`<b>${agence.nom}</b><br>${agence.adresse}<br>📞 ${agence.telephone}`)
+                        .addTo(map);
+                });
+            }
 
             // Afficher les centres en rouge (traitement du GPS)
             if (data.centres) {
@@ -70,18 +78,51 @@ function filterMap() {
     
     // Suppression de tous les marqueurs
     markersCommunes.forEach(marker => map.removeLayer(marker));
+    markersAgences.forEach(marker => map.removeLayer(marker));
     markersCentres.forEach(marker => map.removeLayer(marker));
     
     if (filterValue === "communes") {
         markersCommunes.forEach(marker => marker.addTo(map));
+    } else if (filterValue === "agences") {
+        markersAgences.forEach(marker => marker.addTo(map));
     } else if (filterValue === "centres") {
         markersCentres.forEach(marker => marker.addTo(map));
-    }else {
+    } else {
         markersCommunes.forEach(marker => marker.addTo(map));
         markersAgences.forEach(marker => marker.addTo(map));
         markersCentres.forEach(marker => marker.addTo(map));
     }
 }
+// Fonction pour ajouter une agence
+document.getElementById('ajouterAgenceBtn').addEventListener('click', function () {
+    var nom = document.getElementById('nomAgence').value;
+    var latitude = parseFloat(document.getElementById('latitude').value);
+    var longitude = parseFloat(document.getElementById('longitude').value);
+    var adresse = document.getElementById('adresse').value;
+    var telephone = document.getElementById('telephone').value;
+    var statut = document.getElementById('statut').value;
+
+    if (!nom || isNaN(latitude) || isNaN(longitude) || !adresse || !telephone || !statut) {
+        alert('Veuillez remplir tous les champs correctement.');
+        return;
+    }
+
+    var nouvelleAgence = { nom, latitude, longitude, adresse, telephone, statut };
+
+    // Ajout du marqueur sur la carte
+    var customIcon = L.icon({
+        iconUrl: 'assets/icons/marker.png',
+        iconSize: [32, 32],
+        iconAnchor: [16, 32],
+        popupAnchor: [0, -32]
+    });
+
+    L.marker([latitude, longitude], {icon: customIcon})
+        .addTo(map)
+        .bindPopup(`<b>${nom}</b><br>${adresse}<br>📞 ${telephone}`);
+
+    alert('Agence ajoutée avec succès !');
+    togglePopup();
 
 // Chargement initial des données
 loadData();
