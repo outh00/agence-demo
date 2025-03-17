@@ -22,55 +22,47 @@ var redIcon = L.icon({
 });
 
 // Chargement des données JSON
-// Vérifier que les données sont bien reçues
 fetch('data.json')
     .then(response => response.json())
     .then(data => {
-        console.log("Données JSON chargées:", data);
-
-        // Vérifier si les communes existent et sont bien formatées
-        if (data.communes) {
-            data.communes.forEach(commune => {
-                if (commune.latitude && commune.longitude) {
-                    L.marker([commune.latitude, commune.longitude], {icon: blueIcon})
-                        .bindPopup(`<b>Commune:</b> ${commune.name}`)
-                        .addTo(map);
-                } else {
-                    console.warn("Coordonnées manquantes pour la commune:", commune);
-                }
+        // Affichage des agences
+        data.agences.forEach(agence => {
+            var customIcon = L.icon({
+                iconUrl: 'assets/icons/marker.png',
+                iconSize: [32, 32],
+                iconAnchor: [16, 32],
+                popupAnchor: [0, -32]
             });
-        } else {
-            console.error("Aucune commune trouvée dans le fichier JSON.");
-        }
 
-        // Vérifier si les centres existent et sont bien formatés
-        if (data.centres) {
-            data.centres.forEach(centre => {
-                if (centre.GPS) {
-                    const [lat, lng] = centre.GPS.split(',').map(Number);
-                    if (!isNaN(lat) && !isNaN(lng)) {
-                        L.marker([lat, lng], {icon: redIcon})
-                            .bindPopup(`
-                                <strong>Centre :</strong> ${centre.Centre}<br>
-                                <strong>Adresse :</strong> ${centre.Adresse}<br>
-                                <strong>Horaires :</strong> ${centre.Horaires}<br>
-                                <strong>Téléphone :</strong> ${centre.Telephone}<br>
-                                <strong>Statut :</strong> ${centre.Statut}
-                            `)
-                            .addTo(map);
-                    } else {
-                        console.warn("Coordonnées invalides pour le centre:", centre);
-                    }
-                } else {
-                    console.warn("Champ GPS manquant pour le centre:", centre);
-                }
-            });
-        } else {
-            console.error("Aucun centre trouvé dans le fichier JSON.");
-        }
+            L.marker([agence.latitude, agence.longitude], {icon: customIcon})
+                .addTo(map)
+                .bindPopup(`<b>${agence.nom}</b><br>${agence.adresse}<br>📞 ${agence.telephone}`);
+        });
+
+        // Afficher les communes en bleu
+        data.communes.forEach(commune => {
+            L.marker([commune.latitude, commune.longitude], { icon: blueIcon })
+              .bindPopup(`<b>Commune:</b> ${commune.name}`)
+              .addTo(map);
+        });
+
+        // Afficher les centres en rouge
+        data.centres.forEach(centre => {
+            const [lat, lng] = centre.GPS.split(',').map(Number);
+            if (!isNaN(lat) && !isNaN(lng)) {
+                L.marker([lat, lng], {icon: redIcon})
+                  .bindPopup(`
+                    <strong>Centre :</strong> ${centre.Centre}<br>
+                    <strong>Adresse :</strong> ${centre.Adresse}<br>
+                    <strong>Horaires :</strong> ${centre.Horaires}<br>
+                    <strong>Téléphone :</strong> ${centre.Telephone}<br>
+                    <strong>Statut :</strong> ${centre.Statut}
+                  `)
+                  .addTo(map);
+            }
+        });
     })
     .catch(error => console.error('Erreur lors du chargement des données:', error));
-
 
 // Mise à jour des KPIs
 function updateKPIs() {
