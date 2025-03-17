@@ -1,562 +1,246 @@
 {
   "communes": [
     {
+      "id": 1,
       "name": "Chougrane",
       "coordinates": [
         [33.352, -7.216]
       ]
     },
     {
+      "id": 2,
       "name": "AinTizgha",
       "coordinates": [
         [33.5797, -7.0194]
       ]
     },
     {
+      "id": 3,
       "name": "Fdalate",
       "coordinates": [
         [33.687, -7.2553]
       ]
     },
     {
+      "id": 4,
       "name": "Mellila",
       "coordinates": [
         [33.361, -6.9657]
       ]
     },
     {
+      "id": 5,
       "name": "MoualineElGhaba",
       "coordinates": [
         [33.7262, -7.1274]
       ]
     },
     {
+      "id": 6,
       "name": "MoualineElOuad",
       "coordinates": [
         [33.5326, -7.3384]
       ]
     },
     {
+      "id": 7,
       "name": "OuladAliToualaa",
       "coordinates": [
         [33.4994, -7.1065]
       ]
     },
     {
+      "id": 8,
       "name": "OuladYahyaLouta",
       "coordinates": [
         [33.532, -7.236]
       ]
     },
     {
+      "id": 9,
       "name": "RdadnaOuladMalek",
       "coordinates": [
         [33.4238, -7.1955]
       ]
     },
     {
+      "id": 10,
       "name": "Ziaida",
       "coordinates": [
         [33.5797, -7.0194]
       ]
     },
     {
+      "id": 11,
       "name": "BirEnnasr",
       "coordinates": [
         [33.3276, -6.9335]
       ]
     },
     {
+      "id": 12,
       "name": "BniYakhlef",
       "coordinates": [
         [33.6717, -7.2717]
       ]
     },
     {
+      "id": 13,
       "name": "ElMansouria",
       "coordinates": [
         [33.687, -7.2553]
       ]
     },
     {
+      "id": 14,
       "name": "SidiBettache",
       "coordinates": [
         [33.5973, -6.9914]
       ]
     },
     {
+      "id": 15,
       "name": "SidiKhdim",
       "coordinates": [
         [33.7786, -7.0564]
       ]
     },
     {
+      "id": 16,
       "name": "SidiMoussaBenAli",
       "coordinates": [
         [33.6095, -7.2982]
       ]
     },
     {
+      "id": 17,
       "name": "SidiMoussaElMajdoub",
       "coordinates": [
         [33.6912, -7.3656]
       ]
     },
     {
+      "id": 18,
       "name": "BenSlimane",
       "coordinates": [
         [33.6385, -7.1062]
       ]
     },
     {
+      "id": 19,
       "name": "Bouznika",
       "coordinates": [
         [33.7217, -7.163]
       ]
     },
     {
+      "id": 20,
       "name": "AinKaicher",
       "coordinates": [
         [32.8094, -6.4767]
-      ]
-    },
-    {
-      "name": "BniBataou",
-      "coordinates": [
-        [32.9027, -6.1405]
-      ]
-    },
-    {
-      "name": "BniZrantel",
-      "coordinates": [
-        [32.7817, -6.2152]
-      ]
-    },
-    {
-      "name": "Boukhrisse",
-      "coordinates": [
-        [32.775, -6.3122]
-      ]
-    },
-    {
-      "name": "OuladGouaouch",
-      "coordinates": [
-        [32.7716, -6.358]
-      ]
-    },
-    {
-      "name": "Rouached",
-      "coordinates": [
-        [32.9945, -6.1166]
-      ]
-    },
-    {
-      "name": "Tachrafat",
-      "coordinates": [
-        [32.6825, -6.4814]
-      ]
-    },
-    {
-      "name": "BirMezoui",
-      "coordinates": [
-        [32.842, -6.7322]
-      ]
-    },
-    {
-      "name": "BniYkhlef",
-      "coordinates": [
-        [32.9821, -6.7205]
-      ]
-    },
-    {
-      "name": "Boulanouare",
-      "coordinates": [
-        [32.8668, -6.6962]
-      ]
-    },
-    {
-      "name": "ElFoqra",
-      "coordinates": [
-        [32.735, -6.8875]
-      ]
-    },
-    {
-      "name": "Lagfaf",
-      "coordinates": [
-        [32.9406, -6.6319]
-      ]
-    },
-    {
-      "name": "M'Fassis",
-      "coordinates": [
-        [32.842, -6.7322]
-      ]
-    },
-    {
-      "name": "OuladAbdoune",
-      "coordinates": [
-        [32.9661, -6.9202]
-      ]
-    },
-    {
-      "name": "OuladAzzouz",
-      "coordinates": [
-        [32.8412, -6.6918]
-      ]
-    },
-    {
-      "name": "Bejaad",
-      "coordinates": [
-        [32.7753, -6.3832]
-      ]
-    },
-    {
-      "name": "Boujniba",
-      "coordinates": [
-        [32.8756, -6.7484]
-      ]
-    },
-    {
-      "name": "Hattane",
-      "coordinates": [
-        [32.7823, -6.7729]
-      ]
-    },
-    {
-      "name": "Khouribga",
-      "coordinates": [
-        [32.8753, -6.8692]
-      ]
-    },
-    {
-      "name": "OuadZem",
-      "coordinates": [
-        [32.8472, -6.5167]
-      ]
-    },
-    {
-      "name": "AitAmmar",
-      "coordinates": [
-        [32.9406, -6.6319]
-      ]
-    },
-    {
-      "name": "BniSmir",
-      "coordinates": [
-        [32.7898, -6.4922]
-      ]
-    },
-    {
-      "name": "Braksa",
-      "coordinates": [
-        [33.0884, -6.2338]
-      ]
-    },
-    {
-      "name": "KasbatTroch",
-      "coordinates": [
-        [32.9096, -6.6021]
-      ]
-    },
-    {
-      "name": "Lagnadiz",
-      "coordinates": [
-        [33.0822, -6.7079]
-      ]
-    },
-    {
-      "name": "Maadna",
-      "coordinates": [
-        [32.8094, -6.4767]
-      ]
-    },
-    {
-      "name": "OuladAissa",
-      "coordinates": [
-        [33.1207, -6.2845]
-      ]
-    },
-    {
-      "name": "OuladBoughadi",
-      "coordinates": [
-        [32.9821, -6.7205]
-      ]
-    },
-    {
-      "name": "OuladFennane",
-      "coordinates": [
-        [32.9546, -6.6112]
-      ]
-    },
-    {
-      "name": "OuladFtata",
-      "coordinates": [
-        [33.0822, -6.7079]
-      ]
-    },
-    {
-      "name": "AinDorbane",
-      "coordinates": [
-        [33.0659, -7.3336]
-      ]
-    },
-    {
-      "name": "Bougargouh",
-      "coordinates": [
-        [33.1753, -7.2418]
-      ]
-    },
-    {
-      "name": "LahlafM'Zab",
-      "coordinates": [
-        [33.0205, -7.23]
-      ]
-    },
-    {
-      "name": "Lakhzazra",
-      "coordinates": [
-        [33.0028, -6.8871]
-      ]
-    },
-    {
-      "name": "M'Garto",
-      "coordinates": [
-        [33.2358, -7.1978]
-      ]
-    },
-    {
-      "name": "Mniaa",
-      "coordinates": [
-        [32.9086, -7.2142]
-      ]
-    },
-    {
-      "name": "Mrizigue",
-      "coordinates": [
-        [32.8649, -6.9809]
       ]
     }
   ],
   "centres": [
     {
       "Centre": "REM TECNO SAHARA",
-      "GPS": "35.696513,-5.336008"
+      "GPS": "35.696513,-5.336008",
+      "communeId": 1
     },
     {
       "Centre": "S.C.V.T.I",
-      "GPS": "34.914788,-4.567233"
+      "GPS": "34.914788,-4.567233",
+      "communeId": 2
     },
     {
       "Centre": "S.O.T.C.A",
-      "GPS": "30.396186894337166,-9.209420469242104"
+      "GPS": "30.396186894337166,-9.209420469242104",
+      "communeId": 3
     },
     {
       "Centre": "SALAMA AIN AOUDA",
-      "GPS": "33.798193,-6.783511"
+      "GPS": "33.798193,-6.783511",
+      "communeId": 4
     },
     {
       "Centre": "SALAMA AIT-KAMRA",
-      "GPS": "35.156126,-3.977053"
+      "GPS": "35.156126,-3.977053",
+      "communeId": 5
     },
     {
       "Centre": "SALAMA BENI-AHMED",
-      "GPS": "34.85450160363313,-5.0688727694869335"
+      "GPS": "34.85450160363313,-5.0688727694869335",
+      "communeId": 6
     },
     {
       "Centre": "SALAMA BENIMELLAL",
-      "GPS": "32.286628,-6.442566"
+      "GPS": "32.286628,-6.442566",
+      "communeId": 7
     },
     {
       "Centre": "SALAMA BENTAYEB",
-      "GPS": "35.026728,-3.440377"
+      "GPS": "35.026728,-3.440377",
+      "communeId": 8
     },
     {
       "Centre": "SALAMA BOUARFA",
-      "GPS": "32.55518748557514,-1.9490514152648168"
+      "GPS": "32.55518748557514,-1.9490514152648168",
+      "communeId": 9
     },
     {
       "Centre": "SALAMA ERRACHIDIA",
-      "GPS": "31.950546,-4.41725"
+      "GPS": "31.950546,-4.41725",
+      "communeId": 10
     },
     {
       "Centre": "SALAMA FES",
-      "GPS": "34.02731778914991,-4.975016142759967"
+      "GPS": "34.02731778914991,-4.975016142759967",
+      "communeId": 11
     },
     {
       "Centre": "SALAMA HARBIL",
-      "GPS": "31.709157,-8.065029"
+      "GPS": "31.709157,-8.065029",
+      "communeId": 12
     },
     {
       "Centre": "SALAMA KALAAT MEGOUNA",
-      "GPS": "31.250745,-6.11805"
+      "GPS": "31.250745,-6.11805",
+      "communeId": 13
     },
     {
       "Centre": "SALAMA KHEMISSET",
-      "GPS": "33.8205318682112,-6.085156663911054"
+      "GPS": "33.8205318682112,-6.085156663911054",
+      "communeId": 14
     },
     {
       "Centre": "SALAMA MARRAKECH",
-      "GPS": "31.672216,-8.044747"
+      "GPS": "31.672216,-8.044747",
+      "communeId": 15
     },
     {
       "Centre": "SALAMA NOUACER",
-      "GPS": "33.512452,-7.766632"
+      "GPS": "33.512452,-7.766632",
+      "communeId": 16
     },
     {
       "Centre": "SALAMA OUARZAZATE",
-      "GPS": "30.932641,-6.932127"
+      "GPS": "30.932641,-6.932127",
+      "communeId": 17
     },
     {
       "Centre": "SALAMA OUJDA",
-      "GPS": "34.686303,-1.953662"
+      "GPS": "34.686303,-1.953662",
+      "communeId": 18
     },
     {
       "Centre": "SALAMA SALE",
-      "GPS": "34.063017,-6.789645"
+      "GPS": "34.063017,-6.789645",
+      "communeId": 19
     },
     {
       "Centre": "SALAMA SOUK LARBAA",
-      "GPS": "34.700332338012934,-6.001083547129768"
-    },
-    {
-      "Centre": "SALAMA TANGER",
-      "GPS": "35.707218,-5.911016"
-    },
-    {
-      "Centre": "SALAMA TAROUDANT",
-      "GPS": "30.423665644067746,-8.916635271754194"
-    },
-    {
-      "Centre": "SALAMA TETOUAN",
-      "GPS": "35.586938,-5.334105"
-    },
-    {
-      "Centre": "SALAMA TIZNIT",
-      "GPS": "29.708365,-9.713803"
-    },
-    {
-      "Centre": "SALAMA ZAIO",
-      "GPS": "34.930706,-2.744095"
-    },
-    {
-      "Centre": "SELAVI",
-      "GPS": "34.034857234023065,-6.811224881266033"
-    },
-    {
-      "Centre": "SEVICO",
-      "GPS": "30.234488,-9.527985"
-    },
-    {
-      "Centre": "SOBVITA",
-      "GPS": "34.930046,-2.311451"
-    },
-    {
-      "Centre": "SOCOTEA",
-      "GPS": "33.890608,-6.965837"
-    },
-    {
-      "Centre": "SOCOVITEX",
-      "GPS": "34.365863,-5.198876"
-    },
-    {
-      "Centre": "SOCTA LACHRAF",
-      "GPS": "32.591778,-8.708306"
-    },
-    {
-      "Centre": "SOTEGEX",
-      "GPS": "33.62633191757926,-7.503968977107458"
-    },
-    {
-      "Centre": "SOVITA",
-      "GPS": "33.562778,-7.549159"
-    },
-    {
-      "Centre": "SSVT AUTO MAROC",
-      "GPS": "34.071873,-6.757089"
-    },
-    {
-      "Centre": "Ste BENCHAOUI",
-      "GPS": "34.238907,-6.615413"
-    },
-    {
-      "Centre": "Ste JAOUHARATE AL ATLAS NEGOCE",
-      "GPS": "32.962271,-5.688719"
-    },
-    {
-      "Centre": "TAZA VISITE",
-      "GPS": "35.083061396938746,-5.231813631685606"
-    },
-    {
-      "Centre": "TECHNOVISITE",
-      "GPS": "33.987507,-6.803494"
-    },
-    {
-      "Centre": "TECNO BOUHOUDA",
-      "GPS": "34.581045,-4.553093"
-    },
-    {
-      "Centre": "TETOUAN VISITE (amtar)",
-      "GPS": "35.234787819721404,-4.792963384879259"
-    },
-    {
-      "Centre": "TETOUAN VISITE (tanger)",
-      "GPS": "35.70767417753618,-5.924830819119187"
-    },
-    {
-      "Centre": "TIFAK EL MUSTAPHA",
-      "GPS": "33.387109,-7.970358"
-    },
-    {
-      "Centre": "VERISAL",
-      "GPS": "34.024028314452885,-6.758244834165364"
-    },
-    {
-      "Centre": "VIASAF",
-      "GPS": "34.004809,-5.058797"
-    },
-    {
-      "Centre": "VIS AUTO SEFROU",
-      "GPS": "33.814962,-4.830847"
-    },
-    {
-      "Centre": "VISIMAR",
-      "GPS": "29.717611,-7.967641"
-    },
-    {
-      "Centre": "VISITA TECNICA DEL AUTOMOVIL",
-      "GPS": "35.0590203809958,-6.0860296279907375"
-    },
-    {
-      "Centre": "VISITE TECHNIQUE ENNOUR",
-      "GPS": "31.62852973951024,-8.120667460615985"
-    },
-    {
-      "Centre": "VISITE TECHNIQUE GOUGHRABOU",
-      "GPS": "29.710238726238348,-9.712697005123385"
-    },
-    {
-      "Centre": "VISITE TECHNIQUE IFRAH",
-      "GPS": "31.498385,-5.538300"
-    },
-    {
-      "Centre": "VISITE TECHNIQUE INZEGANE",
-      "GPS": "30.343802754539926,-9.543294660563944"
-    },
-    {
-      "Centre": "VISITE TECHNIQUE LUKUS",
-      "GPS": "35.191805,-6.135259"
-    },
-    {
-      "Centre": "VISITE VEHICULE KSSIBA",
-      "GPS": "33.52120575849413,-7.556967367312105"
-    },
-    {
-      "Centre": "VISITRAJ",
-      "GPS": "35.047651,-2.887487"
-    },
-    {
-      "Centre": "VT SIDI IFNI",
-      "GPS": "29.354952,-10.186725"
+      "GPS": "34.700332338012934,-6.001083547129768",
+      "communeId": 20
     }
   ]
 }

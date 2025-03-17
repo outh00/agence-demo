@@ -29,16 +29,24 @@ async function loadData() {
   }
 }
 
-// Afficher les communes sous forme de zones (polygones)
+// Afficher les communes sous forme de polygones
 function displayCommunes() {
   communes.forEach(commune => {
     const polygon = L.polygon(commune.coordinates, {
-      color: 'blue',
-      fillColor: 'lightblue',
-      fillOpacity: 0.4,
+      color: 'darkblue', // Bordure plus foncée
+      fillColor: 'lightblue', // Remplissage plus clair
+      fillOpacity: 0.6, // Opacité augmentée
+      weight: 2, // Épaisseur de la bordure
     }).addTo(map);
 
-    polygon.bindPopup(`<b>Commune : ${commune.name}</b>`);
+    // Récupérer les centres de la commune
+    const centresCommune = centres.filter(centre => centre.communeId === commune.id);
+
+    // Ajouter un popup avec le nom de la commune et la liste des centres
+    polygon.bindPopup(`
+      <b>Commune : ${commune.name}</b><br>
+      Centres : ${centresCommune.map(c => c.Centre).join(', ')}
+    `);
   });
 }
 
@@ -47,7 +55,13 @@ function displayCentres() {
   centres.forEach(centre => {
     const [latitude, longitude] = centre.GPS.split(',').map(coord => parseFloat(coord.trim()));
     const marker = L.marker([latitude, longitude]).addTo(map);
-    marker.bindPopup(`<b>Centre : ${centre.Centre}</b>`);
+
+    // Ajouter un popup avec le nom du centre et la commune associée
+    const commune = communes.find(c => c.id === centre.communeId);
+    marker.bindPopup(`
+      <b>Centre : ${centre.Centre}</b><br>
+      Commune : ${commune ? commune.name : 'Non spécifiée'}
+    `);
   });
 }
 
@@ -109,7 +123,9 @@ function updateMap() {
 // Fonction pour mettre à jour la liste des agences
 function updateAgencyList() {
   const list = document.getElementById('agency-list');
-  list.innerHTML = '';
+  list.innerHTML = ''; // Vide la liste actuelle
+
+  // Parcours toutes les agences et les ajoute à la liste
   agences.forEach(agency => {
     const li = document.createElement('li');
     li.innerHTML = `
@@ -117,7 +133,7 @@ function updateAgencyList() {
       Statut: ${agency.status}<br>
       <button onclick="deleteAgency(${agency.id})">Supprimer</button>
     `;
-    list.appendChild(li);
+    list.appendChild(li); // Ajoute l'élément à la liste
   });
 }
 
@@ -143,4 +159,4 @@ function clearForm() {
 // Initialisation
 loadData();
 updateMap();
-updateAgencyList();
+updateAgencyList(); // Appel initial pour afficher les agences
