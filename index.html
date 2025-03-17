@@ -6,11 +6,46 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <style>
     #map { height: 100vh; }
+    #add-agency-btn {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      z-index: 1000;
+      background-color: white;
+      border: 1px solid #ccc;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+    #popup-form {
+      display: none;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 15px;
+      border: 1px solid #ccc;
+      z-index: 1001;
+    }
   </style>
 </head>
 <body>
   <div id="map"></div>
-
+  <button id="add-agency-btn">Ajouter une agence</button>
+  
+  <div id="popup-form">
+    <h3>Ajouter une agence</h3>
+    <label>Nom commune: <input type="text" id="commune"></label><br>
+    <label>Latitude: <input type="text" id="latitude"></label><br>
+    <label>Longitude: <input type="text" id="longitude"></label><br>
+    <label>Adresse: <input type="text" id="adresse"></label><br>
+    <label>Horaire: <input type="time" id="horaire"></label><br>
+    <label>Téléphone: <input type="text" id="telephone"></label><br>
+    <label>Statut: <input type="text" id="statut"></label><br>
+    <button id="save-agency">Enregistrer</button>
+    <button id="close-popup">Annuler</button>
+  </div>
+  
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="app.js"></script>
 </body>
