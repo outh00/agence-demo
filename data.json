@@ -2,28 +2,28 @@
   "regions": [
     {
       "nom": "Béni Mellal-Khénifra",
-      "polygon": [[32.367, -6.369], [32.5, -6.6], [32.2, -6.1], [32.4, -6.3]]
+      "polygon": [[32.3683, -6.3692], [32.5, -6.6], [32.2, -6.1], [32.4, -6.3]]
     }
   ],
   "provinces": [
     {
       "nom": "Azilal",
-      "polygon": [[31.967, -6.569], [32.0, -6.62], [31.9, -6.48], [31.98, -6.53]]
+      "polygon": [[31.9663, -6.5683], [32.0, -6.6], [31.9, -6.5], [31.98, -6.55]]
     },
     {
       "nom": "Béni Mellal",
-      "polygon": [[32.338, -6.357], [32.35, -6.42], [32.3, -6.28], [32.34, -6.33]]
+      "polygon": [[32.337, -6.3565], [32.35, -6.4], [32.3, -6.3], [32.34, -6.35]]
     },
     {
       "nom": "Fquih Ben Salah",
-      "polygon": [[32.501, -6.691], [32.52, -6.72], [32.48, -6.66], [32.49, -6.67]]
+      "polygon": [[32.5009, -6.6906], [32.52, -6.7], [32.48, -6.68], [32.49, -6.69]]
     }
   ],
   "communes": [
     {
       "nom": "Azilal",
-      "latitude": 31.967,
-      "longitude": -6.569,
+      "latitude": 31.9663,
+      "longitude": -6.5683,
       "population": 22000,
       "BesoinCommuneCCT_VL": 2,
       "BesoinCommuneCCT_PL": 1,
@@ -37,17 +37,24 @@
         },
         {
           "nom": "Centre Azilal 2",
-          "adresse": "Rue Hassan II, Azilal",
-          "horaires": "08:30 - 17:30",
-          "telephone": "+212612345678",
+          "adresse": "Quartier Sud, Azilal",
+          "horaires": "09:00 - 18:00",
+          "telephone": "+212611111111",
           "statut": "Actif"
+        },
+        {
+          "nom": "Centre Azilal 3",
+          "adresse": "Centre Ville, Azilal",
+          "horaires": "07:30 - 16:30",
+          "telephone": "+212622222222",
+          "statut": "Inactif"
         }
       ]
     },
     {
       "nom": "Béni Mellal",
-      "latitude": 32.338,
-      "longitude": -6.357,
+      "latitude": 32.337,
+      "longitude": -6.3565,
       "population": 52000,
       "BesoinCommuneCCT_VL": 4,
       "BesoinCommuneCCT_PL": 1,
@@ -56,29 +63,29 @@
           "nom": "Centre Beni Mellal 1",
           "adresse": "Avenue Hassan II, Beni Mellal",
           "horaires": "08:30 - 18:00",
-          "telephone": "+212611111111",
+          "telephone": "+212633333333",
           "statut": "Actif"
         },
         {
           "nom": "Centre Beni Mellal 2",
           "adresse": "Quartier Administratif, Beni Mellal",
           "horaires": "09:00 - 17:30",
-          "telephone": "+212622222222",
+          "telephone": "+212644444444",
           "statut": "Inactif"
         },
         {
           "nom": "Centre Beni Mellal 3",
-          "adresse": "Bd Mohamed VI, Beni Mellal",
-          "horaires": "07:30 - 16:00",
-          "telephone": "+212633333333",
+          "adresse": "Nouvelle Zone, Beni Mellal",
+          "horaires": "10:00 - 19:00",
+          "telephone": "+212655555555",
           "statut": "Actif"
         }
       ]
     },
     {
       "nom": "Fquih Ben Salah",
-      "latitude": 32.501,
-      "longitude": -6.691,
+      "latitude": 32.5009,
+      "longitude": -6.6906,
       "population": 31000,
       "BesoinCommuneCCT_VL": 3,
       "BesoinCommuneCCT_PL": 1,
@@ -87,15 +94,22 @@
           "nom": "Centre Fquih Ben Salah 1",
           "adresse": "Bd Mohamed V, Fquih Ben Salah",
           "horaires": "07:30 - 16:30",
-          "telephone": "+212633333333",
+          "telephone": "+212677777777",
           "statut": "Actif"
         },
         {
           "nom": "Centre Fquih Ben Salah 2",
-          "adresse": "Rue Souk, Fquih Ben Salah",
-          "horaires": "08:00 - 17:00",
-          "telephone": "+212644444444",
+          "adresse": "Centre Ville, Fquih Ben Salah",
+          "horaires": "08:00 - 17:30",
+          "telephone": "+212688888888",
           "statut": "Actif"
+        },
+        {
+          "nom": "Centre Fquih Ben Salah 3",
+          "adresse": "Zone Industrielle, Fquih Ben Salah",
+          "horaires": "09:00 - 18:00",
+          "telephone": "+212699999999",
+          "statut": "Inactif"
         }
       ]
     }

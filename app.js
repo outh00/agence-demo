@@ -7,8 +7,8 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 // Icônes personnalisés
-const blueIcon = L.icon({
-    iconUrl: 'https://maps.google.com/mapfiles/ms/icons/blue-dot.png',
+const violetIcon = L.icon({
+    iconUrl: 'https://maps.google.com/mapfiles/ms/icons/purple-dot.png',
     iconSize: [32, 32],
     iconAnchor: [16, 32]
 });
@@ -25,46 +25,46 @@ fetch('data.json')
     .then(data => {
         console.log("Données JSON chargées:", data);
 
-        // Ajout du cercle pour représenter la région
+        // Affichage de la région avec un grand cercle jaune
         data.regions.forEach(region => {
-            var center = [32.3683, -6.3692]; // Centre de la région
-            var radius = 70000; // Rayon en mètres pour englober les provinces
-
-            L.circle(center, {
+            L.circle([32.3683, -6.3692], {
                 color: 'yellow',
                 fillColor: '#ffff00',
                 fillOpacity: 0.3,
-                radius: radius
+                radius: 100000
             }).addTo(map).bindPopup(`<b>Région :</b> ${region.nom}`);
         });
 
-        // Ajout des cercles pour représenter les provinces
+        // Affichage des provinces avec des cercles rouges
         data.provinces.forEach(province => {
-            var center = province.polygon.reduce((acc, val) => [acc[0] + val[0], acc[1] + val[1]], [0, 0])
-                .map(coord => coord / province.polygon.length);
-
-            L.circle(center, {
+            L.circle(province.polygon[0], {
                 color: 'red',
                 fillColor: '#ff0000',
                 fillOpacity: 0.3,
-                radius: 30000
+                radius: 50000
             }).addTo(map).bindPopup(`<b>Province :</b> ${province.nom}`);
         });
 
-        // Ajout des communes sous forme de marqueurs
+        // Affichage des communes avec des cercles violets
         data.communes.forEach(commune => {
-            L.marker([commune.latitude, commune.longitude], {icon: blueIcon})
-                .bindPopup(`
-                    <b>Commune :</b> ${commune.nom}<br>
-                    <b>Population :</b> ${commune.population}<br>
-                    <b>Besoin VL :</b> ${commune.BesoinCommuneCCT_VL}<br>
-                    <b>Besoin PL :</b> ${commune.BesoinCommuneCCT_PL}
-                `)
-                .addTo(map);
+            L.circle([commune.latitude, commune.longitude], {
+                color: 'purple',
+                fillColor: '#800080',
+                fillOpacity: 0.3,
+                radius: 10000
+            }).addTo(map).bindPopup(`
+                <b>Commune :</b> ${commune.nom}<br>
+                <b>Population :</b> ${commune.population}<br>
+                <b>Besoin VL :</b> ${commune.BesoinCommuneCCT_VL}<br>
+                <b>Besoin PL :</b> ${commune.BesoinCommuneCCT_PL}
+            `);
 
-            // Ajout des centres
-            commune.centres.forEach(centre => {
-                L.marker([commune.latitude, commune.longitude], {icon: redIcon})
+            // Affichage des agences à l'intérieur de la commune
+            commune.centres.forEach((centre, index) => {
+                let latOffset = (index - 1) * 0.002;
+                let lngOffset = (index - 1) * 0.002;
+
+                L.marker([commune.latitude + latOffset, commune.longitude + lngOffset], {icon: redIcon})
                     .bindPopup(`
                         <strong>Centre :</strong> ${centre.nom}<br>
                         <strong>Adresse :</strong> ${centre.adresse}<br>
