@@ -5,20 +5,34 @@
   <title>Carte Communes & Centres</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; display: flex; }
+    #sidebar { width: 250px; background: #333; color: white; padding: 20px; height: 100vh; position: fixed; }
+    #sidebar ul { list-style: none; padding: 0; }
+    #sidebar ul li { padding: 10px; border-bottom: 1px solid #555; cursor: pointer; }
+    #sidebar ul li:hover { background: #444; }
+    #main-content { margin-left: 250px; width: calc(100% - 250px); }
     #kpi-container { display: flex; justify-content: space-around; padding: 10px; background: #f4f4f4; }
     .kpi-box { padding: 10px 20px; background: white; border-radius: 5px; box-shadow: 0 0 5px rgba(0,0,0,0.2); }
     #map { height: 85vh; }
   </style>
 </head>
 <body>
-  <div id="kpi-container">
-    <div class="kpi-box">Total Agences: <span id="total-agences">0</span></div>
-    <div class="kpi-box">Agences Actives: <span id="agences-actives">0</span></div>
-    <div class="kpi-box">Agences Inactives: <span id="agences-inactives">0</span></div>
+  <div id="sidebar">
+    <h2>Menu</h2>
+    <ul>
+      <li onclick="togglePopup()">Ajouter une agence</li>
+      <li>Statistiques</li>
+      <li>Paramètres</li>
+    </ul>
   </div>
-  <div id="map"></div>
-
+  <div id="main-content">
+    <div id="kpi-container">
+      <div class="kpi-box">Total Agences: <span id="total-agences">0</span></div>
+      <div class="kpi-box">Agences Actives: <span id="agences-actives">0</span></div>
+      <div class="kpi-box">Agences Inactives: <span id="agences-inactives">0</span></div>
+    </div>
+    <div id="map"></div>
+  </div>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="app.js"></script>
 </body>
