@@ -2,143 +2,123 @@
   "communes": [
     {
       "id": 1,
-      "name": "Chougrane",
-      "coordinates": [
-        [33.352, -7.216]
-      ]
+      "name": "Ahlaf",
+      "latitude": 33.303770709731324,
+      "longitude": -7.117069994158544
     },
     {
       "id": 2,
       "name": "AinTizgha",
-      "coordinates": [
-        [33.5797, -7.0194]
-      ]
+      "latitude": 33.67275811087397,
+      "longitude": -7.057849529341064
     },
     {
       "id": 3,
       "name": "Fdalate",
-      "coordinates": [
-        [33.687, -7.2553]
-      ]
+      "latitude": 33.5925366481426,
+      "longitude": -7.273314073090278
     },
     {
       "id": 4,
       "name": "Mellila",
-      "coordinates": [
-        [33.361, -6.9657]
-      ]
+      "latitude": 33.408153683354044,
+      "longitude": -7.10892190849776
     },
     {
       "id": 5,
       "name": "MoualineElGhaba",
-      "coordinates": [
-        [33.7262, -7.1274]
-      ]
+      "latitude": 33.6468278346328,
+      "longitude": -7.149375428617941
     },
     {
       "id": 6,
       "name": "MoualineElOuad",
-      "coordinates": [
-        [33.5326, -7.3384]
-      ]
+      "latitude": 33.481143415524,
+      "longitude": -7.304532516827609
     },
     {
       "id": 7,
       "name": "OuladAliToualaa",
-      "coordinates": [
-        [33.4994, -7.1065]
-      ]
+      "latitude": 33.46792967479642,
+      "longitude": -7.172073429497931
     },
     {
       "id": 8,
       "name": "OuladYahyaLouta",
-      "coordinates": [
-        [33.532, -7.236]
-      ]
+      "latitude": 33.561910164563535,
+      "longitude": -7.176955606626344
     },
     {
       "id": 9,
       "name": "RdadnaOuladMalek",
-      "coordinates": [
-        [33.4238, -7.1955]
-      ]
+      "latitude": 33.3912091569012,
+      "longitude": -7.245355048942599
     },
     {
       "id": 10,
       "name": "Ziaida",
-      "coordinates": [
-        [33.5797, -7.0194]
-      ]
+      "latitude": 33.50914809598302,
+      "longitude": -7.019181884198055
     },
     {
       "id": 11,
       "name": "BirEnnasr",
-      "coordinates": [
-        [33.3276, -6.9335]
-      ]
+      "latitude": 33.3745825249687,
+      "longitude": -6.8995951918302865
     },
     {
       "id": 12,
       "name": "BniYakhlef",
-      "coordinates": [
-        [33.6717, -7.2717]
-      ]
+      "latitude": 33.671977354982374,
+      "longitude": -7.3171580532375256
     },
     {
       "id": 13,
       "name": "ElMansouria",
-      "coordinates": [
-        [33.687, -7.2553]
-      ]
+      "latitude": 33.730762293828924,
+      "longitude": -7.279969799514665
     },
     {
       "id": 14,
       "name": "SidiBettache",
-      "coordinates": [
-        [33.5973, -6.9914]
-      ]
+      "latitude": 33.54858173834384,
+      "longitude": -6.899635607408398
     },
     {
       "id": 15,
       "name": "SidiKhdim",
-      "coordinates": [
-        [33.7786, -7.0564]
-      ]
+      "latitude": 33.775588347033214,
+      "longitude": -7.111285958721681
     },
     {
       "id": 16,
       "name": "SidiMoussaBenAli",
-      "coordinates": [
-        [33.6095, -7.2982]
-      ]
+      "latitude": 33.579790011828486,
+      "longitude": -7.359325795047556
     },
     {
       "id": 17,
       "name": "SidiMoussaElMajdoub",
-      "coordinates": [
-        [33.6912, -7.3656]
-      ]
+      "latitude": 33.64191979816065,
+      "longitude": -7.366813213158071
     },
     {
       "id": 18,
       "name": "BenSlimane",
-      "coordinates": [
-        [33.6385, -7.1062]
-      ]
+      "latitude": 33.64149728785159,
+      "longitude": -7.1166789515260325
     },
     {
       "id": 19,
       "name": "Bouznika",
-      "coordinates": [
-        [33.7217, -7.163]
-      ]
+      "latitude": 33.763224317642724,
+      "longitude": -7.197296330917545
     },
     {
       "id": 20,
       "name": "AinKaicher",
-      "coordinates": [
-        [32.8094, -6.4767]
-      ]
+      "latitude": 32.73653370476017,
+      "longitude": -6.501375744798373
     }
   ],
   "centres": [
