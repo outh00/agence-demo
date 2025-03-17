@@ -17,15 +17,11 @@ document.addEventListener("DOMContentLoaded", () => {
     iconSize: [32, 32],
     iconAnchor: [16, 32]
   });
-// Bouton pour afficher le popup
-document.getElementById('ajouterAgence').addEventListener('click', function () {
-  document.getElementById('popup-ajout').style.display = 'block';
-});
-
-// Bouton pour fermer le popup
-document.getElementById('fermerPopup').addEventListener('click', function () {
-  document.getElementById('popup-ajout').style.display = 'none';
-});
+// Fonction pour afficher/masquer le pop-up
+function togglePopup() {
+  var popup = document.getElementById('popup-ajout');
+  popup.style.display = (popup.style.display === 'block') ? 'none' : 'block';
+}
 
 // Fonction pour ajouter une agence
 document.getElementById('ajouterAgenceBtn').addEventListener('click', function () {
@@ -42,10 +38,10 @@ document.getElementById('ajouterAgenceBtn').addEventListener('click', function (
   }
 
   var nouvelleAgence = { nom, latitude, longitude, adresse, telephone, statut };
-  
+
   // Ajout du marqueur sur la carte
   var customIcon = L.icon({
-      iconUrl: 'assets/icons/marker.png', // Assurez-vous que le chemin est correct
+      iconUrl: 'assets/icons/marker.png',
       iconSize: [32, 32],
       iconAnchor: [16, 32],
       popupAnchor: [0, -32]
@@ -59,20 +55,8 @@ document.getElementById('ajouterAgenceBtn').addEventListener('click', function (
   updateKPIs();
 
   alert('Agence ajoutée avec succès !');
-  document.getElementById('popup-ajout').style.display = 'none';
+  togglePopup(); // Fermer le popup après ajout
 });
-
-// Fonction pour mettre à jour les KPIs
-function updateKPIs() {
-  fetch('data.json')
-      .then(response => response.json())
-      .then(data => {
-          document.getElementById('total-agences').innerText = data.agences.length;
-          document.getElementById('total-actif').innerText = data.agences.filter(a => a.statut === 'Actif').length;
-          document.getElementById('total-inactif').innerText = data.agences.filter(a => a.statut === 'Inactif').length;
-      })
-      .catch(error => console.error('Erreur lors du chargement des KPIs:', error));
-}
 
   // Charger les données JSON et placer les marqueurs
   fetch('data.json')

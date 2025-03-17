@@ -17,91 +17,7 @@
     #map { height: 85vh; }
   </style>
 </head>
-<button id="ajouterAgence" class="ajouter-agence-btn">➕ Ajouter une agence</button>
 
-<!-- Pop-up Formulaire -->
-<div id="popup-ajout" class="popup">
-    <div class="popup-content">
-        <span id="fermerPopup" class="close">&times;</span>
-        <h2>Ajouter une Agence</h2>
-        <label>Nom de l'agence :</label>
-        <input type="text" id="nomAgence" placeholder="Nom de l'agence">
-        
-        <label>Latitude :</label>
-        <input type="text" id="latitude" placeholder="Ex: 32.0000">
-        
-        <label>Longitude :</label>
-        <input type="text" id="longitude" placeholder="Ex: -6.0000">
-        
-        <label>Adresse :</label>
-        <input type="text" id="adresse" placeholder="Adresse complète">
-        
-        <label>Téléphone :</label>
-        <input type="text" id="telephone" placeholder="Ex: +212600000000">
-        
-        <label>Statut :</label>
-        <select id="statut">
-            <option value="Actif">Actif</option>
-            <option value="Inactif">Inactif</option>
-        </select>
-
-        <button id="ajouterAgenceBtn">Ajouter</button>
-    </div>
-</div>
-
-<!-- CSS pour le popup -->
-<style>
-    .ajouter-agence-btn {
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        padding: 10px 15px;
-        background-color: #28a745;
-        color: white;
-        border: none;
-        cursor: pointer;
-        border-radius: 5px;
-    }
-    
-    .popup {
-        display: none;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 300px;
-        background: white;
-        padding: 20px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-        border-radius: 10px;
-        z-index: 1000;
-    }
-    
-    .popup-content {
-        display: flex;
-        flex-direction: column;
-    }
-    
-    .popup-content input, .popup-content select {
-        margin: 5px 0;
-        padding: 8px;
-    }
-    
-    .popup-content button {
-        margin-top: 10px;
-        padding: 10px;
-        background: #007bff;
-        color: white;
-        border: none;
-        cursor: pointer;
-    }
-    
-    .close {
-        float: right;
-        font-size: 24px;
-        cursor: pointer;
-    }
-</style>
 <body>
   <div id="sidebar">
     <h2>Menu</h2>
@@ -111,6 +27,77 @@
       <li>Paramètres</li>
     </ul>
   </div>
+  <!-- Pop-up Formulaire -->
+<div id="popup-ajout" class="popup">
+  <div class="popup-content">
+      <span onclick="togglePopup()" class="close">&times;</span>
+      <h2>Ajouter une Agence</h2>
+      <label>Nom de l'agence :</label>
+      <input type="text" id="nomAgence" placeholder="Nom de l'agence">
+      
+      <label>Latitude :</label>
+      <input type="text" id="latitude" placeholder="Ex: 32.0000">
+      
+      <label>Longitude :</label>
+      <input type="text" id="longitude" placeholder="Ex: -6.0000">
+      
+      <label>Adresse :</label>
+      <input type="text" id="adresse" placeholder="Adresse complète">
+      
+      <label>Téléphone :</label>
+      <input type="text" id="telephone" placeholder="Ex: +212600000000">
+      
+      <label>Statut :</label>
+      <select id="statut">
+          <option value="Actif">Actif</option>
+          <option value="Inactif">Inactif</option>
+      </select>
+
+      <button id="ajouterAgenceBtn">Ajouter</button>
+  </div>
+</div>
+
+<!-- CSS pour le popup -->
+<style>
+  .popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 300px;
+      background: white;
+      padding: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      border-radius: 10px;
+      z-index: 1000;
+  }
+
+  .popup-content {
+      display: flex;
+      flex-direction: column;
+  }
+
+  .popup-content input, .popup-content select {
+      margin: 5px 0;
+      padding: 8px;
+  }
+
+  .popup-content button {
+      margin-top: 10px;
+      padding: 10px;
+      background: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+  }
+
+  .close {
+      float: right;
+      font-size: 24px;
+      cursor: pointer;
+  }
+</style>
   <div id="main-content">
     <div id="kpi-container">
       <div class="kpi-box">Total Agences: <span id="total-agences">0</span></div>
