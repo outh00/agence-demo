@@ -1,41 +1,49 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const map = L.map('map').setView([33.5731, -7.5898], 6);
+document.addEventListener("DOMContentLoaded", function () {
+  const map = L.map('map', {
+    center: [33.5731, -7.5898],
+    zoom: 6,
+    maxBounds: [
+      [27.5, -13.5],   // Sud-Ouest du Maroc
+      [36.5, -0.9]     // Nord-Est du Maroc
+    ],
+    maxBoundsViscosity: 1.0, // Empêche le déplacement hors des limites
+  });
 
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '© OpenStreetMap contributors'
   }).addTo(map);
 
-  // Définition des icônes personnalisées
-  const blueIcon = L.icon({
+  const blueIcon = new L.Icon({
     iconUrl: 'https://maps.google.com/mapfiles/ms/icons/blue-dot.png',
-    iconSize: [32, 32],
-    iconAnchor: [16, 32]
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34]
   });
 
-  const redIcon = L.icon({
+  const redIcon = new L.Icon({
     iconUrl: 'https://maps.google.com/mapfiles/ms/icons/red-dot.png',
-    iconSize: [32, 32],
-    iconAnchor: [16, 32]
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34]
   });
 
-  // Charger les données JSON et placer les marqueurs
-  fetch('data.json')
+  fetch('data_final.json')
     .then(response => response.json())
     .then(data => {
-      // Afficher les communes en bleu
       data.communes.forEach(commune => {
-        L.marker([commune.latitude, commune.longitude], { icon: blueIcon })
-          .bindPopup(`<b>Commune:</b> ${commune.name}`)
+        L.marker([commune.latitude, commune.longitude], {icon: blueIcon})
+          .bindPopup(`<strong>Commune :</strong> ${commune.name}`)
           .addTo(map);
       });
 
-      // Afficher les centres en rouge
       data.centres.forEach(centre => {
         const [lat, lng] = centre.GPS.split(',').map(Number);
-        L.marker([lat, lng], { icon: redIcon })
-          .bindPopup(`<b>Centre:</b> ${centre.Centre}`)
-          .addTo(map);
+        if (!isNaN(lat) && !isNaN(lng)) {
+          L.marker([lat, lng], {icon: redIcon})
+            .bindPopup(`<strong>Centre :</strong> ${centre.Centre}`)
+            .addTo(map);
+        }
       });
-  })
-  .catch(err => console.error("Erreur lors du chargement des données :", err));
+    })
+    .catch(err => console.error("Erreur lors du chargement des données :", err));
 });
