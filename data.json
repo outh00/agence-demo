@@ -2,29 +2,29 @@
   "regions": [
     {
       "nom": "Béni Mellal-Khénifra",
-      "polygon": [[32.3683, -6.3692], [32.5, -6.5], [32.2, -6.2], [32.4, -6.4]]
+      "polygon": [[32.367, -6.369], [32.5, -6.6], [32.2, -6.1], [32.4, -6.3]]
     }
   ],
   "provinces": [
     {
       "nom": "Azilal",
-      "polygon": [[31.9663, -6.5683], [32.0, -6.6], [31.9, -6.5], [31.98, -6.55]]
+      "polygon": [[31.967, -6.569], [32.0, -6.62], [31.9, -6.48], [31.98, -6.53]]
     },
     {
       "nom": "Béni Mellal",
-      "polygon": [[32.337, -6.3565], [32.35, -6.4], [32.3, -6.3], [32.34, -6.35]]
+      "polygon": [[32.338, -6.357], [32.35, -6.42], [32.3, -6.28], [32.34, -6.33]]
     },
     {
       "nom": "Fquih Ben Salah",
-      "polygon": [[32.5009, -6.6906], [32.52, -6.7], [32.48, -6.68], [32.49, -6.69]]
+      "polygon": [[32.501, -6.691], [32.52, -6.72], [32.48, -6.66], [32.49, -6.67]]
     }
   ],
   "communes": [
     {
       "nom": "Azilal",
-      "latitude": 31.9663,
-      "longitude": -6.5683,
-      "population": 20000,
+      "latitude": 31.967,
+      "longitude": -6.569,
+      "population": 22000,
       "BesoinCommuneCCT_VL": 2,
       "BesoinCommuneCCT_PL": 1,
       "centres": [
@@ -39,9 +39,9 @@
     },
     {
       "nom": "Béni Mellal",
-      "latitude": 32.337,
-      "longitude": -6.3565,
-      "population": 50000,
+      "latitude": 32.338,
+      "longitude": -6.357,
+      "population": 52000,
       "BesoinCommuneCCT_VL": 4,
       "BesoinCommuneCCT_PL": 1,
       "centres": [
@@ -63,9 +63,9 @@
     },
     {
       "nom": "Fquih Ben Salah",
-      "latitude": 32.5009,
-      "longitude": -6.6906,
-      "population": 30000,
+      "latitude": 32.501,
+      "longitude": -6.691,
+      "population": 31000,
       "BesoinCommuneCCT_VL": 3,
       "BesoinCommuneCCT_PL": 1,
       "centres": [
