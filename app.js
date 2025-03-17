@@ -84,6 +84,8 @@ function filterMap() {
     if (filterValue === "communes") {
         markersCommunes.forEach(marker => marker.addTo(map));
     } else if (filterValue === "centres") {
+        markersAgences.forEach(marker => marker.addTo(map));
+    } else if (filterValue === "centres") {
         markersCentres.forEach(marker => marker.addTo(map));
     } else {
         markersCommunes.forEach(marker => marker.addTo(map));
