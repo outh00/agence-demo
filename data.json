@@ -34,6 +34,13 @@
           "horaires": "08:00 - 17:00",
           "telephone": "+212600000000",
           "statut": "Actif"
+        },
+        {
+          "nom": "Centre Azilal 2",
+          "adresse": "Rue Hassan II, Azilal",
+          "horaires": "08:30 - 17:30",
+          "telephone": "+212612345678",
+          "statut": "Actif"
         }
       ]
     },
@@ -58,6 +65,13 @@
           "horaires": "09:00 - 17:30",
           "telephone": "+212622222222",
           "statut": "Inactif"
+        },
+        {
+          "nom": "Centre Beni Mellal 3",
+          "adresse": "Bd Mohamed VI, Beni Mellal",
+          "horaires": "07:30 - 16:00",
+          "telephone": "+212633333333",
+          "statut": "Actif"
         }
       ]
     },
@@ -78,16 +92,9 @@
         },
         {
           "nom": "Centre Fquih Ben Salah 2",
-          "adresse": "Bd Mohamed V, Fquih Ben Salah",
-          "horaires": "07:30 - 16:30",
-          "telephone": "+212633333333",
-          "statut": "Actif"
-        },
-        {
-          "nom": "Centre Est ",
-          "adresse": "Bd Mohamed V, Fquih Ben Salah",
-          "horaires": "07:30 - 16:30",
-          "telephone": "+212633333333",
+          "adresse": "Rue Souk, Fquih Ben Salah",
+          "horaires": "08:00 - 17:00",
+          "telephone": "+212644444444",
           "statut": "Actif"
         }
       ]
