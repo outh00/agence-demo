@@ -7575,5 +7575,1763 @@
       "latitude": 34.28152226554587,
       "longitude": -4.160381803291242
     }
+  ],
+  "centres": [
+    {
+      "Centre": "SGS AIT MELLOUL",
+      "GPS": "30.384336,-9.523964"
+    },
+    {
+      "Centre": "SGS AS KÉNITRA",
+      "GPS": "34.247464,-6.608049"
+    },
+    {
+      "Centre": "SGS SETTAT",
+      "GPS": "32.985347, -7.617593"
+    },
+    {
+      "Centre": "SGS BERRECHID",
+      "GPS": "33.262092,-7.60791"
+    },
+    {
+      "Centre": "SGS BEJAAD",
+      "GPS": "32.80501,-6.443546       "
+    },
+    {
+      "Centre": "SGS BENSLIMANE",
+      "GPS": "33.598584,-7.140786     "
+    },
+    {
+      "Centre": "SGS MARRAKECH",
+      "GPS": "31.686537,-8.054712"
+    },
+    {
+      "Centre": "SGS AS OUJDA",
+      "GPS": "34.699227,-1.89143"
+    },
+    {
+      "Centre": "SGS OUJDA II",
+      "GPS": "34.659433,-1.930372     "
+    },
+    {
+      "Centre": "SGS DRIOUCH",
+      "GPS": "34.975094,-3.406175"
+    },
+    {
+      "Centre": "SGS IBN TACHFINE",
+      "GPS": "33.585773,-7.581911"
+    },
+    {
+      "Centre": "SGS AIN SEBAA",
+      "GPS": "33.623516,-7.506271"
+    },
+    {
+      "Centre": "SGS SIDI MAAROUF",
+      "GPS": "33.52129,-7.653619"
+    },
+    {
+      "Centre": "SGS LISSASFA",
+      "GPS": "33.527296,-7.682501"
+    },
+    {
+      "Centre": "SGS MOHAMMEDIA",
+      "GPS": "33.708749,-7.348846"
+    },
+    {
+      "Centre": "SGS MEDIOUNA",
+      "GPS": "33.447744,-7.516735     "
+    },
+    {
+      "Centre": "SGS RABAT HASSAN 2",
+      "GPS": "33.983661, -6.872181"
+    },
+    {
+      "Centre": "SGS SALÉ",
+      "GPS": "34.066935, -6.793139"
+    },
+    {
+      "Centre": "SGS AS TEMARA",
+      "GPS": "33.904328, -6.940618"
+    },
+    {
+      "Centre": "SGS BENI MELLAL",
+      "GPS": "32.341751,-6.370861"
+    },
+    {
+      "Centre": "SGS MEKNES",
+      "GPS": "33.855452,  -  5.580146"
+    },
+    {
+      "Centre": "SGS TAZA",
+      "GPS": "34.239954,-3.983043     "
+    },
+    {
+      "Centre": "SGS TETOUAN",
+      "GPS": "35.571681,-5.322115"
+    },
+    {
+      "Centre": "SGS Tanger Aswak Assalam",
+      "GPS": "35.738820,-5.872506"
+    },
+    {
+      "Centre": "SGS Tanger 2",
+      "GPS": "35.749468, -5.793299"
+    },
+    {
+      "Centre": "SOMOVIT",
+      "GPS": "30.349338,-9.499778"
+    },
+    {
+      "Centre": "TOMALO",
+      "GPS": "30.3435,-9.499086"
+    },
+    {
+      "Centre": "AGADIR VISITE TECHNIQUE",
+      "GPS": "30.309084, -9.505554"
+    },
+    {
+      "Centre": "CVT TAMANAR",
+      "GPS": "31.010854, -9.674759"
+    },
+    {
+      "Centre": "CENTRE DE CONTRÔLE TECHNIQUE INZEGANE",
+      "GPS": "30.348179, -9.538836"
+    },
+    {
+      "Centre": "CCT TALILT",
+      "GPS": "30.393980, -9.518101"
+    },
+    {
+      "Centre": "ORCOTEX KENITRA",
+      "GPS": "34.278183,-6.557067"
+    },
+    {
+      "Centre": "ORCOTEX SOUK EL LARBAA",
+      "GPS": "34.686983,-5.996783"
+    },
+    {
+      "Centre": "CEKEVIT",
+      "GPS": "34.265117,-6.589718"
+    },
+    {
+      "Centre": "A.M.T.E.C SYSTÈME",
+      "GPS": "34.232896, -6.540202"
+    },
+    {
+      "Centre": "EL MAEZI MOHAMED",
+      "GPS": "32.492728,-7.19597"
+    },
+    {
+      "Centre": "CVT OUARDIGHA",
+      "GPS": "32.865807, -6.560617"
+    },
+    {
+      "Centre": "GALAXY CONTROL",
+      "GPS": "33.069641, -7.626119"
+    },
+    {
+      "Centre": "SONEAR",
+      "GPS": "31.632817,-8.041963"
+    },
+    {
+      "Centre": "BELKOUAR MOHAMED",
+      "GPS": "31.668061,-8.046632"
+    },
+    {
+      "Centre": "SOVITET",
+      "GPS": "31.626879,-8.069571"
+    },
+    {
+      "Centre": "ORCOTEX   MARRAKECH",
+      "GPS": "31.638833,-8.004417"
+    },
+    {
+      "Centre": "CVTT CHICHAWA",
+      "GPS": "31.524545,-8.769973"
+    },
+    {
+      "Centre": "CENTRE DE VISITE TECHNIQUE BEN MOUSSA ABBES \" CVTBMA\"",
+      "GPS": "31.838834,-7.313359"
+    },
+    {
+      "Centre": "SADDIQUI MUSTAPHA",
+      "GPS": "32.055172,-7.389346"
+    },
+    {
+      "Centre": "SOVITEV",
+      "GPS": "31.631366,-8.112218"
+    },
+    {
+      "Centre": "FALI CONTROLE",
+      "GPS": "31.577529, -8.055237"
+    },
+    {
+      "Centre": "SOCIETE CT AUTOMOBILE SARL",
+      "GPS": "31.589671, -8.447382"
+    },
+    {
+      "Centre": "CT AL AMANE",
+      "GPS": "32.051909, -8.629258"
+    },
+    {
+      "Centre": "MARRAKECH CONTRÔLE",
+      "GPS": "31.622962, -7.988691"
+    },
+    {
+      "Centre": "INVEST IMMO CONSULTING GROUP",
+      "GPS": "31.647547, -7.902663"
+    },
+    {
+      "Centre": "CEVITOR",
+      "GPS": "35.006831,-3.015184"
+    },
+    {
+      "Centre": "CECOTAC",
+      "GPS": "34.223504,-3.360599"
+    },
+    {
+      "Centre": "ORCOTEX OUJDA",
+      "GPS": "34.701959,-1.890378"
+    },
+    {
+      "Centre": "SCTV JAARA",
+      "GPS": "34.912039,-2.346241"
+    },
+    {
+      "Centre": "AUTO TEST",
+      "GPS": "34.392378,-2.899927"
+    },
+    {
+      "Centre": "V.T.A.O",
+      "GPS": "34.685476,-1.914794"
+    },
+    {
+      "Centre": "AVT RIF",
+      "GPS": "34.236084, -3.304910"
+    },
+    {
+      "Centre": "CENTRE OULAD AHALLAL",
+      "GPS": "35.249821, -2.939348"
+    },
+    {
+      "Centre": "MATERIAQ",
+      "GPS": "34.392380, -2.899412"
+    },
+    {
+      "Centre": "BOUGATAYA CENTRE DE CONTRÔLE TECHNIQUE",
+      "GPS": "33.538139, -7.720815"
+    },
+    {
+      "Centre": "KOUDOUS ABDESSADEK",
+      "GPS": "33.513774,-7.819659"
+    },
+    {
+      "Centre": "FARID CONTROLE",
+      "GPS": "33.556513,-7.691154"
+    },
+    {
+      "Centre": "ROUBIL CONTROLE",
+      "GPS": "33.526741,-7.565675"
+    },
+    {
+      "Centre": "ORCOTEX CASABLANCA",
+      "GPS": "33.597327,-7.607429"
+    },
+    {
+      "Centre": "CVTT BELLATI CASABLANCA",
+      "GPS": "33.55613,-7.624278"
+    },
+    {
+      "Centre": "V.T.A.R",
+      "GPS": "33.58184,-7.599315"
+    },
+    {
+      "Centre": "BERTRANS VISITAS",
+      "GPS": "33.598254,-7.593157"
+    },
+    {
+      "Centre": "CVT SBIT TIT MELLIL",
+      "GPS": "33.567636,-7.510574"
+    },
+    {
+      "Centre": "LNTI",
+      "GPS": "33.659537,-7.409045"
+    },
+    {
+      "Centre": "CONTROL TECHNIQUE TIT MELLIL",
+      "GPS": "33.536067, -7.493559"
+    },
+    {
+      "Centre": "POLE TECHNIQUE",
+      "GPS": "33.504819, -7.707800"
+    },
+    {
+      "Centre": "AUTOMOBILE  CLUB",
+      "GPS": "33.590619, -7.518940"
+    },
+    {
+      "Centre": "TECHNIQUE CONTRÔLE  AL MOUWAHIDINE",
+      "GPS": "33.586566, -7.544533"
+    },
+    {
+      "Centre": "NACIRI VISITE AUTO",
+      "GPS": "33.527786, -7.665913"
+    },
+    {
+      "Centre": "PREMIUM VISITE TECHNIQUE",
+      "GPS": "33.528593, -7.666092"
+    },
+    {
+      "Centre": "MOFTECH CONTRÔLE TECHNIQUE DES VEHICULES",
+      "GPS": "33.567469, -7.521253"
+    },
+    {
+      "Centre": "CENTRE TECHNIQUE GHANDI",
+      "GPS": "33.568500, -7.643119"
+    },
+    {
+      "Centre": "EL KHALIL VISITE TECHNIQUE",
+      "GPS": "33,54808, -7.590563"
+    },
+    {
+      "Centre": "VISITE TECHNIQUE DIALCOM",
+      "GPS": "33.510142, -7.632931"
+    },
+    {
+      "Centre": "TECHNICAR",
+      "GPS": "33.538139, -7.720815"
+    },
+    {
+      "Centre": "VISITE SAADA",
+      "GPS": "33,513153, -7.629405"
+    },
+    {
+      "Centre": "MEVITEC",
+      "GPS": "33,5749050770413, -7.640001722637236"
+    },
+    {
+      "Centre": "ORCOTEX  RABAT",
+      "GPS": "34.026100, -6.849267"
+    },
+    {
+      "Centre": "CECOV",
+      "GPS": "34.225768, -5.707398"
+    },
+    {
+      "Centre": "ORCOTEX  SAFI",
+      "GPS": "32.300483,-9.224667"
+    },
+    {
+      "Centre": "ORCOTEX EL JADIDA",
+      "GPS": "33.208367,-8.491733"
+    },
+    {
+      "Centre": "CONTRÔLE TECHNIQUE SIDI BENNOUR",
+      "GPS": "32.595761,8.393397"
+    },
+    {
+      "Centre": "VISITE TECHNIQUE SHAIM",
+      "GPS": "32.367740, -8.834960"
+    },
+    {
+      "Centre": "LACHRAF CONTROL TECHNIQUE",
+      "GPS": "32.836852, -8.896842"
+    },
+    {
+      "Centre": "LOUBNA TECH",
+      "GPS": "32.340765, -9.213765"
+    },
+    {
+      "Centre": "S.C.T.S.S",
+      "GPS": "32.294923,-6.699418"
+    },
+    {
+      "Centre": "ORCOTEX BENI MELLAL",
+      "GPS": "32.332496,-6.362353"
+    },
+    {
+      "Centre": "ORCOTEX MEKNES",
+      "GPS": "33.893150, -5.517867"
+    },
+    {
+      "Centre": "UNIVERS CONTROLE",
+      "GPS": "33.753317,-5.480332"
+    },
+    {
+      "Centre": "TAOUJDATE CONTROLE TECHNIQUE",
+      "GPS": "33.818232, -5.276065"
+    },
+    {
+      "Centre": "ZERHOUNIA",
+      "GPS": "34.058445, -5.531336"
+    },
+    {
+      "Centre": "CENTRE CONTRÔLE TECHNIQUE BOUMIA",
+      "GPS": "32.725128, -5.107310"
+    },
+    {
+      "Centre": "UNIVITEC",
+      "GPS": "34.036131, -4.993376"
+    },
+    {
+      "Centre": "CONASER AIN TAOUJDATE",
+      "GPS": "33.952299,-5.198507"
+    },
+    {
+      "Centre": "JDI FRERE",
+      "GPS": "34.662542, -4.608451"
+    },
+    {
+      "Centre": "TECHNO GHAFSAI",
+      "GPS": "34.647199, -4.915912"
+    },
+    {
+      "Centre": "YACOUB PROMO SARL",
+      "GPS": "34.004379, -4.974733"
+    },
+    {
+      "Centre": "LES JARDINS DE SEBOU",
+      "GPS": "33.994906, -4.968140"
+    },
+    {
+      "Centre": "LES JARDINS DE SEBOU 2",
+      "GPS": "34.046718, -5.047853"
+    },
+    {
+      "Centre": "ORCOTEX  TANGER",
+      "GPS": "35.772133,-5.803033"
+    },
+    {
+      "Centre": "ORCOTEX TETOUAN",
+      "GPS": "35.566433,-5.417483"
+    },
+    {
+      "Centre": "LABED ANOUAR",
+      "GPS": "35.620954,-5.328991"
+    },
+    {
+      "Centre": "C.T.A.P.L",
+      "GPS": "34.779868,-5.545397"
+    },
+    {
+      "Centre": "MDIQ CCT",
+      "GPS": "35.574035, -5.318453"
+    },
+    {
+      "Centre": "SECUTOTALE",
+      "GPS": "35.743594, -5.781100"
+    },
+    {
+      "Centre": "GZENAYA AMAN CARS",
+      "GPS": "35.717787, -5.900780 "
+    },
+    {
+      "Centre": "LAGOUIRA VISITE TECHNIQUE",
+      "GPS": "23.691455, -15.956815"
+    },
+    {
+      "Centre": "ABDOU Visite Technique",
+      "GPS": "32.456202-6.543689"
+    },
+    {
+      "Centre": "ADITAR",
+      "GPS": "35.161372-3.048885"
+    },
+    {
+      "Centre": "AL MABROUKA",
+      "GPS": "34.056937 ,-4.941289"
+    },
+    {
+      "Centre": "Alhikma Services",
+      "GPS": "VJ7V+3Q6, Fnideq 93000"
+    },
+    {
+      "Centre": "AMINA Sarl",
+      "GPS": "34.264700352377915,-6.591627895832062"
+    },
+    {
+      "Centre": "Aslimani Mohamadi",
+      "GPS": "35.132277-2.922929"
+    },
+    {
+      "Centre": "Auto Doukkala",
+      "GPS": "32.651941,-8.427329"
+    },
+    {
+      "Centre": "AUTOTECH",
+      "GPS": "33.201083,-8.492905"
+    },
+    {
+      "Centre": "BAB SAHRA TAMEK",
+      "GPS": "28.988847-10.052224"
+    },
+    {
+      "Centre": "Belaouchi Et Fils",
+      "GPS": "7C94+P3 Kénitra"
+    },
+    {
+      "Centre": "Boujdour AUTOMOTIVE",
+      "GPS": "25.936248,-14.312087"
+    },
+    {
+      "Centre": "BOUJMIA Visite Technique",
+      "GPS": "30.109542,-9.5542407"
+    },
+    {
+      "Centre": "CATENORD",
+      "GPS": "35.164233,-6.146649"
+    },
+    {
+      "Centre": "CATENORD",
+      "GPS": "35.76188,-5.819921"
+    },
+    {
+      "Centre": "CCT Azrou",
+      "GPS": "33.4493883,-5.2208987"
+    },
+    {
+      "Centre": "CCT Mohammed Lkhrif",
+      "GPS": "26.741469,-11.655314"
+    },
+    {
+      "Centre": "CEVITASY",
+      "GPS": "34.204757,-5.711169"
+    },
+    {
+      "Centre": "CHERVT",
+      "GPS": "34.002487, -6.522189"
+    },
+    {
+      "Centre": "Controle Automobile et Expertise",
+      "GPS": "34.690383-1.905583"
+    },
+    {
+      "Centre": "CONTROTEC",
+      "GPS": "33.718218,-7.335777"
+    },
+    {
+      "Centre": "CT CONFIANCE",
+      "GPS": "33.164526,-8.4032398"
+    },
+    {
+      "Centre": "CTAF",
+      "GPS": "34.0459471,-5.056524"
+    },
+    {
+      "Centre": "CTCONFIANCE",
+      "GPS": "31,9395580, -7,9409350"
+    },
+    {
+      "Centre": "C-TECH",
+      "GPS": "33.8933615, -5.4564393"
+    },
+    {
+      "Centre": "Al Khadraa",
+      "GPS": "27.152868,-13.205084"
+    },
+    {
+      "Centre": "CVT Akkaoya",
+      "GPS": "32,30451° N, 6,70931° O"
+    },
+    {
+      "Centre": "AL FADILA",
+      "GPS": "33.9840351,-6.8756384"
+    },
+    {
+      "Centre": "Al Hamra",
+      "GPS": "33°32'43.8\"N 7°35'20.1\"W"
+    },
+    {
+      "Centre": "Al JANOUB",
+      "GPS": "30.362971,-9.524421"
+    },
+    {
+      "Centre": "CVT Drissi",
+      "GPS": "34.947213,-6.181179"
+    },
+    {
+      "Centre": "CVT El Hassan El Mansour",
+      "GPS": "28.98221,-10.070765"
+    },
+    {
+      "Centre": "CVT Hamidouch",
+      "GPS": "35,217321,-3921851"
+    },
+    {
+      "Centre": "CVT Hammou",
+      "GPS": "M2RQ+7M3, DAKHLA"
+    },
+    {
+      "Centre": "CVT Ibtissam",
+      "GPS": "33.61982818335626, -7.125038392867874"
+    },
+    {
+      "Centre": "CVT MALAK",
+      "GPS": "33.82790920000001-6.903473500000018"
+    },
+    {
+      "Centre": "CVT NAJI",
+      "GPS": "28.440832,-11.096111"
+    },
+    {
+      "Centre": "CVT RADI",
+      "GPS": "33.597365-7.598613"
+    },
+    {
+      "Centre": "CVT Saada",
+      "GPS": "G9JH+XW Rommani"
+    },
+    {
+      "Centre": "CVT Safi",
+      "GPS": "8RC3+Q2, Safi"
+    },
+    {
+      "Centre": "CVT Savitec",
+      "GPS": "34.036093,-6.771339"
+    },
+    {
+      "Centre": "CVT Tiflet",
+      "GPS": "33.8942908,-6.3428954"
+    },
+    {
+      "Centre": "CVTON Guelmim",
+      "GPS": "28.9917913,-10.0537427"
+    },
+    {
+      "Centre": "CYVIT Youssoufia",
+      "GPS": "32.070593,-8.625215"
+    },
+    {
+      "Centre": "DEKRA Ahfir",
+      "GPS": "35.1964653,-3.894572"
+    },
+    {
+      "Centre": "DEKRA Ain Atiq",
+      "GPS": "33.879982,-6.989193"
+    },
+    {
+      "Centre": "DEKRA Ain Sbaa",
+      "GPS": "33.620766,-7.532343"
+    },
+    {
+      "Centre": "DEKRA Aoulouz",
+      "GPS": " 30.67307,-8.18087"
+    },
+    {
+      "Centre": "DEKRA Assa",
+      "GPS": "28.609113, -9.728426"
+    },
+    {
+      "Centre": "DEKRA Berrechid",
+      "GPS": "33.221834,-7.573167"
+    },
+    {
+      "Centre": "DEKRA Bouznika",
+      "GPS": "33.759194,-7.159605"
+    },
+    {
+      "Centre": "DEKRA Demnate",
+      "GPS": "31.747794,-7.005781"
+    },
+    {
+      "Centre": "DEKRA Jorf",
+      "GPS": "34.449667,-5.508598"
+    },
+    {
+      "Centre": "DEKRA Kamra",
+      "GPS": "33.986952,-6.873135"
+    },
+    {
+      "Centre": "DEKRA Khemissat",
+      "GPS": "33.822436,-6.082693"
+    },
+    {
+      "Centre": "DEKRA Khouribga",
+      "GPS": "32.898083, -6.871124‎"
+    },
+    {
+      "Centre": "DEKRA La Gironde",
+      "GPS": "33.580968,-7.599489"
+    },
+    {
+      "Centre": "DEKRA Lissasfa",
+      "GPS": "33.524349,-7.680967"
+    },
+    {
+      "Centre": "DEKRA Machraa",
+      "GPS": "34.590541,-5.959618"
+    },
+    {
+      "Centre": "DEKRA Marrakech",
+      "GPS": "31.675681,-8.035104"
+    },
+    {
+      "Centre": "DEKRA Marrakech Menara",
+      "GPS": "31.6276186,-8.0423992 "
+    },
+    {
+      "Centre": "DEKRA Ouezzane",
+      "GPS": "34.836966, -5.542522"
+    },
+    {
+      "Centre": "DEKRA Oujda",
+      "GPS": "34.70371, -1.887458"
+    },
+    {
+      "Centre": "DEKRA Oulfa",
+      "GPS": "33.556984,-7.674089"
+    },
+    {
+      "Centre": "DEKRA Porte 4",
+      "GPS": "33.597394,-7.601834"
+    },
+    {
+      "Centre": "DEKRA Safi",
+      "GPS": "32.321882,-9.197874"
+    },
+    {
+      "Centre": "DEKRA Sale",
+      "GPS": "34.055,-6.807"
+    },
+    {
+      "Centre": "DEKRA Sbata",
+      "GPS": "33.530355,-7.568621"
+    },
+    {
+      "Centre": "DEKRA Selouane",
+      "GPS": "35.05701,-2.94492"
+    },
+    {
+      "Centre": "DEKRA Settat",
+      "GPS": "32.976426,-7.623707"
+    },
+    {
+      "Centre": "DEKRA Sidi Moumen",
+      "GPS": "33.577899,-7.552376"
+    },
+    {
+      "Centre": "DEKRA Tadla",
+      "GPS": "32.582177,-6.259975"
+    },
+    {
+      "Centre": "DEKRA Tanger",
+      "GPS": " 35.74055,-5.78001"
+    },
+    {
+      "Centre": "DEKRA Taounate",
+      "GPS": "34.548869,-4.637057"
+    },
+    {
+      "Centre": "DEKRA Tetouan",
+      "GPS": "35.557459,-5.375185"
+    },
+    {
+      "Centre": "DEKRA Zghanghan",
+      "GPS": "35.154508,-2.983046"
+    },
+    {
+      "Centre": "Fandi Hamid",
+      "GPS": "31.986949,-6.570233"
+    },
+    {
+      "Centre": "FATH EL ISMAILIA",
+      "GPS": "33.860057° 5.535633° DIRECTION 323.39°NW ALTITUDE 618.72M"
+    },
+    {
+      "Centre": "HANS Contrôle",
+      "GPS": "34.004975,-5.051639"
+    },
+    {
+      "Centre": "JORF MOTORS",
+      "GPS": "32.74436213430505-8.201727600344952"
+    },
+    {
+      "Centre": "KEVITECH",
+      "GPS": "34.277636,-6.563248"
+    },
+    {
+      "Centre": "La PERFORMANCE",
+      "GPS": "33.557, -7.675"
+    },
+    {
+      "Centre": "LGHRBAWYA Multi Service",
+      "GPS": "34.3121868,-6.5664744"
+    },
+    {
+      "Centre": "MADACOV",
+      "GPS": "X4MG+VFJ,Rabat"
+    },
+    {
+      "Centre": "Mahmoud CVT Zaers",
+      "GPS": "33.837651, -6.898960"
+    },
+    {
+      "Centre": "M'Barek Oujamaa",
+      "GPS": "27.14978,-13.235911"
+    },
+    {
+      "Centre": "Med VITECH",
+      "GPS": "34.947898,-3.52898"
+    },
+    {
+      "Centre": "MOREL Car",
+      "GPS": "35.765416, -5.798809"
+    },
+    {
+      "Centre": "MOUKVITECH",
+      "GPS": "8H3P+6RF"
+    },
+    {
+      "Centre": "MVTA",
+      "GPS": "31.63943,-8.0377265"
+    },
+    {
+      "Centre": "NEO Solutions",
+      "GPS": "34,6905200, -1,9079770"
+    },
+    {
+      "Centre": "NORISK Errachidia",
+      "GPS": "31.91895,-4.444904"
+    },
+    {
+      "Centre": "NORISK Ouarzazate",
+      "GPS": "31.91895,-4.444905"
+    },
+    {
+      "Centre": "NOVITE SA",
+      "GPS": "33.58336068154934, -7.548489877841528"
+    },
+    {
+      "Centre": "PIOCHE",
+      "GPS": "32.969154,-8.216271"
+    },
+    {
+      "Centre": "PRO Contrôle Technique",
+      "GPS": "33.847034, -5.526077"
+    },
+    {
+      "Centre": "RACHTEQ",
+      "GPS": "31.50516,-5.03416"
+    },
+    {
+      "Centre": "RASS AL MA",
+      "GPS": "35.11022,-5.286773"
+    },
+    {
+      "Centre": "REDAD Transport",
+      "GPS": "33.597206, -7.601352"
+    },
+    {
+      "Centre": "RIAD Marocaine",
+      "GPS": "34.287706,-6.521770"
+    },
+    {
+      "Centre": "RIMAL ASSAHRA",
+      "GPS": "30.381322,-9.519174"
+    },
+    {
+      "Centre": "RT-TECH",
+      "GPS": "33.890212,-5.594651"
+    },
+    {
+      "Centre": "SAHARA",
+      "GPS": "27.1331956,-13.1896229"
+    },
+    {
+      "Centre": "SCCT",
+      "GPS": "29.670689 ,-9.720135"
+    },
+    {
+      "Centre": "SECU Auto",
+      "GPS": "31.370024,-5.963494"
+    },
+    {
+      "Centre": "SECUREX Agadir",
+      "GPS": "30.3992664,-9.5670599"
+    },
+    {
+      "Centre": "SECUREX Casablanca",
+      "GPS": "HCP2+G3P"
+    },
+    {
+      "Centre": "SECUREX Khemisset",
+      "GPS": "33.821313,-6.07529"
+    },
+    {
+      "Centre": "SECUREX Marrakech",
+      "GPS": "JXGG+4HX, Rue Abou Bakr Seddiq, Marrakesh"
+    },
+    {
+      "Centre": "SECUREX MEKNES",
+      "GPS": "33.8917778,-5.529388888888889"
+    },
+    {
+      "Centre": "SECUREX Settat",
+      "GPS": "32.982483, -7.607219"
+    },
+    {
+      "Centre": "SECVIT",
+      "GPS": "https://goo.gl/maps/JdNcHtvGgVM7iMdD8"
+    },
+    {
+      "Centre": "Sexer",
+      "GPS": "33.228798,-8.543089"
+    },
+    {
+      "Centre": "SMG Contrôle",
+      "GPS": "33.479624038562136, -7.677301940687274"
+    },
+    {
+      "Centre": "SONYOCOTEV",
+      "GPS": "34.267773-5.914148"
+    },
+    {
+      "Centre": "SOVITEC",
+      "GPS": "34.241165,-5.721415"
+    },
+    {
+      "Centre": "STE SAKIA HAMRA Automotive",
+      "GPS": "27°08'36.5\"N 13°11'32.6\"W "
+    },
+    {
+      "Centre": "STSR",
+      "GPS": "34.063550, -6.790222"
+    },
+    {
+      "Centre": "TAAMIR Sahara Groupe",
+      "GPS": "4RJ7+CF Laâyoune"
+    },
+    {
+      "Centre": "TAIBA",
+      "GPS": "34.060990,-4.936045"
+    },
+    {
+      "Centre": "Tantan Automotive ",
+      "GPS": "28.440832,-11.096111"
+    },
+    {
+      "Centre": "TAVITEXAM",
+      "GPS": "32.514835-6.700746"
+    },
+    {
+      "Centre": "TECHNOVIE",
+      "GPS": "33.96943,-6.889083"
+    },
+    {
+      "Centre": "TIFCOTECH",
+      "GPS": "31.677471,-8.048969"
+    },
+    {
+      "Centre": "Tilila Technique",
+      "GPS": "X5RR+4X Rabat"
+    },
+    {
+      "Centre": "UGATRA",
+      "GPS": "34.073555,-6.755976"
+    },
+    {
+      "Centre": "Union Csa",
+      "GPS": "32.298118, -9.214395"
+    },
+    {
+      "Centre": "Univers Système Auto",
+      "GPS": "31.370024,-5.963494"
+    },
+    {
+      "Centre": "VERINOR",
+      "GPS": "35.248177,-2.937969"
+    },
+    {
+      "Centre": "VGM",
+      "GPS": "34.266770,-6.565307"
+    },
+    {
+      "Centre": "VISITE TECHNIQUE Sidi Smail",
+      "GPS": "32.9556511,-8.4922724"
+    },
+    {
+      "Centre": "VISITE TECHNIQUE Soualem",
+      "GPS": "C5J7+2G Had Soualem"
+    },
+    {
+      "Centre": "Visite Technique Tassila",
+      "GPS": "30°22'59.1''N 9°31'15.3W"
+    },
+    {
+      "Centre": "VISITEC",
+      "GPS": "HJ4F+XV Tétouan"
+    },
+    {
+      "Centre": "VITAPT",
+      "GPS": "https://goo.gl/maps/xeEht1vfATyXFEtF7"
+    },
+    {
+      "Centre": "VITECMA",
+      "GPS": "30.334583,-9.485913"
+    },
+    {
+      "Centre": "VITECOR",
+      "GPS": "P436+JF7"
+    },
+    {
+      "Centre": "VITEKA",
+      "GPS": "Viteka, PXJM+FP5, Imouzzer Kandar"
+    },
+    {
+      "Centre": "VITENORD",
+      "GPS": "35.565345,-5.390405"
+    },
+    {
+      "Centre": "VT Attaouia",
+      "GPS": "31.838429,-7.327064"
+    },
+    {
+      "Centre": "AA VISITE",
+      "GPS": "33.5323248,-7.6224879"
+    },
+    {
+      "Centre": "AHMED KHOUADRI (SERCOSA)",
+      "GPS": "32.870231,-6.923516"
+    },
+    {
+      "Centre": "AL AZHAR",
+      "GPS": "33.600145,-7.524948"
+    },
+    {
+      "Centre": "AL HAOUZ",
+      "GPS": "31.6294723,-7.9810845"
+    },
+    {
+      "Centre": "AL JAOUDA",
+      "GPS": "33.9715904,-6.8498129"
+    },
+    {
+      "Centre": "ANASR",
+      "GPS": "33.271428,-8.346901"
+    },
+    {
+      "Centre": "ANNAJAT",
+      "GPS": "33.568761,-7.517655"
+    },
+    {
+      "Centre": "ANNASR",
+      "GPS": "34.0354264,-6.9236428"
+    },
+    {
+      "Centre": "ANOUAL",
+      "GPS": "34.951341,-3.524237"
+    },
+    {
+      "Centre": "AUTO BILAN",
+      "GPS": "35.738022,-5.780053"
+    },
+    {
+      "Centre": "BCTEA",
+      "GPS": "33.288627,-8.325933"
+    },
+    {
+      "Centre": "BEN GUERIR (RHAMNA)",
+      "GPS": "32.275097,-7.954389"
+    },
+    {
+      "Centre": "BILADI",
+      "GPS": "32.548819,-6.688428"
+    },
+    {
+      "Centre": "BIVITECH",
+      "GPS": "30.23597,-9.393526"
+    },
+    {
+      "Centre": "BRIGUI CONTROLE",
+      "GPS": "34.01356,-5.161135"
+    },
+    {
+      "Centre": "C.T.V FES",
+      "GPS": "34.039951,-5.008562"
+    },
+    {
+      "Centre": "C.T.V TAZA",
+      "GPS": "34.231755,-3.994613"
+    },
+    {
+      "Centre": "C.V.T BOUHRIA",
+      "GPS": "34.931737,-2.254364"
+    },
+    {
+      "Centre": "CASA CENTRE CONTRÔLE",
+      "GPS": "33.56387379,-7.5568104"
+    },
+    {
+      "Centre": "CCT ITKANE",
+      "GPS": "34.069833,-6.760047"
+    },
+    {
+      "Centre": "CECORTAZ",
+      "GPS": "34.232098,-4.029667"
+    },
+    {
+      "Centre": "CEDACO",
+      "GPS": "34.025511,-4.980608"
+    },
+    {
+      "Centre": "CEVITEX",
+      "GPS": "33.843944,-7.047439"
+    },
+    {
+      "Centre": "CHERED",
+      "GPS": "33.5905275,-7.6060529"
+    },
+    {
+      "Centre": "CONVITEX",
+      "GPS": "34.000006,-5.062614"
+    },
+    {
+      "Centre": "CORSER",
+      "GPS": "34.030006,-6.790414"
+    },
+    {
+      "Centre": "CVT AHL LAGHLAM",
+      "GPS": "33.596931,-7.501709"
+    },
+    {
+      "Centre": "CVT AIT OURIR",
+      "GPS": "31.548418,-7.639686"
+    },
+    {
+      "Centre": "CVT CHERT",
+      "GPS": "30.647875,-8.464891"
+    },
+    {
+      "Centre": "CVT GZOULA",
+      "GPS": "32.104782,-9.082046"
+    },
+    {
+      "Centre": "CVT HARBIL (UTAVT)",
+      "GPS": "31.72483,-8.093272"
+    },
+    {
+      "Centre": "CVT MOHAMMEDIA",
+      "GPS": "33.617518,-7.458447"
+    },
+    {
+      "Centre": "CVT OUARZAZATE",
+      "GPS": "30.019957,-9.579112"
+    },
+    {
+      "Centre": "EL AINE CVT",
+      "GPS": "30.686892,-6.444029"
+    },
+    {
+      "Centre": "EL AINNE CVT",
+      "GPS": "30.898085,-6.908097"
+    },
+    {
+      "Centre": "ELH ",
+      "GPS": "33.560141,-7.554207"
+    },
+    {
+      "Centre": "HAILALI",
+      "GPS": "30.505697,-9.657343"
+    },
+    {
+      "Centre": "HARBIL CVT",
+      "GPS": "31.537068,-9.532528"
+    },
+    {
+      "Centre": "INCONA",
+      "GPS": "30.345957,-9.509364"
+    },
+    {
+      "Centre": "KAMEVI",
+      "GPS": "32.336195,-6.355308"
+    },
+    {
+      "Centre": "LA GRANDE CEINTURE",
+      "GPS": "33.5731104,-7.58984339"
+    },
+    {
+      "Centre": "LA MAROCAINE",
+      "GPS": "32.983714,-7.620894"
+    },
+    {
+      "Centre": "MEDINA",
+      "GPS": "30.4277547,-9.5981072"
+    },
+    {
+      "Centre": "MOYEN ATLAS SERVICE",
+      "GPS": "32.215357,-6.78792"
+    },
+    {
+      "Centre": "NEAB",
+      "GPS": "33.633854,-7.449733"
+    },
+    {
+      "Centre": "NISRINE",
+      "GPS": "33.57304,-7.589843"
+    },
+    {
+      "Centre": "ORCOTA",
+      "GPS": "33.84451,-4.846039"
+    },
+    {
+      "Centre": "OTEXA KHOU",
+      "GPS": "32.899325,-6.907684"
+    },
+    {
+      "Centre": "OTEXA OUAD",
+      "GPS": "32.866696,-6.584574"
+    },
+    {
+      "Centre": "OUARGHA",
+      "GPS": "34.448241,-4.701277"
+    },
+    {
+      "Centre": "OUBVICH",
+      "GPS": "30.068358,-9.153339"
+    },
+    {
+      "Centre": "OULED CHIKH EL GHALI",
+      "GPS": "33.450227,-7.46749"
+    },
+    {
+      "Centre": "PRO NEGOSE",
+      "GPS": "32.646529,-5.910585"
+    },
+    {
+      "Centre": "REDCHE",
+      "GPS": "30.4277547,-9.5981072"
+    },
+    {
+      "Centre": "S.V.T.A ESSAOUIRA",
+      "GPS": "31.521713,-9.756984"
+    },
+    {
+      "Centre": "S.V.T.A TIZNITE",
+      "GPS": "29.692056,-9.718778"
+    },
+    {
+      "Centre": "SAFSAF",
+      "GPS": "33.5731104,-7.58984339"
+    },
+    {
+      "Centre": "SAVITEC",
+      "GPS": "34.185702,-4.290959"
+    },
+    {
+      "Centre": "SAVITEC TAZA",
+      "GPS": "34.2234394,-3.9601148"
+    },
+    {
+      "Centre": "SIDI MOUMEN",
+      "GPS": "33.5731104,-7.58984339"
+    },
+    {
+      "Centre": "SOCIETE BIRRAMI DE VISITE TECHNIQUE \"SBVT\"",
+      "GPS": "34.277187,-6.538307"
+    },
+    {
+      "Centre": "SOCIETE MAROCAINE DE PROMOTION",
+      "GPS": "33.547946,-7.740511"
+    },
+    {
+      "Centre": "SOCONTA",
+      "GPS": "35.769825,-5.819332"
+    },
+    {
+      "Centre": "SOCOTEX BERRECHID",
+      "GPS": "33.295342,-7.574652"
+    },
+    {
+      "Centre": "SOCOTEX MEDIA ",
+      "GPS": "33.682291,-7.408491"
+    },
+    {
+      "Centre": "SOMOTEC KALAA",
+      "GPS": "32.056415,-7.382557"
+    },
+    {
+      "Centre": "SOMOTEC TAROUDANT",
+      "GPS": "30.465354,-8.928037"
+    },
+    {
+      "Centre": "SOMOTEC TAZI",
+      "GPS": "34.31186,-6.2624"
+    },
+    {
+      "Centre": "SONS UNION",
+      "GPS": "34.065918,-4.449549"
+    },
+    {
+      "Centre": "TREE LAM",
+      "GPS": "35.453898,-6.029723"
+    },
+    {
+      "Centre": "ULTRA CONTROLE",
+      "GPS": "35.726674,-5.754609"
+    },
+    {
+      "Centre": "UNIVERS CONTRÔLE",
+      "GPS": "35.1686165,-2.92758399"
+    },
+    {
+      "Centre": "VAEX",
+      "GPS": "34.056085,-6.807173"
+    },
+    {
+      "Centre": "VIARAF",
+      "GPS": "33.173661,-5.556582"
+    },
+    {
+      "Centre": "VISITE TECHNIQUE MEDIOUNA",
+      "GPS": "33.444815,-7.520366"
+    },
+    {
+      "Centre": "VITEVE",
+      "GPS": "33.99821,-5.05882"
+    },
+    {
+      "Centre": "VTSO",
+      "GPS": "33.554828,-7.561308"
+    },
+    {
+      "Centre": "WAHBI HASSAN (CEVITA BORJA)",
+      "GPS": "33.579838,-7.587658"
+    },
+    {
+      "Centre": "ZYIAD POUR LE CONTRÔLE TECNHQIUE ",
+      "GPS": "33.504117,-7.664602"
+    },
+    {
+      "Centre": "AJRS",
+      "GPS": "33.539099774252634, -7.558383212659037"
+    },
+    {
+      "Centre": "AKROUH MOHAMED",
+      "GPS": "35.098282,-3.839595"
+    },
+    {
+      "Centre": "ALBAB NOUREDDINE",
+      "GPS": "32.502144, -6.680203"
+    },
+    {
+      "Centre": "AMANE FATTAH",
+      "GPS": "32.27557052124016, -9.247557631763543"
+    },
+    {
+      "Centre": "ANOUR AMAN AUTO",
+      "GPS": "34.681981845893326, -1.9001603651990449"
+    },
+    {
+      "Centre": "ARGANA VISITE SARL",
+      "GPS": "33.39480132813346, -5.336761260568708"
+    },
+    {
+      "Centre": "AUTO BILAN EZZINE S.A.R.L",
+      "GPS": "32.656540, -8.417666"
+    },
+    {
+      "Centre": "AUTO CONTRÔLE",
+      "GPS": "32.568661,-7.823590"
+    },
+    {
+      "Centre": "AUTOMOBILE ASSISTANCE",
+      "GPS": "33.589384,-7.595538"
+    },
+    {
+      "Centre": "BIG SUD",
+      "GPS": "30.176722, -9.474571"
+    },
+    {
+      "Centre": "BIOTECHNIQUE",
+      "GPS": "30.1894761122307, -9.364169495614691"
+    },
+    {
+      "Centre": "BIRJEVITECH",
+      "GPS": "30.365019, -9.541519"
+    },
+    {
+      "Centre": "BOUAAYAD AHMED & EL MANSOURI ABDERRAHIM",
+      "GPS": "34.933336,-4.304356"
+    },
+    {
+      "Centre": "BOUSFIHA ABDENBI",
+      "GPS": "33.868603,-5.538333"
+    },
+    {
+      "Centre": "C.T.A RAHYMI",
+      "GPS": "34.256230359311395, -5.850916793139864"
+    },
+    {
+      "Centre": "C.V.T.A",
+      "GPS": "33.623376799965264, -7.525388529041456"
+    },
+    {
+      "Centre": "CENTRE DE CONTROLE TECHNIQUE NOUACER",
+      "GPS": "33.362432, -7.531930"
+    },
+    {
+      "Centre": "CEVITEC 2000",
+      "GPS": "35.168695,-2.933973"
+    },
+    {
+      "Centre": "CEV-NET-LOC",
+      "GPS": "30.367645,-5.844046"
+    },
+    {
+      "Centre": "CEVTECA",
+      "GPS": "30.41178759748504, -9.545937291330224"
+    },
+    {
+      "Centre": "CO TEC OUAD NOUN",
+      "GPS": "29.354952,-10.186725"
+    },
+    {
+      "Centre": "COGECOB",
+      "GPS": "33.576299,-7.626052"
+    },
+    {
+      "Centre": "CONTEBO",
+      "GPS": "33.57146817134635, -7.543271028677059"
+    },
+    {
+      "Centre": "CONTRÔLE AUTO ANGAD",
+      "GPS": "34.589465,-2.503678"
+    },
+    {
+      "Centre": "CONTRÔLE TECHNIQUE DES VEHICULES DOUKKALA",
+      "GPS": "33.211678, -8.487400"
+    },
+    {
+      "Centre": "CONTROLE TECHNIQUE HAMDANE",
+      "GPS": "33.06221451379053, -7.189555789413212"
+    },
+    {
+      "Centre": "CONTROLE TECHNIQUE LAZ",
+      "GPS": "33.476385,-5.242812"
+    },
+    {
+      "Centre": "EL AYACHI TECH",
+      "GPS": " 32.268460, -4.504707 "
+    },
+    {
+      "Centre": "EL MESSAOUDI CONTROLE TECHNIQUE",
+      "GPS": "30.383578870210975, -9.479691652095465"
+    },
+    {
+      "Centre": "ESSACOTECH",
+      "GPS": "31.522265, -9.756563"
+    },
+    {
+      "Centre": "EXCOV",
+      "GPS": "33.893654,-5.533232"
+    },
+    {
+      "Centre": "FAHS TECNI",
+      "GPS": "33.686376819683865, -5.3756953353830115"
+    },
+    {
+      "Centre": "G.C.V.T",
+      "GPS": "34.936721, -2.330064"
+    },
+    {
+      "Centre": "GARAGE DU FORT",
+      "GPS": " 34.238907, -6.615413  "
+    },
+    {
+      "Centre": "GHAZI MISSOUR",
+      "GPS": "33.042266,-4.006411"
+    },
+    {
+      "Centre": "HAMAMA MOHAMED",
+      "GPS": "33.08006369919451, -7.237415631741917"
+    },
+    {
+      "Centre": "INSPECTION TECHNIQUE POUR VEHICULE",
+      "GPS": "35.003638,-5.902803"
+    },
+    {
+      "Centre": "JALACOTECH",
+      "GPS": "35.040485,-2.969721"
+    },
+    {
+      "Centre": "KAMA",
+      "GPS": "30.381032, -9.504486"
+    },
+    {
+      "Centre": "LAHCEN BELLABES",
+      "GPS": "34.031505,-6.783430"
+    },
+    {
+      "Centre": "LAKHSASS VISITE TECHNIQUE",
+      "GPS": "29.362468836068384, -9.754088360672759"
+    },
+    {
+      "Centre": "LAMKADDEM KHALID",
+      "GPS": "34.342732,-2.141101"
+    },
+    {
+      "Centre": "LAZVITEX AZROU",
+      "GPS": "33.449222,-5.219602"
+    },
+    {
+      "Centre": "LAZVITEX KHENIFRA",
+      "GPS": "32.925428,-5.672181"
+    },
+    {
+      "Centre": "LAZVITEX MEKNES",
+      "GPS": "33.842716,-5.522503"
+    },
+    {
+      "Centre": "LAZVITEX MIDELT",
+      "GPS": "32.680518,-4.716451"
+    },
+    {
+      "Centre": "LE CONTROLEUR",
+      "GPS": "31.628637,-8.036151"
+    },
+    {
+      "Centre": "MAGRINE AUTO",
+      "GPS": "32.273590, -9.197150"
+    },
+    {
+      "Centre": "MHAYNI DE VISITE TECHNIQUE",
+      "GPS": "35.008399,-5.906752"
+    },
+    {
+      "Centre": "MONDIALISATION",
+      "GPS": "35.751626982928265, -5.80293372306809"
+    },
+    {
+      "Centre": "NOCEVITEO",
+      "GPS": "30.394021821365513, -9.20972558464555"
+    },
+    {
+      "Centre": "RACHIDI HASSANI",
+      "GPS": "31.428068527066454, -4.232899311602847"
+    },
+    {
+      "Centre": "RAJVITEC",
+      "GPS": "32.915715,-5.670979"
+    },
+    {
+      "Centre": "REM TECNO SAHARA",
+      "GPS": "35.696513, -5.336008"
+    },
+    {
+      "Centre": "S.C.V.T.I",
+      "GPS": "34.914788,-4.567233"
+    },
+    {
+      "Centre": "S.O.T.C.A",
+      "GPS": "30.396186894337166, -9.209420469242104"
+    },
+    {
+      "Centre": "SALAMA AIN AOUDA",
+      "GPS": "33.798193,-6.783511"
+    },
+    {
+      "Centre": "SALAMA AIT-KAMRA",
+      "GPS": "35.156126,-3.977053"
+    },
+    {
+      "Centre": "SALAMA BENI-AHMED",
+      "GPS": "34.85450160363313, -5.0688727694869335"
+    },
+    {
+      "Centre": "SALAMA BENIMELLAL",
+      "GPS": "32.286628, -6.442566"
+    },
+    {
+      "Centre": "SALAMA BENTAYEB",
+      "GPS": "35.026728,-3.440377"
+    },
+    {
+      "Centre": "SALAMA BOUARFA",
+      "GPS": "32.55518748557514, -1.9490514152648168"
+    },
+    {
+      "Centre": "SALAMA ERRACHIDIA",
+      "GPS": "31.950546,-4.41725"
+    },
+    {
+      "Centre": "SALAMA FES",
+      "GPS": "34.02731778914991, -4.975016142759967"
+    },
+    {
+      "Centre": "SALAMA HARBIL",
+      "GPS": "31.709157,-8.065029"
+    },
+    {
+      "Centre": "SALAMA KALAAT MEGOUNA",
+      "GPS": "31.250745,-6.11805"
+    },
+    {
+      "Centre": "SALAMA KHEMISSET",
+      "GPS": "33.8205318682112, -6.085156663911054"
+    },
+    {
+      "Centre": "SALAMA MARRAKECH",
+      "GPS": "31.672216,-8.044747"
+    },
+    {
+      "Centre": "SALAMA NOUACER",
+      "GPS": "33.512452,-7.766632"
+    },
+    {
+      "Centre": "SALAMA OUARZAZATE",
+      "GPS": "30.932641,-6.932127"
+    },
+    {
+      "Centre": "SALAMA OUJDA",
+      "GPS": "34.686303,-1.953662"
+    },
+    {
+      "Centre": "SALAMA SALE",
+      "GPS": "34.063017,-6.789645"
+    },
+    {
+      "Centre": "SALAMA SOUK LARBAA",
+      "GPS": "34.700332338012934, -6.001083547129768"
+    },
+    {
+      "Centre": "SALAMA TANGER",
+      "GPS": "35.707218,-5.911016"
+    },
+    {
+      "Centre": "SALAMA TAROUDANT",
+      "GPS": "30.423665644067746, -8.916635271754194"
+    },
+    {
+      "Centre": "SALAMA TETOUAN",
+      "GPS": "35.586938,-5.334105"
+    },
+    {
+      "Centre": "SALAMA TIZNIT",
+      "GPS": "29.708365,-9.713803"
+    },
+    {
+      "Centre": "SALAMA ZAIO",
+      "GPS": "34.930706,-2.744095"
+    },
+    {
+      "Centre": "SELAVI",
+      "GPS": "34.034857234023065, -6.811224881266033"
+    },
+    {
+      "Centre": "SEVICO",
+      "GPS": "30.234488, -9.527985"
+    },
+    {
+      "Centre": "SOBVITA",
+      "GPS": "34.930046, -2.311451"
+    },
+    {
+      "Centre": "SOCOTEA",
+      "GPS": "33.890608,-6.965837"
+    },
+    {
+      "Centre": "SOCOVITEX",
+      "GPS": "34.365863,-5.198876"
+    },
+    {
+      "Centre": "SOCTA LACHRAF",
+      "GPS": "32.591778, -8.708306"
+    },
+    {
+      "Centre": "SOTEGEX",
+      "GPS": "33.62633191757926, -7.503968977107458"
+    },
+    {
+      "Centre": "SOVITA",
+      "GPS": "33.562778,-7.549159"
+    },
+    {
+      "Centre": "SSVT AUTO MAROC",
+      "GPS": "34.071873, -6.757089"
+    },
+    {
+      "Centre": "Ste BENCHAOUI",
+      "GPS": "34.238907, -6.615413"
+    },
+    {
+      "Centre": "Ste JAOUHARATE AL ATLAS NEGOCE",
+      "GPS": "32.962271,-5.688719"
+    },
+    {
+      "Centre": "TAZA VISITE",
+      "GPS": "35.083061396938746, -5.231813631685606"
+    },
+    {
+      "Centre": "TECHNOVISITE",
+      "GPS": "33.987507,-6.803494"
+    },
+    {
+      "Centre": "TECNO BOUHOUDA",
+      "GPS": "34.581045, -4.553093"
+    },
+    {
+      "Centre": "TETOUAN VISITE (amtar)",
+      "GPS": "35.234787819721404, -4.792963384879259"
+    },
+    {
+      "Centre": "TETOUAN VISITE (tanger)",
+      "GPS": "35.70767417753618, -5.924830819119187"
+    },
+    {
+      "Centre": "TIFAK EL MUSTAPHA",
+      "GPS": "33.387109,-7.970358"
+    },
+    {
+      "Centre": "VERISAL",
+      "GPS": "34.024028314452885, -6.758244834165364"
+    },
+    {
+      "Centre": "VIASAF",
+      "GPS": "34.004809,-5.058797"
+    },
+    {
+      "Centre": "VIS AUTO SEFROU",
+      "GPS": "33.814962,-4.830847"
+    },
+    {
+      "Centre": "VISIMAR",
+      "GPS": "29.717611,-7.967641"
+    },
+    {
+      "Centre": "VISITA TECNICA DEL AUTOMOVIL",
+      "GPS": "35.0590203809958, -6.0860296279907375"
+    },
+    {
+      "Centre": "VISITE TECHNIQUE ENNOUR",
+      "GPS": "31.62852973951024, -8.120667460615985"
+    },
+    {
+      "Centre": "VISITE TECHNIQUE GOUGHRABOU",
+      "GPS": "29.710238726238348, -9.712697005123385"
+    },
+    {
+      "Centre": "VISITE TECHNIQUE IFRAH",
+      "GPS": "31.498385, -5.538300"
+    },
+    {
+      "Centre": "VISITE TECHNIQUE INZEGANE",
+      "GPS": "30.343802754539926, -9.543294660563944"
+    },
+    {
+      "Centre": "VISITE TECHNIQUE LUKUS",
+      "GPS": "35.191805, -6.135259"
+    },
+    {
+      "Centre": "VISITE VEHICULE KSSIBA",
+      "GPS": "33.52120575849413, -7.556967367312105"
+    },
+    {
+      "Centre": "VISITRAJ",
+      "GPS": "35.047651,-2.887487"
+    },
+    {
+      "Centre": "VT SIDI IFNI",
+      "GPS": "29.354952,-10.186725"
+    }
   ]
 }
