@@ -1,5 +1,5 @@
 // Initialisation de la carte
-var map = L.map('map').setView([32.3683, -6.3692], 6); // Centre du Maroc
+var map = L.map('map').setView([32.3683, -6.3692], 7); // Centre de la région Béni Mellal-Khénifra
 
 // Ajout des tuiles OpenStreetMap
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -20,7 +20,7 @@ fetch('data.json')
         // Affichage des régions comme zones
         data.regions.forEach(region => {
             if (region.polygon) {
-                let polygon = L.polygon(region.polygon, { color: regionColor, fillOpacity: 0.3 })
+                L.polygon(region.polygon, { color: regionColor, fillOpacity: 0.3 })
                     .addTo(map)
                     .bindPopup(`<b>Région:</b> ${region.nom}`);
             }
@@ -29,18 +29,19 @@ fetch('data.json')
         // Affichage des provinces comme zones plus petites
         data.provinces.forEach(province => {
             if (province.polygon) {
-                let polygon = L.polygon(province.polygon, { color: provinceColor, fillOpacity: 0.3 })
+                L.polygon(province.polygon, { color: provinceColor, fillOpacity: 0.4 })
                     .addTo(map)
                     .bindPopup(`<b>Province:</b> ${province.nom}`);
             }
         });
 
-        // Affichage des communes comme points
+        // Affichage des communes comme points à l'intérieur des provinces
         data.communes.forEach(commune => {
             if (commune.latitude && commune.longitude) {
                 L.circleMarker([commune.latitude, commune.longitude], {
                     color: communeColor,
-                    radius: 5
+                    radius: 6,
+                    fillOpacity: 0.8
                 }).bindPopup(`
                     <b>Commune:</b> ${commune.nom}<br>
                     <b>Besoins VL:</b> ${commune.BesoinCommuneCCT_VL}<br>
