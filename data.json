@@ -1,67 +1,154 @@
 {
   "regions": [
-    {
-      "nom": "Béni Mellal-Khénifra",
-      "centre": [32.3683, -6.3692],
-      "radius": 120000
-    }
-  ],
-  "provinces": [
-    {
-      "nom": "Azilal",
-      "centre": [31.967, -6.569],
-      "radius": 50000
-    },
-    {
-      "nom": "Béni Mellal",
-      "centre": [32.338, -6.357],
-      "radius": 50000
-    },
-    {
-      "nom": "Fquih Ben Salah",
-      "centre": [32.501, -6.691],
-      "radius": 50000
-    }
-  ],
-  "communes": [
-    {
-      "nom": "Azilal",
-      "centre": [31.967, -6.569],
-      "radius": 20000,
-      "population": 22000,
-      "BesoinCommuneCCT_VL": 2,
-      "BesoinCommuneCCT_PL": 1,
-      "centres": [
-        {"nom": "Centre Azilal 1", "latitude": 31.968, "longitude": -6.570, "adresse": "Rue Principale, Azilal", "horaires": "08:00 - 17:00", "telephone": "+212600000000", "statut": "Actif"},
-        {"nom": "Centre Azilal 2", "latitude": 31.965, "longitude": -6.568, "adresse": "Avenue Mohamed V, Azilal", "horaires": "09:00 - 18:00", "telephone": "+212611111111", "statut": "Actif"},
-        {"nom": "Centre Azilal 3", "latitude": 31.966, "longitude": -6.569, "adresse": "Bd Hassan II, Azilal", "horaires": "08:30 - 16:30", "telephone": "+212622222222", "statut": "Inactif"}
-      ]
-    },
-    {
-      "nom": "Béni Mellal",
-      "centre": [32.338, -6.357],
-      "radius": 20000,
-      "population": 52000,
-      "BesoinCommuneCCT_VL": 4,
-      "BesoinCommuneCCT_PL": 1,
-      "centres": [
-        {"nom": "Centre Beni Mellal 1", "latitude": 32.339, "longitude": -6.358, "adresse": "Avenue Hassan II, Beni Mellal", "horaires": "08:30 - 18:00", "telephone": "+212633333333", "statut": "Actif"},
-        {"nom": "Centre Beni Mellal 2", "latitude": 32.336, "longitude": -6.356, "adresse": "Quartier Administratif, Beni Mellal", "horaires": "09:00 - 17:30", "telephone": "+212644444444", "statut": "Inactif"},
-        {"nom": "Centre Beni Mellal 3", "latitude": 32.337, "longitude": -6.355, "adresse": "Bd Mohamed V, Beni Mellal", "horaires": "08:00 - 17:00", "telephone": "+212655555555", "statut": "Actif"}
-      ]
-    },
-    {
-      "nom": "Fquih Ben Salah",
-      "centre": [32.501, -6.691],
-      "radius": 20000,
-      "population": 31000,
-      "BesoinCommuneCCT_VL": 3,
-      "BesoinCommuneCCT_PL": 1,
-      "centres": [
-        {"nom": "Centre Fquih Ben Salah 1", "latitude": 32.502, "longitude": -6.692, "adresse": "Bd Mohamed V, Fquih Ben Salah", "horaires": "07:30 - 16:30", "telephone": "+212666666666", "statut": "Actif"},
-        {"nom": "Centre Fquih Ben Salah 2", "latitude": 32.500, "longitude": -6.690, "adresse": "Centre Ville, Fquih Ben Salah", "horaires": "08:00 - 17:00", "telephone": "+212677777777", "statut": "Actif"},
-        {"nom": "Centre Fquih Ben Salah 3", "latitude": 32.499, "longitude": -6.689, "adresse": "Avenue Royale, Fquih Ben Salah", "horaires": "09:00 - 18:00", "telephone": "+212688888888", "statut": "Inactif"}
-      ]
-    }
+      {
+          "nom": "Béni Mellal-Khénifra",
+          "provinces": [
+              {
+                  "nom": "Béni Mellal",
+                  "polygon": [
+                      [
+                          32.375,
+                          -6.3
+                      ],
+                      [
+                          32.4,
+                          -6.35
+                      ],
+                      [
+                          32.35,
+                          -6.4
+                      ],
+                      [
+                          32.3,
+                          -6.35
+                      ],
+                      [
+                          32.325,
+                          -6.3
+                      ]
+                  ],
+                  "centre": [
+                      32.337,
+                      -6.3565
+                  ]
+              },
+              {
+                  "nom": "Azilal",
+                  "polygon": [
+                      [
+                          31.95,
+                          -6.5
+                      ],
+                      [
+                          31.98,
+                          -6.55
+                      ],
+                      [
+                          31.97,
+                          -6.6
+                      ],
+                      [
+                          31.92,
+                          -6.55
+                      ],
+                      [
+                          31.93,
+                          -6.5
+                      ]
+                  ],
+                  "centre": [
+                      31.9663,
+                      -6.5683
+                  ]
+              },
+              {
+                  "nom": "Fquih Ben Salah",
+                  "polygon": [
+                      [
+                          32.5,
+                          -6.65
+                      ],
+                      [
+                          32.53,
+                          -6.68
+                      ],
+                      [
+                          32.52,
+                          -6.72
+                      ],
+                      [
+                          32.49,
+                          -6.69
+                      ],
+                      [
+                          32.48,
+                          -6.65
+                      ]
+                  ],
+                  "centre": [
+                      32.5009,
+                      -6.6906
+                  ]
+              },
+              {
+                  "nom": "Khénifra",
+                  "polygon": [
+                      [
+                          32.9,
+                          -5.6
+                      ],
+                      [
+                          32.93,
+                          -5.65
+                      ],
+                      [
+                          32.91,
+                          -5.7
+                      ],
+                      [
+                          32.88,
+                          -5.67
+                      ],
+                      [
+                          32.89,
+                          -5.62
+                      ]
+                  ],
+                  "centre": [
+                      32.9394,
+                      -5.6683
+                  ]
+              },
+              {
+                  "nom": "Khouribga",
+                  "polygon": [
+                      [
+                          32.88,
+                          -6.7
+                      ],
+                      [
+                          32.92,
+                          -6.75
+                      ],
+                      [
+                          32.91,
+                          -6.8
+                      ],
+                      [
+                          32.87,
+                          -6.77
+                      ],
+                      [
+                          32.86,
+                          -6.72
+                      ]
+                  ],
+                  "centre": [
+                      32.8815,
+                      -6.9063
+                  ]
+              }
+          ]
+      }
   ]
 }
