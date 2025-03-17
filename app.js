@@ -38,29 +38,30 @@ fetch('data.json')
             }).addTo(map).bindPopup(`<b>Région :</b> ${region.nom}`);
         });
 
-        // Ajout des polygones pour les provinces
+        // Ajout des cercles pour représenter les provinces
         data.provinces.forEach(province => {
-            L.polygon(province.polygon, {
+            var center = province.polygon.reduce((acc, val) => [acc[0] + val[0], acc[1] + val[1]], [0, 0])
+                .map(coord => coord / province.polygon.length);
+
+            L.circle(center, {
                 color: 'red',
                 fillColor: '#ff0000',
-                fillOpacity: 0.3
+                fillOpacity: 0.3,
+                radius: 30000
             }).addTo(map).bindPopup(`<b>Province :</b> ${province.nom}`);
         });
 
         // Ajout des communes sous forme de marqueurs
         data.communes.forEach(commune => {
-            if (commune.latitude && commune.longitude) {
-                L.circleMarker([commune.latitude, commune.longitude], {
-                    color: communeColor,
-                    radius: 6,
-                    fillOpacity: 0.8
-                }).bindPopup(`
-                    <b>Commune:</b> ${commune.nom}<br>
-                    <b>Besoins VL:</b> ${commune.BesoinCommuneCCT_VL}<br>
-                    <b>Besoins PL:</b> ${commune.BesoinCommuneCCT_PL}<br>
-                    <b>Population:</b> ${commune.population}
-                `).addTo(map);
-                }
+            L.marker([commune.latitude, commune.longitude], {icon: blueIcon})
+                .bindPopup(`
+                    <b>Commune :</b> ${commune.nom}<br>
+                    <b>Population :</b> ${commune.population}<br>
+                    <b>Besoin VL :</b> ${commune.BesoinCommuneCCT_VL}<br>
+                    <b>Besoin PL :</b> ${commune.BesoinCommuneCCT_PL}
+                `)
+                .addTo(map);
+
             // Ajout des centres
             commune.centres.forEach(centre => {
                 L.marker([commune.latitude, commune.longitude], {icon: redIcon})
