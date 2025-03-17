@@ -3,40 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carte Communes & Centres</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <title>Carte Interactive Maroc</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <style>
         body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-        #map { height: 100vh; width: 100%; }
-        #sidebar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 250px;
-            height: 100vh;
-            background: #333;
-            color: white;
-            padding: 20px;
-            overflow-y: auto;
-        }
-        #sidebar ul { list-style: none; padding: 0; }
-        #sidebar ul li { padding: 10px; border-bottom: 1px solid #555; cursor: pointer; }
-        #sidebar ul li:hover { background: #444; }
-        #main-content { margin-left: 250px; width: calc(100% - 250px); }
+        #map { height: 90vh; width: 100%; }
     </style>
 </head>
 <body>
-    <div id="sidebar">
-        <h2>Menu</h2>
-        <ul>
-            <li onclick="togglePopup()">Ajouter une agence</li>
-            <li>Statistiques</li>
-            <li>Paramètres</li>
-        </ul>
-    </div>
-    <div id="main-content">
-        <div id="map"></div>
-    </div>
+    <h2>Carte Interactive du Maroc</h2>
+    <div id="map"></div>
+    
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="app.js"></script>
 </body>

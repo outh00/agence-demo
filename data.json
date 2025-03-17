@@ -2,55 +2,81 @@
   "regions": [
     {
       "nom": "Béni Mellal-Khénifra",
-      "latitude": 32.3683,
-      "longitude": -6.3692,
-      "polygon": [
-        [32.5, -6.5], [32.7, -6.3], [32.3, -6.1], [32.1, -6.4], [32.5, -6.5]
-      ]
+      "polygon": [[32.3683, -6.3692], [32.5, -6.5], [32.2, -6.2], [32.4, -6.4]]
     }
   ],
   "provinces": [
     {
       "nom": "Azilal",
-      "latitude": 32.1500,
-      "longitude": -6.5700,
-      "polygon": [
-        [32.2, -6.6], [32.3, -6.4], [32.1, -6.3], [32.0, -6.5], [32.2, -6.6]
-      ]
+      "polygon": [[31.9663, -6.5683], [32.0, -6.6], [31.9, -6.5], [31.98, -6.55]]
     },
     {
       "nom": "Béni Mellal",
-      "latitude": 32.3300,
-      "longitude": -6.3600,
-      "polygon": [
-        [32.4, -6.4], [32.5, -6.2], [32.3, -6.1], [32.2, -6.3], [32.4, -6.4]
-      ]
+      "polygon": [[32.337, -6.3565], [32.35, -6.4], [32.3, -6.3], [32.34, -6.35]]
+    },
+    {
+      "nom": "Fquih Ben Salah",
+      "polygon": [[32.5009, -6.6906], [32.52, -6.7], [32.48, -6.68], [32.49, -6.69]]
     }
   ],
   "communes": [
     {
-      "nom": "Afourar",
-      "latitude": 32.2160,
-      "longitude": -6.5300,
+      "nom": "Azilal",
+      "latitude": 31.9663,
+      "longitude": -6.5683,
+      "population": 20000,
       "BesoinCommuneCCT_VL": 2,
       "BesoinCommuneCCT_PL": 1,
-      "population": 5000
-    },
-    {
-      "nom": "Azilal",
-      "latitude": 32.1500,
-      "longitude": -6.5700,
-      "BesoinCommuneCCT_VL": 3,
-      "BesoinCommuneCCT_PL": 1,
-      "population": 10000
+      "centres": [
+        {
+          "nom": "Centre Azilal 1",
+          "adresse": "Rue Principale, Azilal",
+          "horaires": "08:00 - 17:00",
+          "telephone": "+212600000000",
+          "statut": "Actif"
+        }
+      ]
     },
     {
       "nom": "Béni Mellal",
-      "latitude": 32.3300,
-      "longitude": -6.3600,
+      "latitude": 32.337,
+      "longitude": -6.3565,
+      "population": 50000,
       "BesoinCommuneCCT_VL": 4,
       "BesoinCommuneCCT_PL": 1,
-      "population": 20000
+      "centres": [
+        {
+          "nom": "Centre Beni Mellal 1",
+          "adresse": "Avenue Hassan II, Beni Mellal",
+          "horaires": "08:30 - 18:00",
+          "telephone": "+212611111111",
+          "statut": "Actif"
+        },
+        {
+          "nom": "Centre Beni Mellal 2",
+          "adresse": "Quartier Administratif, Beni Mellal",
+          "horaires": "09:00 - 17:30",
+          "telephone": "+212622222222",
+          "statut": "Inactif"
+        }
+      ]
+    },
+    {
+      "nom": "Fquih Ben Salah",
+      "latitude": 32.5009,
+      "longitude": -6.6906,
+      "population": 30000,
+      "BesoinCommuneCCT_VL": 3,
+      "BesoinCommuneCCT_PL": 1,
+      "centres": [
+        {
+          "nom": "Centre Fquih Ben Salah 1",
+          "adresse": "Bd Mohamed V, Fquih Ben Salah",
+          "horaires": "07:30 - 16:30",
+          "telephone": "+212633333333",
+          "statut": "Actif"
+        }
+      ]
     }
   ]
 }
