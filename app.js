@@ -6,11 +6,23 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; OpenStreetMap contributors'
 }).addTo(map);
 
-// Icônes personnalisés pour les centres
-const centerIcon = L.icon({
+// Icônes personnalisées
+const blueIcon = L.icon({
+    iconUrl: 'https://maps.google.com/mapfiles/ms/icons/blue-dot.png',
+    iconSize: [32, 32],
+    iconAnchor: [16, 32]
+});
+
+const redIcon = L.icon({
     iconUrl: 'https://maps.google.com/mapfiles/ms/icons/red-dot.png',
-    iconSize: [20, 20],
-    iconAnchor: [10, 10]
+    iconSize: [32, 32],
+    iconAnchor: [16, 32]
+});
+
+const purpleIcon = L.icon({
+    iconUrl: 'https://maps.google.com/mapfiles/ms/icons/purple-dot.png',
+    iconSize: [32, 32],
+    iconAnchor: [16, 32]
 });
 
 // Chargement des données
@@ -24,7 +36,7 @@ fetch('data.json')
             L.circle(region.centre, {
                 color: 'yellow',
                 fillColor: '#ffff00',
-                fillOpacity: 0.2,
+                fillOpacity: 0.3,
                 radius: region.radius
             }).addTo(map).bindPopup(`<b>Région :</b> ${region.nom}`);
         });
@@ -44,7 +56,7 @@ fetch('data.json')
             L.circle(commune.centre, {
                 color: 'blue',
                 fillColor: '#0000ff',
-                fillOpacity: 0.4,
+                fillOpacity: 0.3,
                 radius: commune.radius
             }).addTo(map).bindPopup(`
                 <b>Commune :</b> ${commune.nom}<br>
@@ -53,9 +65,9 @@ fetch('data.json')
                 <b>Besoin PL :</b> ${commune.BesoinCommuneCCT_PL}
             `);
 
-            // Ajout des centres sous forme de marqueurs dans les communes
+            // Ajout des centres dans chaque commune
             commune.centres.forEach(centre => {
-                L.marker([centre.latitude, centre.longitude], {icon: centerIcon})
+                L.marker([centre.latitude, centre.longitude], {icon: purpleIcon})
                     .bindPopup(`
                         <strong>Centre :</strong> ${centre.nom}<br>
                         <strong>Adresse :</strong> ${centre.adresse}<br>
@@ -66,6 +78,5 @@ fetch('data.json')
                     .addTo(map);
             });
         });
-
     })
     .catch(error => console.error('Erreur lors du chargement des données:', error));
