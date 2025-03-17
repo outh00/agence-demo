@@ -68,50 +68,156 @@
 
 <!-- CSS pour le popup -->
 <style>
-  .popup {
-      display: none;
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 300px;
-      background: white;
-      padding: 20px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-      border-radius: 10px;
-      z-index: 1000;
-  }
+/* Styles généraux */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
 
-  .popup-content {
-      display: flex;
-      flex-direction: column;
-  }
+/* Sidebar - Menu latéral */
+#sidebar {
+    width: 250px;
+    background: #333;
+    color: white;
+    padding: 20px;
+    height: 100vh;
+    position: fixed;
+    transition: transform 0.3s ease-in-out;
+}
 
-  .popup-content input, .popup-content select {
-      margin: 5px 0;
-      padding: 8px;
-  }
+#sidebar ul {
+    list-style: none;
+    padding: 0;
+}
 
-  .popup-content button {
-      margin-top: 10px;
-      padding: 10px;
-      background: #007bff;
-      color: white;
-      border: none;
-      cursor: pointer;
-  }
+#sidebar ul li {
+    padding: 10px;
+    border-bottom: 1px solid #555;
+    cursor: pointer;
+}
 
-  .close {
-      float: right;
-      font-size: 24px;
-      cursor: pointer;
-  }
+#sidebar ul li:hover {
+    background: #444;
+}
+
+/* Contenu principal */
+#main-content {
+    margin-left: 250px;
+    width: calc(100% - 250px);
+    transition: margin-left 0.3s ease-in-out;
+}
+
+/* KPI container */
+#kpi-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 10px;
+    background: #f4f4f4;
+}
+
+.kpi-box {
+    padding: 10px 20px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    margin: 5px;
+}
+
+/* Carte */
+#map {
+    height: 85vh;
+}
+
+/* Popup */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    background: white;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    z-index: 1000;
+}
+
+.popup-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.popup-content input, .popup-content select {
+    margin: 5px 0;
+    padding: 8px;
+    width: 100%;
+}
+
+.popup-content button {
+    margin-top: 10px;
+    padding: 10px;
+    background: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    /* Réduire la taille du menu latéral */
+    #sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        transform: translateX(0);
+    }
+
+    #sidebar ul {
+        display: flex;
+        justify-content: space-around;
+        padding: 10px;
+    }
+
+    #sidebar ul li {
+        flex: 1;
+        text-align: center;
+        border-bottom: none;
+    }
+
+    /* Adapter le contenu principal */
+    #main-content {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    /* KPI en colonne sur mobile */
+    #kpi-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .kpi-box {
+        width: 80%;
+        text-align: center;
+    }
+
+    /* Ajustement du popup */
+    .popup {
+        width: 90%;
+    }
+}
+
 </style>
   <div id="main-content">
     <div id="kpi-container">
-      <div class="kpi-box">Total Agences: <span id="total-agences">0</span></div>
-      <div class="kpi-box">Agences Actives: <span id="agences-actives">0</span></div>
-      <div class="kpi-box">Agences Inactives: <span id="agences-inactives">0</span></div>
+      <div class="kpi-box">Total Agences: <span id="total-agences">200</span></div>
+      <div class="kpi-box">Agences Actives: <span id="agences-actives">198</span></div>
+      <div class="kpi-box">Agences Inactives: <span id="agences-inactives">2</span></div>
     </div>
     <div id="map"></div>
   </div>
