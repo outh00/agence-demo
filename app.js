@@ -7,19 +7,18 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 // Définition des icônes personnalisés
-var blueIcon = L.icon({
-    iconUrl: 'assets/icons/blue-marker.png',
+  // Définition des icônes personnalisées
+  const blueIcon = L.icon({
+    iconUrl: 'https://maps.google.com/mapfiles/ms/icons/blue-dot.png',
     iconSize: [32, 32],
-    iconAnchor: [16, 32],
-    popupAnchor: [0, -32]
-});
+    iconAnchor: [16, 32]
+  });
 
-var redIcon = L.icon({
-    iconUrl: 'assets/icons/red-marker.png',
+  const redIcon = L.icon({
+    iconUrl: 'https://maps.google.com/mapfiles/ms/icons/red-dot.png',
     iconSize: [32, 32],
-    iconAnchor: [16, 32],
-    popupAnchor: [0, -32]
-});
+    iconAnchor: [16, 32]
+  });
 
 // Vérifier que les données sont bien reçues
 fetch('data.json')
