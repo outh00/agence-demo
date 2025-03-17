@@ -32,9 +32,17 @@ document.addEventListener("DOMContentLoaded", () => {
       // Afficher les centres en rouge
       data.centres.forEach(centre => {
         const [lat, lng] = centre.GPS.split(',').map(Number);
-        L.marker([lat, lng], { icon: redIcon })
-          .bindPopup(`<b>Centre:</b> ${centre.Centre}`)
-          .addTo(map);
+        if (!isNaN(lat) && !isNaN(lng)) {
+          L.marker([lat, lng], {icon: redIcon})
+            .bindPopup(`
+              <strong>Centre :</strong> ${centre.Centre}<br>
+              <strong>Adresse :</strong> ${centre.Adresse}<br>
+              <strong>Horaires :</strong> ${centre.Horaires}<br>
+              <strong>Téléphone :</strong> ${centre.Telephone}<br>
+              <strong>Statut :</strong> ${centre.Statut}
+            `)
+            .addTo(map);
+        }
       });
   })
   .catch(err => console.error("Erreur lors du chargement des données :", err));
