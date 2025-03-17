@@ -2,115 +2,65 @@
   "regions": [
     {
       "nom": "Béni Mellal-Khénifra",
-      "polygon": [[32.3683, -6.3692], [32.5, -6.6], [32.2, -6.1], [32.4, -6.3]]
+      "centre": [32.3683, -6.3692],
+      "radius": 120000
     }
   ],
   "provinces": [
     {
       "nom": "Azilal",
-      "polygon": [[31.9663, -6.5683], [32.0, -6.6], [31.9, -6.5], [31.98, -6.55]]
+      "centre": [31.967, -6.569],
+      "radius": 50000
     },
     {
       "nom": "Béni Mellal",
-      "polygon": [[32.337, -6.3565], [32.35, -6.4], [32.3, -6.3], [32.34, -6.35]]
+      "centre": [32.338, -6.357],
+      "radius": 50000
     },
     {
       "nom": "Fquih Ben Salah",
-      "polygon": [[32.5009, -6.6906], [32.52, -6.7], [32.48, -6.68], [32.49, -6.69]]
+      "centre": [32.501, -6.691],
+      "radius": 50000
     }
   ],
   "communes": [
     {
       "nom": "Azilal",
-      "latitude": 31.9663,
-      "longitude": -6.5683,
+      "centre": [31.967, -6.569],
+      "radius": 20000,
       "population": 22000,
       "BesoinCommuneCCT_VL": 2,
       "BesoinCommuneCCT_PL": 1,
       "centres": [
-        {
-          "nom": "Centre Azilal 1",
-          "adresse": "Rue Principale, Azilal",
-          "horaires": "08:00 - 17:00",
-          "telephone": "+212600000000",
-          "statut": "Actif"
-        },
-        {
-          "nom": "Centre Azilal 2",
-          "adresse": "Quartier Sud, Azilal",
-          "horaires": "09:00 - 18:00",
-          "telephone": "+212611111111",
-          "statut": "Actif"
-        },
-        {
-          "nom": "Centre Azilal 3",
-          "adresse": "Centre Ville, Azilal",
-          "horaires": "07:30 - 16:30",
-          "telephone": "+212622222222",
-          "statut": "Inactif"
-        }
+        {"nom": "Centre Azilal 1", "latitude": 31.968, "longitude": -6.570, "adresse": "Rue Principale, Azilal", "horaires": "08:00 - 17:00", "telephone": "+212600000000", "statut": "Actif"},
+        {"nom": "Centre Azilal 2", "latitude": 31.965, "longitude": -6.568, "adresse": "Avenue Mohamed V, Azilal", "horaires": "09:00 - 18:00", "telephone": "+212611111111", "statut": "Actif"},
+        {"nom": "Centre Azilal 3", "latitude": 31.966, "longitude": -6.569, "adresse": "Bd Hassan II, Azilal", "horaires": "08:30 - 16:30", "telephone": "+212622222222", "statut": "Inactif"}
       ]
     },
     {
       "nom": "Béni Mellal",
-      "latitude": 32.337,
-      "longitude": -6.3565,
+      "centre": [32.338, -6.357],
+      "radius": 20000,
       "population": 52000,
       "BesoinCommuneCCT_VL": 4,
       "BesoinCommuneCCT_PL": 1,
       "centres": [
-        {
-          "nom": "Centre Beni Mellal 1",
-          "adresse": "Avenue Hassan II, Beni Mellal",
-          "horaires": "08:30 - 18:00",
-          "telephone": "+212633333333",
-          "statut": "Actif"
-        },
-        {
-          "nom": "Centre Beni Mellal 2",
-          "adresse": "Quartier Administratif, Beni Mellal",
-          "horaires": "09:00 - 17:30",
-          "telephone": "+212644444444",
-          "statut": "Inactif"
-        },
-        {
-          "nom": "Centre Beni Mellal 3",
-          "adresse": "Nouvelle Zone, Beni Mellal",
-          "horaires": "10:00 - 19:00",
-          "telephone": "+212655555555",
-          "statut": "Actif"
-        }
+        {"nom": "Centre Beni Mellal 1", "latitude": 32.339, "longitude": -6.358, "adresse": "Avenue Hassan II, Beni Mellal", "horaires": "08:30 - 18:00", "telephone": "+212633333333", "statut": "Actif"},
+        {"nom": "Centre Beni Mellal 2", "latitude": 32.336, "longitude": -6.356, "adresse": "Quartier Administratif, Beni Mellal", "horaires": "09:00 - 17:30", "telephone": "+212644444444", "statut": "Inactif"},
+        {"nom": "Centre Beni Mellal 3", "latitude": 32.337, "longitude": -6.355, "adresse": "Bd Mohamed V, Beni Mellal", "horaires": "08:00 - 17:00", "telephone": "+212655555555", "statut": "Actif"}
       ]
     },
     {
       "nom": "Fquih Ben Salah",
-      "latitude": 32.5009,
-      "longitude": -6.6906,
+      "centre": [32.501, -6.691],
+      "radius": 20000,
       "population": 31000,
       "BesoinCommuneCCT_VL": 3,
       "BesoinCommuneCCT_PL": 1,
       "centres": [
-        {
-          "nom": "Centre Fquih Ben Salah 1",
-          "adresse": "Bd Mohamed V, Fquih Ben Salah",
-          "horaires": "07:30 - 16:30",
-          "telephone": "+212677777777",
-          "statut": "Actif"
-        },
-        {
-          "nom": "Centre Fquih Ben Salah 2",
-          "adresse": "Centre Ville, Fquih Ben Salah",
-          "horaires": "08:00 - 17:30",
-          "telephone": "+212688888888",
-          "statut": "Actif"
-        },
-        {
-          "nom": "Centre Fquih Ben Salah 3",
-          "adresse": "Zone Industrielle, Fquih Ben Salah",
-          "horaires": "09:00 - 18:00",
-          "telephone": "+212699999999",
-          "statut": "Inactif"
-        }
+        {"nom": "Centre Fquih Ben Salah 1", "latitude": 32.502, "longitude": -6.692, "adresse": "Bd Mohamed V, Fquih Ben Salah", "horaires": "07:30 - 16:30", "telephone": "+212666666666", "statut": "Actif"},
+        {"nom": "Centre Fquih Ben Salah 2", "latitude": 32.500, "longitude": -6.690, "adresse": "Centre Ville, Fquih Ben Salah", "horaires": "08:00 - 17:00", "telephone": "+212677777777", "statut": "Actif"},
+        {"nom": "Centre Fquih Ben Salah 3", "latitude": 32.499, "longitude": -6.689, "adresse": "Avenue Royale, Fquih Ben Salah", "horaires": "09:00 - 18:00", "telephone": "+212688888888", "statut": "Inactif"}
       ]
     }
   ]
