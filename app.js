@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Charger les données JSON et placer les marqueurs
-  fetch('data_final.json')
+  fetch('data.json')
     .then(response => response.json())
     .then(data => {
       // Afficher les communes en bleu
