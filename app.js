@@ -71,6 +71,15 @@ function loadData() {
         })
         .catch(error => console.error('Erreur lors du chargement des données:', error));
 }
+// Fonction pour afficher/masquer le pop-up
+function togglePopup() {
+    var popup = document.getElementById('popup-ajout');
+    if (popup.style.display === "block") {
+        popup.style.display = "none";
+    } else {
+        popup.style.display = "block";
+    }
+}
 
 // Fonction pour ajouter une agence
 document.getElementById('ajouterAgenceBtn').addEventListener('click', function () {
@@ -115,8 +124,6 @@ function filterMap() {
     
     if (filterValue === "communes") {
         markersCommunes.forEach(marker => marker.addTo(map));
-    } else if (filterValue === "agences") {
-        markersAgences.forEach(marker => marker.addTo(map));
     } else if (filterValue === "centres") {
         markersCentres.forEach(marker => marker.addTo(map));
     } else {
