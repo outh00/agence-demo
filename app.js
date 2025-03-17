@@ -49,15 +49,18 @@ fetch('data.json')
 
         // Ajout des communes sous forme de marqueurs
         data.communes.forEach(commune => {
-            L.marker([commune.latitude, commune.longitude], {icon: blueIcon})
-                .bindPopup(`
-                    <b>Commune :</b> ${commune.nom}<br>
-                    <b>Population :</b> ${commune.population}<br>
-                    <b>Besoin VL :</b> ${commune.BesoinCommuneCCT_VL}<br>
-                    <b>Besoin PL :</b> ${commune.BesoinCommuneCCT_PL}
-                `)
-                .addTo(map);
-
+            if (commune.latitude && commune.longitude) {
+                L.circleMarker([commune.latitude, commune.longitude], {
+                    color: communeColor,
+                    radius: 6,
+                    fillOpacity: 0.8
+                }).bindPopup(`
+                    <b>Commune:</b> ${commune.nom}<br>
+                    <b>Besoins VL:</b> ${commune.BesoinCommuneCCT_VL}<br>
+                    <b>Besoins PL:</b> ${commune.BesoinCommuneCCT_PL}<br>
+                    <b>Population:</b> ${commune.population}
+                `).addTo(map);
+                }
             // Ajout des centres
             commune.centres.forEach(centre => {
                 L.marker([commune.latitude, commune.longitude], {icon: redIcon})
