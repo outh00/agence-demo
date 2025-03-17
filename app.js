@@ -15,7 +15,7 @@ var blueIcon = L.icon({
 });
 
 var redIcon = L.icon({
-    iconUrl: 'assets/icons/red-marker.png',
+    iconUrl: 'https://png.pngtree.com/png-vector/20190903/ourmid/pngtree-map-location-marker-icon-in-red-png-image_1722078.jpg',
     iconSize: [32, 32],
     iconAnchor: [16, 32],
     popupAnchor: [0, -32]
