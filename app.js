@@ -1,49 +1,44 @@
-document.addEventListener("DOMContentLoaded", function() {
-  const ajouterCentreBtn = document.getElementById("ajouterCentreBtn");
-  const popupForm = document.getElementById("popupForm");
-  const closePopup = document.getElementById("closePopup");
-  const validerCentre = document.getElementById("validerCentre");
-  
-  ajouterCentreBtn.addEventListener("click", function() {
-      popupForm.style.display = "block";
-  });
-  
-  closePopup.addEventListener("click", function() {
-      popupForm.style.display = "none";
-  });
-  
-  window.addEventListener("click", function(event) {
-      if (event.target === popupForm) {
-          popupForm.style.display = "none";
-      }
-  });
-  
-  validerCentre.addEventListener("click", function() {
-      const nom = document.getElementById("nom").value;
-      const latitude = document.getElementById("latitude").value;
-      const longitude = document.getElementById("longitude").value;
-      const adresse = document.getElementById("adresse").value;
-      const horaire = document.getElementById("horaire").value;
-      const telephone = document.getElementById("telephone").value;
-      const statut = document.getElementById("statut").value;
+// app.js
 
-      if (!nom || !latitude || !longitude || !adresse || !horaire || !telephone || !statut) {
-          alert("Veuillez remplir tous les champs");
-          return;
-      }
+// Initialisation de la carte
+var map = L.map('map').setView([32.000, -6.000], 7);  // Position centrale ajustable
 
-      const centre = {
-          nom: nom,
-          latitude: latitude,
-          longitude: longitude,
-          adresse: adresse,
-          horaire: horaire,
-          telephone: telephone,
-          statut: statut
-      };
-      
-      console.log("Nouveau centre ajouté :", centre);
-      alert("Centre ajouté avec succès !");
-      popupForm.style.display = "none";
-  });
-});
+// Ajout du fond de carte OpenStreetMap
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors'
+}).addTo(map);
+
+// Tableau pour stocker les agences
+var agences = [];
+
+// Fonction pour ajouter une agence sur la carte
+function ajouterAgence(nom, lat, lon) {
+    var marker = L.marker([lat, lon]).addTo(map)
+        .bindPopup(`<b>${nom}</b>`)
+        .openPopup();
+    agences.push({ nom, lat, lon, marker });
+}
+
+// Afficher la modal d'ajout de centre
+function ouvrirPopupAjout() {
+    document.getElementById('popup-ajout').style.display = 'block';
+}
+
+// Fermer la modal
+function fermerPopupAjout() {
+    document.getElementById('popup-ajout').style.display = 'none';
+}
+
+// Gestion de la soumission du formulaire
+function ajouterCentre() {
+    var nom = document.getElementById('nom-centre').value;
+    var lat = parseFloat(document.getElementById('latitude').value);
+    var lon = parseFloat(document.getElementById('longitude').value);
+    
+    if (nom && !isNaN(lat) && !isNaN(lon)) {
+        ajouterAgence(nom, lat, lon);
+        fermerPopupAjout();
+    } else {
+        alert('Veuillez entrer des coordonnées valides.');
+    }
+}

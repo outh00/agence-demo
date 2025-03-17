@@ -3,45 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestion des Centres</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Carte des Agences</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script defer src="app.js"></script>
+    <style>
+        #map { height: 500px; width: 100%; }
+        .popup-ajout {
+            display: none;
+            position: fixed;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            background: white; padding: 20px;
+            box-shadow: 0px 0px 10px gray;
+        }
+    </style>
 </head>
 <body>
-    <h1>Liste des Centres</h1>
-    <button id="ajouterCentreBtn">Ajouter un Centre</button>
+    <h1>Carte des Agences</h1>
+    <button onclick="ouvrirPopupAjout()">Ajouter un Centre</button>
+    <div id="map"></div>
     
-    <div id="popupForm" class="popup">
-        <div class="popup-content">
-            <span class="close" id="closePopup">&times;</span>
-            <h2>Ajouter un Centre</h2>
-            <label for="nom">Nom Commune :</label>
-            <input type="text" id="nom" required>
-            
-            <label for="latitude">Latitude :</label>
-            <input type="number" id="latitude" step="any" required>
-            
-            <label for="longitude">Longitude :</label>
-            <input type="number" id="longitude" step="any" required>
-            
-            <label for="adresse">Adresse :</label>
-            <input type="text" id="adresse" required>
-            
-            <label for="horaire">Horaire :</label>
-            <input type="time" id="horaire" required>
-            
-            <label for="telephone">Téléphone :</label>
-            <input type="tel" id="telephone" required>
-            
-            <label for="statut">Statut :</label>
-            <select id="statut">
-                <option value="Actif">Actif</option>
-                <option value="Inactif">Inactif</option>
-            </select>
-            
-            <button id="validerCentre">Valider</button>
-        </div>
+    <!-- Pop-up d'ajout -->
+    <div id="popup-ajout" class="popup-ajout">
+        <h2>Ajouter un Centre</h2>
+        <label>Nom :</label>
+        <input type="text" id="nom-centre"><br>
+        <label>Latitude :</label>
+        <input type="text" id="latitude"><br>
+        <label>Longitude :</label>
+        <input type="text" id="longitude"><br>
+        <button onclick="ajouterCentre()">Ajouter</button>
+        <button onclick="fermerPopupAjout()">Annuler</button>
     </div>
-    
-    <script src="app.js"></script>
 </body>
 </html>
