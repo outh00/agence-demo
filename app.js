@@ -35,7 +35,10 @@ function loadData() {
             if (data.communes) {
                 markersCommunes = data.communes.map(commune => {
                     return L.marker([commune.latitude, commune.longitude], {icon: blueIcon})
-                        .bindPopup(`<b>Commune:</b> ${commune.name}`)
+                        .bindPopup(`
+						<b>Commune:</b> ${commune.name}
+						<b>population:</b>${commune.population}
+						`)
                         .addTo(map);
                 });
             }
