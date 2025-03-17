@@ -1,227 +1,43 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Carte Communes & Centres</title>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-  <style>
-    
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; display: flex; }
-    #sidebar { width: 250px; background: #333; color: white; padding: 20px; height: 100vh; position: fixed; }
-    #sidebar ul { list-style: none; padding: 0; }
-    #sidebar ul li { padding: 10px; border-bottom: 1px solid #555; cursor: pointer; }
-    #sidebar ul li:hover { background: #444; }
-    #main-content { margin-left: 250px; width: calc(100% - 250px); }
-    #kpi-container { display: flex; justify-content: space-around; padding: 10px; background: #f4f4f4; }
-    .kpi-box { padding: 10px 20px; background: white; border-radius: 5px; box-shadow: 0 0 5px rgba(0,0,0,0.2); }
-    #map { height: 85vh; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carte Communes & Centres</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+        #map { height: 100vh; width: 100%; }
+        #sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 250px;
+            height: 100vh;
+            background: #333;
+            color: white;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        #sidebar ul { list-style: none; padding: 0; }
+        #sidebar ul li { padding: 10px; border-bottom: 1px solid #555; cursor: pointer; }
+        #sidebar ul li:hover { background: #444; }
+        #main-content { margin-left: 250px; width: calc(100% - 250px); }
+    </style>
 </head>
-
 <body>
-<div id="sidebar">
-    <h2>Menu</h2>
-    <ul>
-        <li onclick="togglePopup()">Ajouter une agence</li>
-        <li>Statistiques</li>
-        <li>Paramètres</li>
-        <li>
-            <label for="filterSelect">Filtrer l'affichage :</label>
-            <select id="filterSelect" onchange="filterMap()">
-                <option value="all">Afficher tout</option>
-                <option value="communes">Afficher uniquement les communes</option>
-                <option value="centres">Afficher uniquement les centres</option>
-            </select>
-        </li>
-    </ul>
-</div>
-
-  <!-- Pop-up Formulaire -->
-<div id="popup-ajout" class="popup">
-  <div class="popup-content">
-      <span onclick="togglePopup()" class="close">&times;</span>
-      <h2>Ajouter une Agence</h2>
-      <label>Nom de l'agence :</label>
-      <input type="text" id="nomAgence" placeholder="Nom de l'agence">
-      
-      <label>Latitude :</label>
-      <input type="text" id="latitude" placeholder="Ex: 32.0000">
-      
-      <label>Longitude :</label>
-      <input type="text" id="longitude" placeholder="Ex: -6.0000">
-      
-      <label>Adresse :</label>
-      <input type="text" id="adresse" placeholder="Adresse complète">
-      
-      <label>Téléphone :</label>
-      <input type="text" id="telephone" placeholder="Ex: +212600000000">
-      
-      <label>Statut :</label>
-      <select id="statut">
-          <option value="Actif">Actif</option>
-          <option value="Inactif">Inactif</option>
-      </select>
-
-      <button id="ajouterAgenceBtn">Ajouter</button>
-  </div>
-</div>
-
-<!-- CSS pour le popup -->
-<style>
-/* Styles généraux */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-}
-
-/* Sidebar - Menu latéral */
-#sidebar {
-    width: 250px;
-    background: #333;
-    color: white;
-    padding: 20px;
-    height: 100vh;
-    position: fixed;
-    transition: transform 0.3s ease-in-out;
-}
-
-#sidebar ul {
-    list-style: none;
-    padding: 0;
-}
-
-#sidebar ul li {
-    padding: 10px;
-    border-bottom: 1px solid #555;
-    cursor: pointer;
-}
-
-#sidebar ul li:hover {
-    background: #444;
-}
-
-/* Contenu principal */
-#main-content {
-    margin-left: 250px;
-    width: calc(100% - 250px);
-    transition: margin-left 0.3s ease-in-out;
-}
-
-/* KPI container */
-#kpi-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 10px;
-    background: #f4f4f4;
-}
-
-.kpi-box {
-    padding: 10px 20px;
-    background: white;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0,0,0,0.2);
-    margin: 5px;
-}
-
-/* Carte */
-#map {
-    height: 85vh;
-}
-
-/* Popup */
-.popup {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 350px;
-    background: white;
-    padding: 20px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    border-radius: 10px;
-    z-index: 1000;
-}
-
-.popup-content {
-    display: flex;
-    flex-direction: column;
-}
-
-.popup-content input, .popup-content select {
-    margin: 5px 0;
-    padding: 8px;
-    width: 100%;
-}
-
-.popup-content button {
-    margin-top: 10px;
-    padding: 10px;
-    background: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-/* Responsive Design */
-@media screen and (max-width: 768px) {
-    /* Réduire la taille du menu latéral */
-    #sidebar {
-        width: 100%;
-        height: auto;
-        position: relative;
-        transform: translateX(0);
-    }
-
-    #sidebar ul {
-        display: flex;
-        justify-content: space-around;
-        padding: 10px;
-    }
-
-    #sidebar ul li {
-        flex: 1;
-        text-align: center;
-        border-bottom: none;
-    }
-
-    /* Adapter le contenu principal */
-    #main-content {
-        margin-left: 0;
-        width: 100%;
-    }
-
-    /* KPI en colonne sur mobile */
-    #kpi-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .kpi-box {
-        width: 80%;
-        text-align: center;
-    }
-
-    /* Ajustement du popup */
-    .popup {
-        width: 90%;
-    }
-}
-
-</style>
-  <div id="main-content">
-    <div id="kpi-container">
-      <div class="kpi-box">Total Agences: <span id="total-agences">200</span></div>
-      <div class="kpi-box">Agences Actives: <span id="agences-actives">198</span></div>
-      <div class="kpi-box">Agences Inactives: <span id="agences-inactives">2</span></div>
+    <div id="sidebar">
+        <h2>Menu</h2>
+        <ul>
+            <li onclick="togglePopup()">Ajouter une agence</li>
+            <li>Statistiques</li>
+            <li>Paramètres</li>
+        </ul>
     </div>
-    <div id="map"></div>
-  </div>
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script src="app.js"></script>
+    <div id="main-content">
+        <div id="map"></div>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
