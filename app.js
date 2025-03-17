@@ -1,138 +1,68 @@
 // Base de données simulée
-const communes = [
-  {
-    id: 1,
-    name: "Ahlaf",
-    coordinates: [
-      [33.362, -7.226], // Coordonnées du polygone (zone)
-      [33.362, -7.206],
-      [33.342, -7.206],
-      [33.342, -7.226],
-    ],
-  },
-  {
-    id: 2,
-    name: "Ain Tizgha",
-    coordinates: [
-      [33.5897, -7.0294],
-      [33.5897, -7.0094],
-      [33.5697, -7.0094],
-      [33.5697, -7.0294],
-    ],
-  },
-  {
-    id: 3,
-    name: "Fdalate",
-    coordinates: [
-      [33.697, -7.2653],
-      [33.697, -7.2453],
-      [33.677, -7.2453],
-      [33.677, -7.2653],
-    ],
-  },
-];
-
-let agences = [
-  {
-    id: 1,
-    name: "Agence Ahlaf 1",
-    communeId: 1, // Référence à la commune Ahlaf
-    latitude: 33.352,
-    longitude: -7.216,
-    status: "Ouvert",
-    phone: "0522 11 11 11",
-    hours: "08h30 - 18h30",
-  },
-  {
-    id: 2,
-    name: "Agence Ahlaf 2",
-    communeId: 1, // Référence à la commune Ahlaf
-    latitude: 33.347,
-    longitude: -7.211,
-    status: "Fermé",
-    phone: "0522 22 22 22",
-    hours: "09h00 - 17h00",
-  },
-  {
-    id: 3,
-    name: "Agence Ain Tizgha 1",
-    communeId: 2, // Référence à la commune Ain Tizgha
-    latitude: 33.5797,
-    longitude: -7.0194,
-    status: "En maintenance",
-    phone: "0522 33 33 33",
-    hours: "10h00 - 19h00",
-  },
-];
+let communes = [];
+let centres = [];
+let agences = [];
 
 // Initialisation de la carte Leaflet centrée sur le Maroc
-const map = L.map('map').setView([31.7917, -7.0926], 8); // Centré sur le Maroc avec un zoom adapté
+const map = L.map('map').setView([31.7917, -7.0926], 6); // Centré sur le Maroc
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   maxZoom: 19,
 }).addTo(map);
 
-// Icône pour les agences
-const agenceIcon = L.icon({
-  iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
-});
+// Charger les données depuis le fichier JSON
+async function loadData() {
+  try {
+    const response = await fetch('data.json'); // Chemin vers le fichier JSON
+    if (!response.ok) {
+      throw new Error('Fichier JSON non trouvé ou erreur de chargement');
+    }
+    const data = await response.json();
+    communes = data.communes || [];
+    centres = data.centres || [];
+
+    // Afficher les communes et les centres sur la carte
+    displayCommunes();
+    displayCentres();
+  } catch (error) {
+    console.error('Erreur lors du chargement des données:', error);
+    alert('Erreur lors du chargement des données. Veuillez réessayer.');
+  }
+}
 
 // Afficher les communes sous forme de zones (polygones)
-communes.forEach(commune => {
-  const polygon = L.polygon(commune.coordinates, {
-    color: 'blue', // Couleur de la bordure de la zone
-    fillColor: 'lightblue', // Couleur de remplissage de la zone
-    fillOpacity: 0.4, // Opacité de la zone
-  }).addTo(map);
+function displayCommunes() {
+  communes.forEach(commune => {
+    const polygon = L.polygon(commune.coordinates, {
+      color: 'blue',
+      fillColor: 'lightblue',
+      fillOpacity: 0.4,
+    }).addTo(map);
 
-  polygon.bindPopup(`<b>Commune : ${commune.name}</b>`);
-});
-
-// Afficher les agences sous forme d'icônes
-agences.forEach(agence => {
-  const marker = L.marker([agence.latitude, agence.longitude], { icon: agenceIcon }).addTo(map);
-  marker.bindPopup(`
-    <b>${agence.name}</b><br>
-    Statut: ${agence.status}<br>
-    Téléphone: ${agence.phone}<br>
-    Horaires: ${agence.hours}
-  `);
-});
-
-// Fonction pour afficher la liste des agences
-function updateAgencyList() {
-  const list = document.getElementById('agency-list');
-  list.innerHTML = '';
-  agences.forEach(agence => {
-    const li = document.createElement('li');
-    li.innerHTML = `
-      <b>${agence.name}</b><br>
-      Statut: ${agence.status}<br>
-      <button onclick="deleteAgency(${agence.id})">Supprimer</button>
-    `;
-    list.appendChild(li);
+    polygon.bindPopup(`<b>Commune : ${commune.name}</b>`);
   });
 }
 
-// Fonction pour supprimer une agence
-function deleteAgency(id) {
-  agences = agences.filter(agence => agence.id !== id);
-  updateAgencyList();
-  updateMap();
+// Afficher les centres sous forme de marqueurs
+function displayCentres() {
+  centres.forEach(centre => {
+    const [latitude, longitude] = centre.GPS.split(',').map(coord => parseFloat(coord.trim()));
+    const marker = L.marker([latitude, longitude]).addTo(map);
+    marker.bindPopup(`<b>Centre : ${centre.Centre}</b>`);
+  });
 }
 
 // Fonction pour ajouter une agence
 function addAgency() {
   const name = document.getElementById('name').value;
-  const communeId = parseInt(document.getElementById('commune').value);
+  const address = document.getElementById('address').value;
   const latitude = parseFloat(document.getElementById('latitude').value);
   const longitude = parseFloat(document.getElementById('longitude').value);
   const status = document.getElementById('status').value;
   const phone = document.getElementById('phone').value;
   const hours = document.getElementById('hours').value;
+  const city = document.getElementById('city').value;
 
-  if (!name || !communeId || !latitude || !longitude) {
+  if (!name || !latitude || !longitude) {
     alert("Veuillez remplir tous les champs obligatoires.");
     return;
   }
@@ -140,12 +70,13 @@ function addAgency() {
   const newAgency = {
     id: agences.length + 1,
     name,
-    communeId,
+    address,
     latitude,
     longitude,
     status,
     phone,
     hours,
+    city,
   };
 
   agences.push(newAgency);
@@ -154,16 +85,62 @@ function addAgency() {
   clearForm();
 }
 
+// Fonction pour mettre à jour la carte
+function updateMap() {
+  map.eachLayer(layer => {
+    if (layer instanceof L.Marker) {
+      map.removeLayer(layer);
+    }
+  });
+
+  agences.forEach(agency => {
+    const marker = L.marker([agency.latitude, agency.longitude]).addTo(map);
+    marker.bindPopup(`
+      <b>${agency.name}</b><br>
+      ${agency.address}<br>
+      Statut: ${agency.status}<br>
+      Téléphone: ${agency.phone}<br>
+      Horaires: ${agency.hours}<br>
+      Commune: ${agency.city}
+    `);
+  });
+}
+
+// Fonction pour mettre à jour la liste des agences
+function updateAgencyList() {
+  const list = document.getElementById('agency-list');
+  list.innerHTML = '';
+  agences.forEach(agency => {
+    const li = document.createElement('li');
+    li.innerHTML = `
+      <b>${agency.name}</b> - ${agency.city}<br>
+      Statut: ${agency.status}<br>
+      <button onclick="deleteAgency(${agency.id})">Supprimer</button>
+    `;
+    list.appendChild(li);
+  });
+}
+
+// Fonction pour supprimer une agence
+function deleteAgency(id) {
+  agences = agences.filter(agency => agency.id !== id);
+  updateMap();
+  updateAgencyList();
+}
+
 // Fonction pour vider le formulaire
 function clearForm() {
   document.getElementById('name').value = '';
-  document.getElementById('commune').value = '';
+  document.getElementById('address').value = '';
   document.getElementById('latitude').value = '';
   document.getElementById('longitude').value = '';
   document.getElementById('status').value = 'Ouvert';
   document.getElementById('phone').value = '';
   document.getElementById('hours').value = '';
+  document.getElementById('city').value = '';
 }
 
 // Initialisation
+loadData();
+updateMap();
 updateAgencyList();
