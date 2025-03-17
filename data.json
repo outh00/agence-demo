@@ -1,56 +1,260 @@
 {
-  "regions": [
-    {
-      "nom": "Béni Mellal-Khénifra",
-      "latitude": 32.3683,
-      "longitude": -6.3692,
-      "polygon": [
-        [32.5, -6.5], [32.7, -6.3], [32.3, -6.1], [32.1, -6.4], [32.5, -6.5]
-      ]
-    }
-  ],
-  "provinces": [
-    {
-      "nom": "Azilal",
-      "latitude": 32.1500,
-      "longitude": -6.5700,
-      "polygon": [
-        [32.2, -6.6], [32.3, -6.4], [32.1, -6.3], [32.0, -6.5], [32.2, -6.6]
-      ]
-    },
-    {
-      "nom": "Béni Mellal",
-      "latitude": 32.3300,
-      "longitude": -6.3600,
-      "polygon": [
-        [32.4, -6.4], [32.5, -6.2], [32.3, -6.1], [32.2, -6.3], [32.4, -6.4]
-      ]
-    }
-  ],
-  "communes": [
-    {
-      "nom": "Afourar",
-      "latitude": 32.2160,
-      "longitude": -6.5300,
-      "BesoinCommuneCCT_VL": 2,
-      "BesoinCommuneCCT_PL": 1,
-      "population": 5000
-    },
-    {
-      "nom": "Azilal",
-      "latitude": 32.1500,
-      "longitude": -6.5700,
-      "BesoinCommuneCCT_VL": 3,
-      "BesoinCommuneCCT_PL": 1,
-      "population": 10000
-    },
-    {
-      "nom": "Béni Mellal",
-      "latitude": 32.3300,
-      "longitude": -6.3600,
-      "BesoinCommuneCCT_VL": 4,
-      "BesoinCommuneCCT_PL": 1,
-      "population": 20000
-    }
-  ]
+  "Béni Mellal-Khénifra": {
+      "provinces": {
+          "Azilal": {
+              "communes": [
+                  {
+                      "nom": "Afourar",
+                      "besoin_province_vl": 2,
+                      "besoin_province_pl": 1,
+                      "besoin_commune_vl": 0,
+                      "besoin_commune_pl": 0,
+                      "population": 12923,
+                      "latitude": 32.014165,
+                      "longitude": -6.551121
+                  },
+                  {
+                      "nom": "Agoudi N'lkhair",
+                      "besoin_province_vl": 2,
+                      "besoin_province_pl": 1,
+                      "besoin_commune_vl": 2,
+                      "besoin_commune_pl": 1,
+                      "population": 56911,
+                      "latitude": 31.997012,
+                      "longitude": -6.540023
+                  },
+                  {
+                      "nom": "Ait Abbas",
+                      "besoin_province_vl": 2,
+                      "besoin_province_pl": 1,
+                      "besoin_commune_vl": 0,
+                      "besoin_commune_pl": 0,
+                      "population": 11731,
+                      "latitude": 31.994742,
+                      "longitude": -6.534952
+                  },
+                  {
+                      "nom": "Ait Blal",
+                      "besoin_province_vl": 2,
+                      "besoin_province_pl": 1,
+                      "besoin_commune_vl": 0,
+                      "besoin_commune_pl": 0,
+                      "population": 55503,
+                      "latitude": 31.953948,
+                      "longitude": -6.55137
+                  },
+                  {
+                      "nom": "Ait Bou Oulli",
+                      "besoin_province_vl": 2,
+                      "besoin_province_pl": 1,
+                      "besoin_commune_vl": 0,
+                      "besoin_commune_pl": 0,
+                      "population": 62602,
+                      "latitude": 31.983649,
+                      "longitude": -6.567834
+                  },
+                  {
+                      "nom": "Ait Majden",
+                      "besoin_province_vl": 2,
+                      "besoin_province_pl": 1,
+                      "besoin_commune_vl": 0,
+                      "besoin_commune_pl": 0,
+                      "population": 76413,
+                      "latitude": 31.997798,
+                      "longitude": -6.504143
+                  },
+                  {
+                      "nom": "Ait Mazigh",
+                      "besoin_province_vl": 2,
+                      "besoin_province_pl": 1,
+                      "besoin_commune_vl": 0,
+                      "besoin_commune_pl": 0,
+                      "population": 64099,
+                      "latitude": 31.9705,
+                      "longitude": -6.545519
+                  },
+                  {
+                      "nom": "Ait M'hamed",
+                      "besoin_province_vl": 2,
+                      "besoin_province_pl": 1,
+                      "besoin_commune_vl": 0,
+                      "besoin_commune_pl": 0,
+                      "population": 26552,
+                      "latitude": 32.002928,
+                      "longitude": -6.525086
+                  },
+                  {
+                      "nom": "Ait Ouaarda",
+                      "besoin_province_vl": 2,
+                      "besoin_province_pl": 1,
+                      "besoin_commune_vl": 0,
+                      "besoin_commune_pl": 0,
+                      "population": 20488,
+                      "latitude": 31.962337,
+                      "longitude": -6.568056
+                  },
+                  {
+                      "nom": "Ait Oumdis",
+                      "besoin_province_vl": 2,
+                      "besoin_province_pl": 1,
+                      "besoin_commune_vl": 0,
+                      "besoin_commune_pl": 0,
+                      "population": 84552,
+                      "latitude": 32.017657,
+                      "longitude": -6.514101
+                  },
+                  {
+                      "nom": "Ait Ouqabli",
+                      "besoin_province_vl": 2,
+                      "besoin_province_pl": 1,
+                      "besoin_commune_vl": 0,
+                      "besoin_commune_pl": 0,
+                      "population": 21348,
+                      "latitude": 31.962444,
+                      "longitude": -6.51238
+                  },
+                  {
+                      "nom": "Ait Taguella",
+                      "besoin_province_vl": 2,
+                      "besoin_province_pl": 1,
+                      "besoin_commune_vl": 0,
+                      "besoin_commune_pl": 0,
+                      "population": 73731,
+                      "latitude": 31.995001,
+                      "longitude": -6.516026
+                  },
+                  {
+                      "nom": "Ait Tamlil",
+                      "besoin_province_vl": 2,
+                      "besoin_province_pl": 1,
+                      "besoin_commune_vl": 0,
+                      "besoin_commune_pl": 0,
+                      "population": 7710,
+                      "latitude": 31.967578,
+                      "longitude": -6.518394
+                  },
+                  {
+                      "nom": "Anergui",
+                      "besoin_province_vl": 2,
+                      "besoin_province_pl": 1,
+                      "besoin_commune_vl": 0,
+                      "besoin_commune_pl": 0,
+                      "population": 69088,
+                      "latitude": 31.966791,
+                      "longitude": -6.533404
+                  },
+                  {
+                      "nom": "Anzou",
+                      "besoin_province_vl": 2,
+                      "besoin_province_pl": 1,
+                      "besoin_commune_vl": 0,
+                      "besoin_commune_pl": 0,
+                      "population": 55873,
+                      "latitude": 31.992086,
+                      "longitude": -6.531105
+                  },
+                  {
+                      "nom": "Azilal",
+                      "besoin_province_vl": 2,
+                      "besoin_province_pl": 1,
+                      "besoin_commune_vl": 0,
+                      "besoin_commune_pl": 0,
+                      "population": 39070,
+                      "latitude": 31.991539,
+                      "longitude": -6.505395
+                  },
+                  {
+                      "nom": "Bin El Ouidane",
+                      "besoin_province_vl": 2,
+                      "besoin_province_pl": 1,
+                      "besoin_commune_vl": 0,
+                      "besoin_commune_pl": 0,
+                      "population": 83357,
+                      "latitude": 31.964458,
+                      "longitude": -6.542987
+                  },
+                  {
+                      "nom": "Bni A'yat",
+                      "besoin_province_vl": 2,
+                      "besoin_province_pl": 1,
+                      "besoin_commune_vl": 0,
+                      "besoin_commune_pl": 0,
+                      "population": 86116,
+                      "latitude": 31.964978,
+                      "longitude": -6.522657
+                  },
+                  {
+                      "nom": "Bni Hassane",
+                      "besoin_province_vl": 2,
+                      "besoin_province_pl": 1,
+                      "besoin_commune_vl": 0,
+                      "besoin_commune_pl": 0,
+                      "population": 74517,
+                      "latitude": 31.995263,
+                      "longitude": -6.539656
+                  },
+                  {
+                      "nom": "Bzou",
+                      "besoin_province_vl": 2,
+                      "besoin_province_pl": 1,
+                      "besoin_commune_vl": 0,
+                      "besoin_commune_pl": 0,
+                      "population": 80135,
+                      "latitude": 32.005807,
+                      "longitude": -6.543721
+                  },
+                  {
+                      "nom": "Demnate",
+                      "besoin_province_vl": 2,
+                      "besoin_province_pl": 1,
+                      "besoin_commune_vl": 0,
+                      "besoin_commune_pl": 0,
+                      "population": 93605,
+                      "latitude": 32.011476,
+                      "longitude": -6.547053
+                  },
+                  {
+                      "nom": "Foum Jemaa",
+                      "besoin_province_vl": 2,
+                      "besoin_province_pl": 1,
+                      "besoin_commune_vl": 0,
+                      "besoin_commune_pl": 0,
+                      "population": 29552,
+                      "latitude": 32.00556,
+                      "longitude": -6.540162
+                  },
+                  {
+                      "nom": "Imlil",
+                      "besoin_province_vl": 2,
+                      "besoin_province_pl": 1,
+                      "besoin_commune_vl": 0,
+                      "besoin_commune_pl": 0,
+                      "population": 62037,
+                      "latitude": 31.994963,
+                      "longitude": -6.561077
+                  },
+                  {
+                      "nom": "Isseksi",
+                      "besoin_province_vl": 2,
+                      "besoin_province_pl": 1,
+                      "besoin_commune_vl": 0,
+                      "besoin_commune_pl": 0,
+                      "population": 37647,
+                      "latitude": 31.970393,
+                      "longitude": -6.511144
+                  },
+                  {
+                      "nom": "Moulay Aissa Ben Driss",
+                      "besoin_province_vl": 2,
+                      "besoin_province_pl": 1,
+                      "besoin_commune_vl": 0,
+                      "besoin_commune_pl": 0,
+                      "population": 29822,
+                      "latitude": 31.985374,
+                      "longitude": -6.508991
+                  }
+              ]
+          }
+      }
+  }
 }
