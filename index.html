@@ -5,10 +5,18 @@
   <title>Carte Communes & Centres</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <style>
-    #map { height: 100vh; }
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+    #kpi-container { display: flex; justify-content: space-around; padding: 10px; background: #f4f4f4; }
+    .kpi-box { padding: 10px 20px; background: white; border-radius: 5px; box-shadow: 0 0 5px rgba(0,0,0,0.2); }
+    #map { height: 85vh; }
   </style>
 </head>
 <body>
+  <div id="kpi-container">
+    <div class="kpi-box">Total Agences: <span id="total-agences">0</span></div>
+    <div class="kpi-box">Agences Actives: <span id="agences-actives">0</span></div>
+    <div class="kpi-box">Agences Inactives: <span id="agences-inactives">0</span></div>
+  </div>
   <div id="map"></div>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
