@@ -1,40 +1,17 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carte des Agences</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <script defer src="app.js"></script>
-    <style>
-        #map { height: 500px; width: 100%; }
-        .popup-ajout {
-            display: none;
-            position: fixed;
-            top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
-            background: white; padding: 20px;
-            box-shadow: 0px 0px 10px gray;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Carte Communes & Centres</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <style>
+    #map { height: 100vh; }
+  </style>
 </head>
 <body>
-    <h1>Carte des Agences</h1>
-    <button onclick="ouvrirPopupAjout()">Ajouter un Centre</button>
-    <div id="map"></div>
-    
-    <!-- Pop-up d'ajout -->
-    <div id="popup-ajout" class="popup-ajout">
-        <h2>Ajouter un Centre</h2>
-        <label>Nom :</label>
-        <input type="text" id="nom-centre"><br>
-        <label>Latitude :</label>
-        <input type="text" id="latitude"><br>
-        <label>Longitude :</label>
-        <input type="text" id="longitude"><br>
-        <button onclick="ajouterCentre()">Ajouter</button>
-        <button onclick="fermerPopupAjout()">Annuler</button>
-    </div>
+  <div id="map"></div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
