@@ -44,21 +44,24 @@ var provinceColors = {
     "Khénifra": "orange"
 };
 
-// Ajouter les communes sous forme de cercles avec popup contenant les données aléatoires
+// Ajouter les communes sous forme de cercles INTERACTIFS avec popup contenant les données aléatoires
 communes.forEach(commune => {
     let besoinProvinceCCT_VL = getRandom(0, 6);
     let besoinProvinceCCT_PL = getRandom(0, 6);
     let besoinCommuneCCT_VL = getRandom(0, 6);
     let besoinCommuneCCT_PL = getRandom(0, 6);
 
-    L.circleMarker([commune.lat, commune.lng], {
+    let circle = L.circleMarker([commune.lat, commune.lng], {
         radius: 8,  // Taille du cercle
         color: "black",  // Bordure
         fillColor: provinceColors[commune.province],  // Couleur selon la province
         fillOpacity: 0.7,
-        weight: 1
-    }).addTo(map)
-    .bindPopup(`
+        weight: 1,
+        interactive: true // Rendre le cercle cliquable
+    }).addTo(map);
+
+    // Associer un popup cliquable
+    circle.bindPopup(`
         <b>Commune : ${commune.name}</b><br>
         Province : ${commune.province}<br>
         Latitude : ${commune.lat}<br>
