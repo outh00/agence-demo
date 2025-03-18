@@ -1,4 +1,4 @@
-// Initialisation de la carte centrée sur Béni Mellal-Khénifra
+// Initialisation de la carte
 var map = L.map('map').setView([32.5, -6.5], 7);
 
 // Ajout des tuiles OpenStreetMap
@@ -6,25 +6,19 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; OpenStreetMap contributors'
 }).addTo(map);
 
-// Déclaration du groupe de calques (uniquement la région)
-var layerRegions = L.layerGroup().addTo(map);
-
-// Chargement des données depuis `data.json`
-// Charger et afficher la région en fonction du polygone et du rayon
+// Charger la région depuis le fichier data_updated.json
 fetch('data.json')
     .then(response => response.json())
     .then(data => {
-        data.regions.forEach(region => {
-            // Tracer le polygone de la région
-            var regionPolygon = L.polygon(region.polygon, {
-                color: 'yellow',
-                fillColor: '#ffff00',
-                fillOpacity: 0.4
-            }).addTo(map).bindPopup(`<b>Région :</b> ${region.nom} <br> Superficie: ${region.superficie_km2} km²`);
+        console.log("Données de la région chargées:", data);
 
-            // Ajuster le zoom pour englober toute la région
-            map.fitBounds(regionPolygon.getBounds());
-        });
+        // Affichage de la région Béni Mellal-Khénifra en contour
+        L.geoJSON(data.regions[0].polygon, {
+            style: {
+                color: 'yellow',  // Jaune pour la région
+                weight: 2,
+                fillOpacity: 0.3
+            }
+        }).addTo(map);
     })
     .catch(error => console.error('Erreur lors du chargement des données:', error));
-
