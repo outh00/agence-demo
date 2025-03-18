@@ -13,16 +13,14 @@ var layerRegions = L.layerGroup().addTo(map);
 fetch('data.json')
     .then(response => response.json())
     .then(data => {
-        console.log("Données chargées :", data);
-
-        // 🟠 Ajout de la région Béni Mellal-Khénifra
         data.regions.forEach(region => {
-            L.polygon(region.polygon, {
-                color: 'orange', // Bordure orange
-                fillColor: 'orange', // Remplissage orange
-                fillOpacity: 0.5
-            }).bindPopup(`<b>Région :</b> ${region.nom}`).addTo(layerRegions);
+            L.circle(region.centre, {
+                color: 'orange',
+                fillColor: '#FFA500',
+                fillOpacity: 0.5,
+                radius: region.radius
+            }).addTo(map).bindPopup(`<b>Région :</b> ${region.nom}`);
         });
-
     })
+
     .catch(error => console.error('Erreur lors du chargement des données:', error));
