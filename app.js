@@ -38,17 +38,26 @@ var communes = [
     { name: "M'Rirt", lat: 33.1633, lng: -5.5944, province: "Khénifra" }
 ];
 
-// Ajouter les communes sous forme de marqueurs interactifs avec popup
+// Ajouter les communes sous forme de marqueurs avec popup affichant les besoins
 communes.forEach(commune => {
+    let besoinProvinceCCT_VL = getRandom(0, 6);
+    let besoinProvinceCCT_PL = getRandom(0, 6);
+    let besoinCommuneCCT_VL = getRandom(0, 6);
+    let besoinCommuneCCT_PL = getRandom(0, 6);
+
     let marker = L.marker([commune.lat, commune.lng], {
         title: commune.name
     }).addTo(map);
 
     let popupContent = `
         <b>Commune : ${commune.name}</b><br>
-        Province : ${commune.province}<br>
-        Latitude : ${commune.lat}<br>
-        Longitude : ${commune.lng}
+        <b>Province :</b> ${commune.province}<br><br>
+        <b>Besoin Province</b> :<br>
+        - VL : ${besoinProvinceCCT_VL}<br>
+        - PL : ${besoinProvinceCCT_PL}<br><br>
+        <b>Besoin Commune</b> :<br>
+        - VL : ${besoinCommuneCCT_VL}<br>
+        - PL : ${besoinCommuneCCT_PL}
     `;
 
     marker.bindPopup(popupContent);
