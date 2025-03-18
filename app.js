@@ -6,7 +6,12 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; OpenStreetMap contributors'
 }).addTo(map);
 
-// Liste des communes avec leurs coordonnées GPS
+// Fonction pour générer des valeurs aléatoires entre min et max
+function getRandom(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+// Liste des communes avec leurs coordonnées GPS et des données aléatoires
 var communes = [
     { name: "Béni Mellal", lat: 32.3373, lng: -6.3498, province: "Béni Mellal" },
     { name: "Kasba Tadla", lat: 32.5987, lng: -6.2684, province: "Béni Mellal" },
@@ -39,8 +44,13 @@ var provinceColors = {
     "Khénifra": "orange"
 };
 
-// Ajouter les communes sous forme de cercles avec popup
+// Ajouter les communes sous forme de cercles avec popup contenant les données aléatoires
 communes.forEach(commune => {
+    let besoinProvinceCCT_VL = getRandom(0, 6);
+    let besoinProvinceCCT_PL = getRandom(0, 6);
+    let besoinCommuneCCT_VL = getRandom(0, 6);
+    let besoinCommuneCCT_PL = getRandom(0, 6);
+
     L.circleMarker([commune.lat, commune.lng], {
         radius: 8,  // Taille du cercle
         color: "black",  // Bordure
@@ -48,7 +58,18 @@ communes.forEach(commune => {
         fillOpacity: 0.7,
         weight: 1
     }).addTo(map)
-    .bindPopup(`<b>Commune : ${commune.name}</b><br>Province : ${commune.province}<br>Latitude : ${commune.lat}<br>Longitude : ${commune.lng}`);
+    .bindPopup(`
+        <b>Commune : ${commune.name}</b><br>
+        Province : ${commune.province}<br>
+        Latitude : ${commune.lat}<br>
+        Longitude : ${commune.lng}<br><br>
+        <b>Besoin Province</b> :<br>
+        - VL : ${besoinProvinceCCT_VL}<br>
+        - PL : ${besoinProvinceCCT_PL}<br><br>
+        <b>Besoin Commune</b> :<br>
+        - VL : ${besoinCommuneCCT_VL}<br>
+        - PL : ${besoinCommuneCCT_PL}
+    `);
 });
 
 // Charger et afficher les régions du Maroc (en bleu)
