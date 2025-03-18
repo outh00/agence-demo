@@ -10,17 +10,21 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 var layerRegions = L.layerGroup().addTo(map);
 
 // Chargement des données depuis `data.json`
+// Charger et afficher la région en fonction du polygone et du rayon
 fetch('data.json')
     .then(response => response.json())
     .then(data => {
         data.regions.forEach(region => {
-            L.circle(region.centre, {
-                color: 'orange',
-                fillColor: '#FFA500',
-                fillOpacity: 0.5,
-                radius: region.radius
-            }).addTo(map).bindPopup(`<b>Région :</b> ${region.nom}`);
+            // Tracer le polygone de la région
+            var regionPolygon = L.polygon(region.polygon, {
+                color: 'yellow',
+                fillColor: '#ffff00',
+                fillOpacity: 0.4
+            }).addTo(map).bindPopup(`<b>Région :</b> ${region.nom} <br> Superficie: ${region.superficie_km2} km²`);
+
+            // Ajuster le zoom pour englober toute la région
+            map.fitBounds(regionPolygon.getBounds());
         });
     })
-
     .catch(error => console.error('Erreur lors du chargement des données:', error));
+
