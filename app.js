@@ -1,4 +1,4 @@
-// Initialisation de la carte
+// Initialisation de la carte avec un zoom par défaut
 var map = L.map('map').setView([31.5, -7.5], 6);
 
 // Ajout d'une couche OpenStreetMap
@@ -13,6 +13,36 @@ function getRandom(min, max) {
 
 // Liste de prénoms arabes en français
 var arabicNames = ["Ahmed", "Youssef", "Fatima", "Mohamed", "Aicha", "Khalid", "Said", "Meryem", "Ibrahim", "Latifa"];
+
+// Couches pour les niveaux de zoom
+var regionsLayer, provincesLayer, communesLayer, centresLayer;
+
+// Charger et afficher les régions (niveau de zoom bas)
+fetch('data/geoBoundaries-MAR-ADM1.geojson')
+    .then(response => response.json())
+    .then(data => {
+        regionsLayer = L.geoJSON(data, {
+            style: { fillColor: "blue", color: "black", weight: 1, fillOpacity: 0.6 },
+            onEachFeature: function (feature, layer) {
+                layer.bindTooltip("Région : " + feature.properties.shapeName);
+            }
+        });
+        map.addLayer(regionsLayer);
+    });
+
+// Charger et afficher les provinces (niveau de zoom moyen)
+fetch('data/geoBoundaries-MAR-ADM2.geojson')
+    .then(response => response.json())
+    .then(data => {
+        provincesLayer = L.geoJSON(data, {
+            style: function (feature) {
+                return { fillColor: "lightgreen", color: "black", weight: 1, fillOpacity: 0.4 };
+            },
+            onEachFeature: function (feature, layer) {
+                layer.bindTooltip("Province : " + feature.properties.shapeName);
+            }
+        });
+    });
 
 // Liste des communes avec leurs coordonnées GPS
 var communes = [
@@ -38,22 +68,23 @@ var communes = [
     { name: "M'Rirt", lat: 33.1633, lng: -5.5944, province: "Khénifra" }
 ];
 
-// Ajouter les communes sous forme de marqueurs bleus avec popup
+// Ajouter les communes et centres en mode couche
+communesLayer = L.layerGroup();
+centresLayer = L.layerGroup();
+
 communes.forEach(commune => {
     let besoinProvinceCCT_VL = getRandom(0, 6);
     let besoinProvinceCCT_PL = getRandom(0, 6);
     let besoinCommuneCCT_VL = getRandom(0, 6);
     let besoinCommuneCCT_PL = getRandom(0, 6);
 
-    let marker = L.marker([commune.lat, commune.lng], {
+    let communeMarker = L.marker([commune.lat, commune.lng], {
         title: commune.name,
         icon: L.icon({
             iconUrl: "https://maps.google.com/mapfiles/ms/icons/blue-dot.png",
             iconSize: [25, 25]
         })
-    }).addTo(map);
-
-    let popupContent = `
+    }).bindPopup(`
         <b>Commune : ${commune.name}</b><br>
         <b>Province :</b> ${commune.province}<br><br>
         <b>Besoin Province</b> :<br>
@@ -62,69 +93,51 @@ communes.forEach(commune => {
         <b>Besoin Commune</b> :<br>
         - VL : ${besoinCommuneCCT_VL}<br>
         - PL : ${besoinCommuneCCT_PL}
-    `;
+    `);
 
-    marker.bindPopup(popupContent);
-});
+    communesLayer.addLayer(communeMarker);
 
-// Ajouter les centres dans chaque commune (marqueurs rouges)
-communes.forEach(commune => {
     let centerLat = commune.lat + (Math.random() * 0.02 - 0.01);
     let centerLng = commune.lng + (Math.random() * 0.02 - 0.01);
 
-    let centerData = {
-        name: "Centre " + commune.name,
-        address: "Adresse " + commune.name,
-        nbreVL: getRandom(0, 6),
-        nbrePL: getRandom(0, 6),
-        AV1: arabicNames[getRandom(0, arabicNames.length - 1)],
-        AV2: arabicNames[getRandom(0, arabicNames.length - 1)],
-        AV3: arabicNames[getRandom(0, arabicNames.length - 1)]
-    };
-
     let centerMarker = L.marker([centerLat, centerLng], {
-        title: centerData.name,
+        title: "Centre " + commune.name,
         icon: L.icon({
             iconUrl: "https://maps.google.com/mapfiles/ms/icons/red-dot.png",
             iconSize: [20, 20]
         })
-    }).addTo(map);
+    }).bindPopup(`
+        <b>Centre ${commune.name}</b><br>
+        <b>Adresse :</b> Adresse ${commune.name}<br>
+        <b>Nbre VL :</b> ${getRandom(0, 6)}<br>
+        <b>Nbre PL :</b> ${getRandom(0, 6)}<br>
+        <b>AV1 :</b> ${arabicNames[getRandom(0, arabicNames.length - 1)]}<br>
+        <b>AV2 :</b> ${arabicNames[getRandom(0, arabicNames.length - 1)]}<br>
+        <b>AV3 :</b> ${arabicNames[getRandom(0, arabicNames.length - 1)]}
+    `);
 
-    let centerPopup = `
-        <b>${centerData.name}</b><br>
-        <b>Adresse :</b> ${centerData.address}<br>
-        <b>Nbre VL :</b> ${centerData.nbreVL}<br>
-        <b>Nbre PL :</b> ${centerData.nbrePL}<br>
-        <b>AV1 :</b> ${centerData.AV1}<br>
-        <b>AV2 :</b> ${centerData.AV2}<br>
-        <b>AV3 :</b> ${centerData.AV3}
-    `;
-
-    centerMarker.bindPopup(centerPopup);
+    centresLayer.addLayer(centerMarker);
 });
 
-// Charger et afficher les régions du Maroc (en bleu)
-fetch('data/geoBoundaries-MAR-ADM1.geojson')
-    .then(response => response.json())
-    .then(data => {
-        L.geoJSON(data, {
-            style: { fillColor: "blue", color: "black", weight: 1, fillOpacity: 0.6 },
-            onEachFeature: function (feature, layer) {
-                layer.bindTooltip("Région : " + feature.properties.shapeName);
-            }
-        }).addTo(map);
-    });
+// Gestion de l'affichage des couches en fonction du zoom
+map.on('zoomend', function () {
+    let zoomLevel = map.getZoom();
 
-// Charger et afficher les provinces du Maroc (en vert léger)
-fetch('data/geoBoundaries-MAR-ADM2.geojson')
-    .then(response => response.json())
-    .then(data => {
-        L.geoJSON(data, {
-            style: function (feature) {
-                return { fillColor: "lightgreen", color: "black", weight: 1, fillOpacity: 0.4 };
-            },
-            onEachFeature: function (feature, layer) {
-                layer.bindTooltip("Province : " + feature.properties.shapeName);
-            }
-        }).addTo(map);
-    });
+    if (zoomLevel < 6) {
+        map.addLayer(regionsLayer);
+        map.removeLayer(provincesLayer);
+        map.removeLayer(communesLayer);
+        map.removeLayer(centresLayer);
+    } else if (zoomLevel >= 6 && zoomLevel < 8) {
+        map.removeLayer(regionsLayer);
+        map.addLayer(provincesLayer);
+        map.removeLayer(communesLayer);
+        map.removeLayer(centresLayer);
+    } else if (zoomLevel >= 8 && zoomLevel < 10) {
+        map.removeLayer(provincesLayer);
+        map.addLayer(communesLayer);
+        map.removeLayer(centresLayer);
+    } else {
+        map.addLayer(centresLayer);
+    }
+});
