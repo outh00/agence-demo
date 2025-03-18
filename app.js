@@ -44,7 +44,9 @@ var provinceColors = {
     "Khénifra": "orange"
 };
 
-// Ajouter les communes sous forme de cercles INTERACTIFS avec popup contenant les données aléatoires
+// Ajouter les cercles des communes APRES les couches GeoJSON et s'assurer qu'ils sont DEVANT
+var circleLayerGroup = L.layerGroup().addTo(map);
+
 communes.forEach(commune => {
     let besoinProvinceCCT_VL = getRandom(0, 6);
     let besoinProvinceCCT_PL = getRandom(0, 6);
@@ -55,10 +57,10 @@ communes.forEach(commune => {
         radius: 8,  // Taille du cercle
         color: "black",  // Bordure
         fillColor: provinceColors[commune.province],  // Couleur selon la province
-        fillOpacity: 0.7,
+        fillOpacity: 0.8,
         weight: 1,
         interactive: true // Rendre le cercle cliquable
-    }).addTo(map);
+    });
 
     // Associer un popup cliquable
     circle.bindPopup(`
@@ -73,6 +75,8 @@ communes.forEach(commune => {
         - VL : ${besoinCommuneCCT_VL}<br>
         - PL : ${besoinCommuneCCT_PL}
     `);
+
+    circle.addTo(circleLayerGroup).bringToFront(); // Assurer que le cercle est devant les autres couches
 });
 
 // Charger et afficher les régions du Maroc (en bleu)
