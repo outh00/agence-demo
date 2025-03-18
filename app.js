@@ -38,7 +38,7 @@ var communes = [
     { name: "M'Rirt", lat: 33.1633, lng: -5.5944, province: "Khénifra" }
 ];
 
-// Ajouter les communes sous forme de marqueurs avec popup affichant les besoins
+// Ajouter les communes sous forme de marqueurs bleus avec popup
 communes.forEach(commune => {
     let besoinProvinceCCT_VL = getRandom(0, 6);
     let besoinProvinceCCT_PL = getRandom(0, 6);
@@ -46,7 +46,11 @@ communes.forEach(commune => {
     let besoinCommuneCCT_PL = getRandom(0, 6);
 
     let marker = L.marker([commune.lat, commune.lng], {
-        title: commune.name
+        title: commune.name,
+        icon: L.icon({
+            iconUrl: "https://maps.google.com/mapfiles/ms/icons/blue-dot.png",
+            iconSize: [25, 25]
+        })
     }).addTo(map);
 
     let popupContent = `
@@ -63,7 +67,7 @@ communes.forEach(commune => {
     marker.bindPopup(popupContent);
 });
 
-// Ajouter les centres dans chaque commune
+// Ajouter les centres dans chaque commune (marqueurs rouges)
 communes.forEach(commune => {
     let centerLat = commune.lat + (Math.random() * 0.02 - 0.01);
     let centerLng = commune.lng + (Math.random() * 0.02 - 0.01);
@@ -81,7 +85,7 @@ communes.forEach(commune => {
     let centerMarker = L.marker([centerLat, centerLng], {
         title: centerData.name,
         icon: L.icon({
-            iconUrl: "https://maps.google.com/mapfiles/ms/icons/blue-dot.png",
+            iconUrl: "https://maps.google.com/mapfiles/ms/icons/red-dot.png",
             iconSize: [20, 20]
         })
     }).addTo(map);
