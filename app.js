@@ -6,13 +6,13 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; OpenStreetMap contributors'
 }).addTo(map);
 
-// Données spécifiques pour les 5 provinces de Béni Mellal-Khénifra
+// Données spécifiques pour les 5 provinces de Béni Mellal-Khénifra avec leurs coordonnées
 var provincesData = {
-    "Béni Mellal": { NbrVL: getRandom(0, 6), NbrPL: getRandom(0, 6), NbrbesoinPL: getRandom(0, 6), NbrbesoinVL: getRandom(0, 6) },
-    "Khouribga": { NbrVL: getRandom(0, 6), NbrPL: getRandom(0, 6), NbrbesoinPL: getRandom(0, 6), NbrbesoinVL: getRandom(0, 6) },
-    "Fquih Ben Salah": { NbrVL: getRandom(0, 6), NbrPL: getRandom(0, 6), NbrbesoinPL: getRandom(0, 6), NbrbesoinVL: getRandom(0, 6) },
-    "Azilal": { NbrVL: getRandom(0, 6), NbrPL: getRandom(0, 6), NbrbesoinPL: getRandom(0, 6), NbrbesoinVL: getRandom(0, 6) },
-    "Khénifra": { NbrVL: getRandom(0, 6), NbrPL: getRandom(0, 6), NbrbesoinPL: getRandom(0, 6), NbrbesoinVL: getRandom(0, 6) }
+    "Béni Mellal": { lat: 32.3394, lng: -6.3601, NbrVL: getRandom(0, 6), NbrPL: getRandom(0, 6), NbrbesoinPL: getRandom(0, 6), NbrbesoinVL: getRandom(0, 6) },
+    "Khouribga": { lat: 32.8811, lng: -6.9063, NbrVL: getRandom(0, 6), NbrPL: getRandom(0, 6), NbrbesoinPL: getRandom(0, 6), NbrbesoinVL: getRandom(0, 6) },
+    "Fquih Ben Salah": { lat: 32.5000, lng: -6.7000, NbrVL: getRandom(0, 6), NbrPL: getRandom(0, 6), NbrbesoinPL: getRandom(0, 6), NbrbesoinVL: getRandom(0, 6) },
+    "Azilal": { lat: 31.9614, lng: -6.5718, NbrVL: getRandom(0, 6), NbrPL: getRandom(0, 6), NbrbesoinPL: getRandom(0, 6), NbrbesoinVL: getRandom(0, 6) },
+    "Khénifra": { lat: 32.9394, lng: -5.6686, NbrVL: getRandom(0, 6), NbrPL: getRandom(0, 6), NbrbesoinPL: getRandom(0, 6), NbrbesoinVL: getRandom(0, 6) }
 };
 
 // Fonction pour générer des valeurs aléatoires entre min et max
@@ -32,7 +32,7 @@ fetch('data/geoBoundaries-MAR-ADM1.geojson')
         }).addTo(map);
     });
 
-// Charger et afficher les provinces du Maroc (en vert léger) avec données supplémentaires pour les 5 provinces ciblées
+// Charger et afficher les provinces du Maroc (en vert léger)
 fetch('data/geoBoundaries-MAR-ADM2.geojson')
     .then(response => response.json())
     .then(data => {
@@ -60,3 +60,8 @@ fetch('data/geoBoundaries-MAR-ADM2.geojson')
             }
         }).addTo(map);
     });
+
+// Ajouter des marqueurs avec popup aux coordonnées des 5 provinces
+Object.keys(provincesData).forEach(province => {
+    let data = provincesData[province];
+    let mar
