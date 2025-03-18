@@ -30,10 +30,25 @@ var communes = [
     { name: "M'Rirt", lat: 33.1633, lng: -5.5944, province: "Khénifra" }
 ];
 
-// Ajouter les communes sous forme de marqueurs avec popup
+// Définition des couleurs pour chaque province
+var provinceColors = {
+    "Béni Mellal": "red",
+    "Khouribga": "blue",
+    "Fquih Ben Salah": "green",
+    "Azilal": "purple",
+    "Khénifra": "orange"
+};
+
+// Ajouter les communes sous forme de cercles avec popup
 communes.forEach(commune => {
-    L.marker([commune.lat, commune.lng]).addTo(map)
-        .bindPopup(`<b>Commune : ${commune.name}</b><br>Province : ${commune.province}<br>Latitude : ${commune.lat}<br>Longitude : ${commune.lng}`);
+    L.circleMarker([commune.lat, commune.lng], {
+        radius: 8,  // Taille du cercle
+        color: "black",  // Bordure
+        fillColor: provinceColors[commune.province],  // Couleur selon la province
+        fillOpacity: 0.7,
+        weight: 1
+    }).addTo(map)
+    .bindPopup(`<b>Commune : ${commune.name}</b><br>Province : ${commune.province}<br>Latitude : ${commune.lat}<br>Longitude : ${commune.lng}`);
 });
 
 // Charger et afficher les régions du Maroc (en bleu)
