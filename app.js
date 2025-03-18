@@ -11,6 +11,9 @@ function getRandom(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+// Liste de prénoms arabes
+var arabicNames = ["أحمد", "يوسف", "فاطمة", "محمد", "عائشة", "خالد", "سعيد", "مريم", "إبراهيم", "لطيفة"];
+
 // Liste des communes avec leurs coordonnées GPS et des données aléatoires
 var communes = [
     { name: "Béni Mellal", lat: 32.3373, lng: -6.3498, province: "Béni Mellal" },
@@ -35,24 +38,19 @@ var communes = [
     { name: "M'Rirt", lat: 33.1633, lng: -5.5944, province: "Khénifra" }
 ];
 
-// Ajouter les communes sous forme de cercles interactifs avec popup
+// Ajouter les communes sous forme de marqueurs interactifs avec popup
 communes.forEach(commune => {
     let besoinProvinceCCT_VL = getRandom(0, 6);
     let besoinProvinceCCT_PL = getRandom(0, 6);
     let besoinCommuneCCT_VL = getRandom(0, 6);
     let besoinCommuneCCT_PL = getRandom(0, 6);
 
-    let circle = L.circleMarker([commune.lat, commune.lng], {
-        radius: 8,  // Taille du cercle
-        color: "black",  // Bordure
-        fillColor: "red",  // Remplissage rouge (modifiable)
-        fillOpacity: 0.7, // Opacité pour la visibilité
-        weight: 1,
-        interactive: true // Activer l'interaction
+    let marker = L.marker([commune.lat, commune.lng], {
+        title: commune.name,
+        interactive: true
     }).addTo(map);
 
-    // Associer une popup interactive
-    circle.bindPopup(`
+    let popupContent = `
         <b>Commune : ${commune.name}</b><br>
         Province : ${commune.province}<br>
         Latitude : ${commune.lat}<br>
@@ -63,37 +61,43 @@ communes.forEach(commune => {
         <b>Besoin Commune</b> :<br>
         - VL : ${besoinCommuneCCT_VL}<br>
         - PL : ${besoinCommuneCCT_PL}
-    `);
+    `;
 
-    // S'assurer que les cercles restent devant toutes les couches
-    circle.bringToFront();
+    marker.bindPopup(popupContent);
 });
 
-// Charger et afficher les régions du Maroc (en bleu)
-fetch('data/geoBoundaries-MAR-ADM1.geojson')
-    .then(response => response.json())
-    .then(data => {
-        L.geoJSON(data, {
-            style: { fillColor: "blue", color: "black", weight: 1, fillOpacity: 0.6 },
-            onEachFeature: function (feature, layer) {
-                layer.bindTooltip("Région : " + feature.properties.shapeName);
-            }
-        }).addTo(map);
-    });
+// Ajouter les centres dans chaque commune
+communes.forEach(commune => {
+    let centerLat = commune.lat + (Math.random() * 0.02 - 0.01);
+    let centerLng = commune.lng + (Math.random() * 0.02 - 0.01);
 
-// Charger et afficher les provinces du Maroc (en vert léger)
-fetch('data/geoBoundaries-MAR-ADM2.geojson')
-    .then(response => response.json())
-    .then(data => {
-        L.geoJSON(data, {
-            style: function (feature) {
-                let provinceName = feature.properties.shapeName;
-                let fillColor = "lightgreen"; 
-                return { fillColor: fillColor, color: "black", weight: 1, fillOpacity: 0.4 };
-            },
-            onEachFeature: function (feature, layer) {
-                let provinceName = feature.properties.shapeName;
-                layer.bindTooltip("Province : " + provinceName);
-            }
-        }).addTo(map);
-    });
+    let centerData = {
+        name: "Centre " + commune.name,
+        address: "Adresse " + commune.name,
+        nbreVL: getRandom(0, 6),
+        nbrePL: getRandom(0, 6),
+        AV1: arabicNames[getRandom(0, arabicNames.length - 1)],
+        AV2: arabicNames[getRandom(0, arabicNames.length - 1)],
+        AV3: arabicNames[getRandom(0, arabicNames.length - 1)]
+    };
+
+    let centerMarker = L.marker([centerLat, centerLng], {
+        title: centerData.name,
+        icon: L.icon({
+            iconUrl: "https://maps.google.com/mapfiles/ms/icons/blue-dot.png",
+            iconSize: [20, 20]
+        })
+    }).addTo(map);
+
+    let centerPopup = `
+        <b>${centerData.name}</b><br>
+        <b>Adresse :</b> ${centerData.address}<br>
+        <b>Nbre VL :</b> ${centerData.nbreVL}<br>
+        <b>Nbre PL :</b> ${centerData.nbrePL}<br>
+        <b>AV1 :</b> ${centerData.AV1}<br>
+        <b>AV2 :</b> ${centerData.AV2}<br>
+        <b>AV3 :</b> ${centerData.AV3}
+    `;
+
+    centerMarker.bindPopup(centerPopup);
+});
