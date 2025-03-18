@@ -11,10 +11,10 @@ function getRandom(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-// Liste de prénoms arabes
-var arabicNames = ["أحمد", "يوسف", "فاطمة", "محمد", "عائشة", "خالد", "سعيد", "مريم", "إبراهيم", "لطيفة"];
+// Liste de prénoms arabes en français
+var arabicNames = ["Ahmed", "Youssef", "Fatima", "Mohamed", "Aicha", "Khalid", "Said", "Meryem", "Ibrahim", "Latifa"];
 
-// Liste des communes avec leurs coordonnées GPS et des données aléatoires
+// Liste des communes avec leurs coordonnées GPS
 var communes = [
     { name: "Béni Mellal", lat: 32.3373, lng: -6.3498, province: "Béni Mellal" },
     { name: "Kasba Tadla", lat: 32.5987, lng: -6.2684, province: "Béni Mellal" },
@@ -40,27 +40,15 @@ var communes = [
 
 // Ajouter les communes sous forme de marqueurs interactifs avec popup
 communes.forEach(commune => {
-    let besoinProvinceCCT_VL = getRandom(0, 6);
-    let besoinProvinceCCT_PL = getRandom(0, 6);
-    let besoinCommuneCCT_VL = getRandom(0, 6);
-    let besoinCommuneCCT_PL = getRandom(0, 6);
-
     let marker = L.marker([commune.lat, commune.lng], {
-        title: commune.name,
-        interactive: true
+        title: commune.name
     }).addTo(map);
 
     let popupContent = `
         <b>Commune : ${commune.name}</b><br>
         Province : ${commune.province}<br>
         Latitude : ${commune.lat}<br>
-        Longitude : ${commune.lng}<br><br>
-        <b>Besoin Province</b> :<br>
-        - VL : ${besoinProvinceCCT_VL}<br>
-        - PL : ${besoinProvinceCCT_PL}<br><br>
-        <b>Besoin Commune</b> :<br>
-        - VL : ${besoinCommuneCCT_VL}<br>
-        - PL : ${besoinCommuneCCT_PL}
+        Longitude : ${commune.lng}
     `;
 
     marker.bindPopup(popupContent);
@@ -101,3 +89,29 @@ communes.forEach(commune => {
 
     centerMarker.bindPopup(centerPopup);
 });
+
+// Charger et afficher les régions du Maroc (en bleu)
+fetch('data/geoBoundaries-MAR-ADM1.geojson')
+    .then(response => response.json())
+    .then(data => {
+        L.geoJSON(data, {
+            style: { fillColor: "blue", color: "black", weight: 1, fillOpacity: 0.6 },
+            onEachFeature: function (feature, layer) {
+                layer.bindTooltip("Région : " + feature.properties.shapeName);
+            }
+        }).addTo(map);
+    });
+
+// Charger et afficher les provinces du Maroc (en vert léger)
+fetch('data/geoBoundaries-MAR-ADM2.geojson')
+    .then(response => response.json())
+    .then(data => {
+        L.geoJSON(data, {
+            style: function (feature) {
+                return { fillColor: "lightgreen", color: "black", weight: 1, fillOpacity: 0.4 };
+            },
+            onEachFeature: function (feature, layer) {
+                layer.bindTooltip("Province : " + feature.properties.shapeName);
+            }
+        }).addTo(map);
+    });
