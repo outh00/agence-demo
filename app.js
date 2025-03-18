@@ -35,18 +35,7 @@ var communes = [
     { name: "M'Rirt", lat: 33.1633, lng: -5.5944, province: "Khénifra" }
 ];
 
-// Définition des couleurs des icônes pour chaque province
-var provinceIcons = {
-    "Béni Mellal": "red",
-    "Khouribga": "blue",
-    "Fquih Ben Salah": "green",
-    "Azilal": "purple",
-    "Khénifra": "orange"
-};
-
-// Ajouter les communes sous forme de marqueurs interactifs
-var markerLayerGroup = L.layerGroup().addTo(map);
-
+// Ajouter les communes sous forme de marqueurs interactifs avec popup
 communes.forEach(commune => {
     let besoinProvinceCCT_VL = getRandom(0, 6);
     let besoinProvinceCCT_PL = getRandom(0, 6);
@@ -54,11 +43,12 @@ communes.forEach(commune => {
     let besoinCommuneCCT_PL = getRandom(0, 6);
 
     let marker = L.marker([commune.lat, commune.lng], {
-        title: commune.name
-    });
+        title: commune.name,
+        interactive: true // Activer l'interaction avec le marqueur
+    }).addTo(map);
 
-    // Associer une popup interactive
-    marker.bindPopup(`
+    // Créer le contenu du popup
+    let popupContent = `
         <b>Commune : ${commune.name}</b><br>
         Province : ${commune.province}<br>
         Latitude : ${commune.lat}<br>
@@ -69,9 +59,15 @@ communes.forEach(commune => {
         <b>Besoin Commune</b> :<br>
         - VL : ${besoinCommuneCCT_VL}<br>
         - PL : ${besoinCommuneCCT_PL}
-    `);
+    `;
 
-    marker.addTo(markerLayerGroup);
+    // Associer le popup au marqueur
+    marker.bindPopup(popupContent);
+
+    // Ouvrir la popup au clic
+    marker.on('click', function() {
+        marker.openPopup();
+    });
 });
 
 // Charger et afficher les régions du Maroc (en bleu)
