@@ -7,86 +7,95 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; OpenStreetMap contributors'
 }).addTo(map);
 
-// Couleurs pour les différents niveaux
-var regionStyle = {color: 'yellow', weight: 2, fillOpacity: 0.2};
-var provinceStyle = {color: 'red', weight: 2, fillOpacity: 0.3};
-var communeStyle = {color: 'blue', weight: 2, fillOpacity: 0.4};
+// Création des groupes de calques
+var regionLayer = L.layerGroup().addTo(map);
+var provinceLayer = L.layerGroup();
+var communeLayer = L.layerGroup();
+var centreLayer = L.layerGroup();
 
-// Icônes des centres
-var centreIcon = L.icon({
-    iconUrl: 'https://maps.google.com/mapfiles/ms/icons/purple-dot.png',
-    iconSize: [20, 20],
-    iconAnchor: [10, 10]
-});
-
-var regionsLayer = L.layerGroup();
-var provincesLayer = L.layerGroup();
-var communesLayer = L.layerGroup();
-var centresLayer = L.layerGroup();
-
-// Charger les données depuis le fichier JSON
+// Chargement des données
 fetch('data.json')
     .then(response => response.json())
     .then(data => {
-        // Ajout des régions
+        console.log("Données JSON chargées:", data);
+
+        // Ajout des régions en jaune
         data.regions.forEach(region => {
-            L.polygon(region.polygon, regionStyle).addTo(regionsLayer)
-                .bindPopup(`<b>Région :</b> ${region.nom}`);
+            L.polygon(region.polygon, {
+                color: 'yellow',
+                fillColor: '#ffff00',
+                fillOpacity: 0.3
+            }).bindPopup(`<b>Région :</b> ${region.nom}`).addTo(regionLayer);
         });
 
-        // Ajout des provinces
+        // Ajout des provinces en rouge
         data.provinces.forEach(province => {
-            L.polygon(province.polygon, provinceStyle).addTo(provincesLayer)
-                .bindPopup(`<b>Province :</b> ${province.nom}`);
+            L.polygon(province.polygon, {
+                color: 'red',
+                fillColor: '#ff0000',
+                fillOpacity: 0.3
+            }).bindPopup(`<b>Province :</b> ${province.nom}`).addTo(provinceLayer);
         });
 
-        // Ajout des communes
+        // Ajout des communes en bleu
         data.communes.forEach(commune => {
-            L.polygon(commune.polygon, communeStyle).addTo(communesLayer)
-                .bindPopup(`
-                    <b>Commune :</b> ${commune.nom}<br>
-                    <b>Population :</b> ${commune.population}
-                `);
+            L.circle(commune.centre, {
+                color: 'blue',
+                fillColor: '#0000ff',
+                fillOpacity: 0.3,
+                radius: commune.radius
+            }).bindPopup(`
+                <b>Commune :</b> ${commune.nom}<br>
+                <b>Population :</b> ${commune.population}<br>
+                <b>Besoin VL :</b> ${commune.BesoinCommuneCCT_VL}<br>
+                <b>Besoin PL :</b> ${commune.BesoinCommuneCCT_PL}
+            `).addTo(communeLayer);
 
-            // Ajout des centres
+            // Ajout des centres sous forme de points
             commune.centres.forEach(centre => {
-                L.marker([centre.latitude, centre.longitude], {icon: centreIcon}).addTo(centresLayer)
-                    .bindPopup(`
-                        <b>Centre :</b> ${centre.nom}<br>
-                        <b>Adresse :</b> ${centre.adresse}<br>
-                        <b>Statut :</b> ${centre.statut}
-                    `);
+                L.marker([centre.latitude, centre.longitude], {
+                    icon: L.icon({
+                        iconUrl: 'https://maps.google.com/mapfiles/ms/icons/purple-dot.png',
+                        iconSize: [32, 32],
+                        iconAnchor: [16, 32]
+                    })
+                }).bindPopup(`
+                    <strong>Centre :</strong> ${centre.nom}<br>
+                    <strong>Adresse :</strong> ${centre.adresse || 'N/A'}<br>
+                    <strong>Horaires :</strong> ${centre.horaires || 'N/A'}<br>
+                    <strong>Téléphone :</strong> ${centre.telephone || 'N/A'}<br>
+                    <strong>Statut :</strong> ${centre.statut || 'N/A'}
+                `).addTo(centreLayer);
             });
         });
-
-        updateLayers(map.getZoom());
     })
     .catch(error => console.error('Erreur lors du chargement des données:', error));
 
-// Fonction pour mettre à jour les couches en fonction du zoom
-function updateLayers(zoomLevel) {
-    map.eachLayer(layer => {
-        if (layer instanceof L.Polygon || layer instanceof L.Marker) {
-            map.removeLayer(layer);
-        }
-    });
+// Gestion de l'affichage en fonction du zoom
+map.on('zoomend', function () {
+    var zoomLevel = map.getZoom();
+    console.log("Zoom actuel :", zoomLevel);
 
     if (zoomLevel < 8) {
-        regionsLayer.addTo(map);
-    } else if (zoomLevel < 10) {
-        provincesLayer.addTo(map);
-    } else if (zoomLevel < 12) {
-        communesLayer.addTo(map);
+        map.addLayer(regionLayer);
+        map.removeLayer(provinceLayer);
+        map.removeLayer(communeLayer);
+        map.removeLayer(centreLayer);
+    } else if (zoomLevel >= 8 && zoomLevel < 10) {
+        map.addLayer(provinceLayer);
+        map.addLayer(regionLayer);
+        map.removeLayer(communeLayer);
+        map.removeLayer(centreLayer);
+    } else if (zoomLevel >= 10 && zoomLevel < 12) {
+        map.addLayer(communeLayer);
+        map.addLayer(provinceLayer);
+        map.removeLayer(regionLayer);
+        map.removeLayer(centreLayer);
     } else {
-        communesLayer.addTo(map);
-        centresLayer.addTo(map);
+        map.addLayer(centreLayer);
+        map.addLayer(communeLayer);
+        map.removeLayer(regionLayer);
+        map.removeLayer(provinceLayer);
     }
-}
-
-// Événement de changement de zoom
-map.on('zoomend', function () {
-    updateLayers(map.getZoom());
 });
 
-// Chargement initial
-updateLayers(map.getZoom());
