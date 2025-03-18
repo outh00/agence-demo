@@ -1,5 +1,5 @@
 // Initialisation de la carte avec un zoom par défaut
-var map = L.map('map').setView([31.5, -7.5], 6);
+var map = L.map('map').setView([32.5, -6.5], 6);
 
 // Ajout d'une couche OpenStreetMap
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -11,11 +11,11 @@ function getRandom(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-// Liste de prénoms arabes en français
-var arabicNames = ["Ahmed", "Youssef", "Fatima", "Mohamed", "Aicha", "Khalid", "Said", "Meryem", "Ibrahim", "Latifa"];
+// Liste des 5 provinces spécifiques
+const targetProvinces = ["Béni Mellal", "Khouribga", "Fquih Ben Salah", "Azilal", "Khénifra"];
 
 // Couches pour les niveaux de zoom
-var regionsLayer, provincesLayer, communesLayer, centresLayer;
+var regionsLayer, provincesLayer, communesLayer;
 
 // Charger et afficher les régions (niveau de zoom bas)
 fetch('data/geoBoundaries-MAR-ADM1.geojson')
@@ -30,16 +30,34 @@ fetch('data/geoBoundaries-MAR-ADM1.geojson')
         map.addLayer(regionsLayer);
     });
 
-// Charger et afficher les provinces (niveau de zoom moyen)
+// Charger et afficher uniquement les 5 provinces concernées avec "Province de ..." et les données
 fetch('data/geoBoundaries-MAR-ADM2.geojson')
     .then(response => response.json())
     .then(data => {
         provincesLayer = L.geoJSON(data, {
+            filter: function (feature) {
+                return targetProvinces.includes(feature.properties.shapeName);
+            },
             style: function (feature) {
                 return { fillColor: "lightgreen", color: "black", weight: 1, fillOpacity: 0.4 };
             },
             onEachFeature: function (feature, layer) {
-                layer.bindTooltip("Province : " + feature.properties.shapeName);
+                let provinceName = feature.properties.shapeName;
+                
+                // Générer des valeurs aléatoires pour les données demandées
+                let NbrVL = getRandom(0, 8);
+                let NbrPL = getRandom(0, 8);
+                let NbrBesoinVL = getRandom(0, 8);
+                let NbrBesoinPL = getRandom(0, 8);
+
+                // Ajouter une infobulle avec les données
+                layer.bindTooltip(`
+                    <b>Province de ${provinceName}</b><br>
+                    <b>NbrVL :</b> ${NbrVL}<br>
+                    <b>NbrPL :</b> ${NbrPL}<br>
+                    <b>NbrBesoinVL :</b> ${NbrBesoinVL}<br>
+                    <b>NbrBesoinPL :</b> ${NbrBesoinPL}
+                `);
             }
         });
     });
@@ -68,17 +86,10 @@ var communes = [
     { name: "M'Rirt", lat: 33.1633, lng: -5.5944, province: "Khénifra" }
 ];
 
-// Ajouter les communes et centres en mode couche
+// Ajouter les communes avec leurs données
 communesLayer = L.layerGroup();
-centresLayer = L.layerGroup();
-
 communes.forEach(commune => {
-    let besoinProvinceCCT_VL = getRandom(0, 6);
-    let besoinProvinceCCT_PL = getRandom(0, 6);
-    let besoinCommuneCCT_VL = getRandom(0, 6);
-    let besoinCommuneCCT_PL = getRandom(0, 6);
-
-    let communeMarker = L.marker([commune.lat, commune.lng], {
+    let marker = L.marker([commune.lat, commune.lng], {
         title: commune.name,
         icon: L.icon({
             iconUrl: "https://maps.google.com/mapfiles/ms/icons/blue-dot.png",
@@ -86,40 +97,13 @@ communes.forEach(commune => {
         })
     }).bindPopup(`
         <b>Commune : ${commune.name}</b><br>
-        <b>Province :</b> ${commune.province}<br><br>
-        <b>Besoin Province</b> :<br>
-        - VL : ${besoinProvinceCCT_VL}<br>
-        - PL : ${besoinProvinceCCT_PL}<br><br>
-        <b>Besoin Commune</b> :<br>
-        - VL : ${besoinCommuneCCT_VL}<br>
-        - PL : ${besoinCommuneCCT_PL}
+        <b>Province :</b> Province de ${commune.province}
     `);
 
-    communesLayer.addLayer(communeMarker);
-
-    let centerLat = commune.lat + (Math.random() * 0.02 - 0.01);
-    let centerLng = commune.lng + (Math.random() * 0.02 - 0.01);
-
-    let centerMarker = L.marker([centerLat, centerLng], {
-        title: "Centre " + commune.name,
-        icon: L.icon({
-            iconUrl: "https://maps.google.com/mapfiles/ms/icons/red-dot.png",
-            iconSize: [20, 20]
-        })
-    }).bindPopup(`
-        <b>Centre ${commune.name}</b><br>
-        <b>Adresse :</b> Adresse ${commune.name}<br>
-        <b>Nbre VL :</b> ${getRandom(0, 6)}<br>
-        <b>Nbre PL :</b> ${getRandom(0, 6)}<br>
-        <b>AV1 :</b> ${arabicNames[getRandom(0, arabicNames.length - 1)]}<br>
-        <b>AV2 :</b> ${arabicNames[getRandom(0, arabicNames.length - 1)]}<br>
-        <b>AV3 :</b> ${arabicNames[getRandom(0, arabicNames.length - 1)]}
-    `);
-
-    centresLayer.addLayer(centerMarker);
+    communesLayer.addLayer(marker);
 });
 
-// Gestion de l'affichage des couches en fonction du zoom
+// Gestion du zoom dynamique
 map.on('zoomend', function () {
     let zoomLevel = map.getZoom();
 
@@ -127,17 +111,12 @@ map.on('zoomend', function () {
         map.addLayer(regionsLayer);
         map.removeLayer(provincesLayer);
         map.removeLayer(communesLayer);
-        map.removeLayer(centresLayer);
     } else if (zoomLevel >= 6 && zoomLevel < 8) {
         map.removeLayer(regionsLayer);
         map.addLayer(provincesLayer);
         map.removeLayer(communesLayer);
-        map.removeLayer(centresLayer);
-    } else if (zoomLevel >= 8 && zoomLevel < 10) {
+    } else if (zoomLevel >= 8) {
         map.removeLayer(provincesLayer);
         map.addLayer(communesLayer);
-        map.removeLayer(centresLayer);
-    } else {
-        map.addLayer(centresLayer);
     }
 });
