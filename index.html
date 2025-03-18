@@ -2,16 +2,21 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Carte du Maroc - GeoJSON</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carte Interactive du Maroc</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
     <style>
-        body { margin: 0; padding: 0; }
-        #map { width: 100%; height: 100vh; }
+        #map {
+            width: 100%;
+            height: 90vh;
+        }
     </style>
 </head>
 <body>
+    <h2>Carte Interactive des Régions et Provinces du Maroc</h2>
     <div id="map"></div>
+    
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script src="app.js"></script>
 </body>
 </html>

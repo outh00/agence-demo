@@ -1,29 +1,32 @@
 // Initialisation de la carte
-var map = L.map('map').setView([31.7917, -7.0926], 6); // Centré sur le Maroc
+var map = L.map('map').setView([31.5, -7.5], 6);
 
-// Ajout des tuiles OpenStreetMap
+// Ajout d'une couche OpenStreetMap
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; OpenStreetMap contributors'
 }).addTo(map);
 
-// Charger les données depuis data.json
-fetch('data.json')
+// Charger et afficher les régions du Maroc (en bleu)
+fetch('data/geoBoundaries-MAR-ADM1.geojson')
     .then(response => response.json())
     .then(data => {
-        console.log("Données JSON chargées :", data);
-
-        // Ajouter les régions à la carte
         L.geoJSON(data, {
-            style: function (feature) {
-                return {
-                    color: "blue",
-                    weight: 2,
-                    fillOpacity: 0.3
-                };
-            },
+            style: { fillColor: "blue", color: "black", weight: 1, fillOpacity: 0.6 },
             onEachFeature: function (feature, layer) {
-                layer.bindPopup(`<b>Région:</b> ${feature.properties.nom}`);
+                layer.bindTooltip("Région : " + feature.properties.shapeName);
             }
         }).addTo(map);
-    })
-    .catch(error => console.error('Erreur lors du chargement des données :', error));
+    });
+
+// Charger et afficher les provinces du Maroc (en vert clair)
+fetch('data/geoBoundaries-MAR-ADM2.geojson')
+    .then(response => response.json())
+    .then(data => {
+        L.geoJSON(data, {
+            style: { fillColor: "lightgreen", color: "black", weight: 1, fillOpacity: 0.4 },
+            onEachFeature: function (feature, layer) {
+                layer.bindTooltip("Province : " + feature.properties.shapeName);
+            }
+        }).addTo(map);
+    });
+
