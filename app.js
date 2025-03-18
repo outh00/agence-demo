@@ -35,8 +35,8 @@ var communes = [
     { name: "M'Rirt", lat: 33.1633, lng: -5.5944, province: "Khénifra" }
 ];
 
-// Définition des couleurs pour chaque province
-var provinceColors = {
+// Définition des couleurs des icônes pour chaque province
+var provinceIcons = {
     "Béni Mellal": "red",
     "Khouribga": "blue",
     "Fquih Ben Salah": "green",
@@ -44,8 +44,8 @@ var provinceColors = {
     "Khénifra": "orange"
 };
 
-// Ajouter les cercles des communes APRES les couches GeoJSON et s'assurer qu'ils sont DEVANT
-var circleLayerGroup = L.layerGroup().addTo(map);
+// Ajouter les communes sous forme de marqueurs interactifs
+var markerLayerGroup = L.layerGroup().addTo(map);
 
 communes.forEach(commune => {
     let besoinProvinceCCT_VL = getRandom(0, 6);
@@ -53,17 +53,12 @@ communes.forEach(commune => {
     let besoinCommuneCCT_VL = getRandom(0, 6);
     let besoinCommuneCCT_PL = getRandom(0, 6);
 
-    let circle = L.circleMarker([commune.lat, commune.lng], {
-        radius: 8,  // Taille du cercle
-        color: "black",  // Bordure
-        fillColor: provinceColors[commune.province],  // Couleur selon la province
-        fillOpacity: 0.8,
-        weight: 1,
-        interactive: true // Rendre le cercle cliquable
+    let marker = L.marker([commune.lat, commune.lng], {
+        title: commune.name
     });
 
-    // Associer un popup cliquable
-    circle.bindPopup(`
+    // Associer une popup interactive
+    marker.bindPopup(`
         <b>Commune : ${commune.name}</b><br>
         Province : ${commune.province}<br>
         Latitude : ${commune.lat}<br>
@@ -76,7 +71,7 @@ communes.forEach(commune => {
         - PL : ${besoinCommuneCCT_PL}
     `);
 
-    circle.addTo(circleLayerGroup).bringToFront(); // Assurer que le cercle est devant les autres couches
+    marker.addTo(markerLayerGroup);
 });
 
 // Charger et afficher les régions du Maroc (en bleu)
